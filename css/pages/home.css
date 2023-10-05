@@ -1,0 +1,9 @@
+.section-hero{
+    width: 100%;
+    height: 18rem;
+}
+.section-banner{
+    width: 100%;
+    height: 20rem;
+    background-color: var(--color-tertiary);
+} 

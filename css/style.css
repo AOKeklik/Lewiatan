@@ -1,3 +1,4 @@
+@import "./components/slider.css";
 @import "./components/header.css";
 @import "./components/btn.css";
 @import "./components/card.css";
@@ -5,6 +6,7 @@
 @import "./pages/home.css";
 
 
+@import "./base/veriables.css";
 @import "./base/utilities.css";
 @import "./base/base.css";
 @import "./base/typography.css";

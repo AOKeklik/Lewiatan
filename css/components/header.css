@@ -1,9 +1,64 @@
-.header {}
-.nav{}
-.menu{}
-.menu-item{}
-.search{}
-.search-label{}
-.search-input{}
+.header {
+    height: 80px;
+    width: 100%;
+    background-color: var(--color-primary);
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+    max-width: 110rem;
+    height: 80px;
+    margin: 0 auto;
+}
+.menu{
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+}
+.menu-item{
+    height: 100%;
+    padding: 0 4rem;
+    display: flex;
+    align-items: center;   
+}
+.menu-item a{
+    color: var(--color-white);
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+.search{
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+}
+.search-label{
+    font-size: 1.7rem;
+    color: var(--color-white);
+}
+.search-input{
+    align-self: flex-end;
+    background-color: var(--color-primary);
+    border: none;
+    outline: none;
+    border-bottom: 2px solid var(--color-white);
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem .5rem;
+    font-size: 1.7rem;
+    letter-spacing: .7px;
+    color: var(--color-white);
+}
 .social{}
-.social-icon{}
+.social-icon{
+    width: 5rem;
+    height: 5rem;
+    fill: var(--color-white);
+    cursor: pointer;
+}
+/* active */
+.active {
+    background-color: var(--color-secondary);
+}
