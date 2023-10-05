@@ -1,0 +1,10 @@
+@import "./components/header.css";
+@import "./components/btn.css";
+@import "./components/card.css";
+
+@import "./pages/home.css";
+
+
+@import "./base/utilities.css";
+@import "./base/base.css";
+@import "./base/typography.css";
