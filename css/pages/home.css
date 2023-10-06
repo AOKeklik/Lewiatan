@@ -3,7 +3,21 @@
     height: 18rem;
 }
 .section-banner{
+    position: relative;
     width: 100%;
-    height: 20rem;
-    background-color: var(--color-tertiary);
+    height: 19rem;
+    background-image: url("../../img/banner/background-banner.png");
+    background-size: 50px 50px;
+    background-position: top left;
+    background-repeat: repeat;
+    box-shadow: 0 1rem 2rem 0 rgba(0,0,0,.12);
 } 
+.main{
+    width: 100%;
+    padding: 2rem 0;
+
+    background-image: url("../../img/main/background-main.png");
+    background-size: 50px 50px;
+    background-position: top left;
+    background-repeat: repeat;
+}

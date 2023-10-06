@@ -1,0 +1,58 @@
+.filter {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+}
+.filter-horizontal,
+.filter-grid {
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.filter-horizontal {    
+    flex-direction: column;
+}
+.filter-h-line {
+    width: 100%;
+    height: 1rem;
+    background-color: var(--color-primary);
+}
+.filter-grid {
+    flex-wrap: wrap;
+    gap: .1rem;
+}
+.filter-g-line {
+    width: 1.24rem;
+    background-color: var(--color-primary);
+}
+.filter-new {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    margin-right: 2rem;
+}
+.filter-new {
+    align-items: center;
+}
+.filter-sort-text {
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+.filter-arrow {
+    width: 2.5rem;
+    height: 2.5rem;
+    stroke: var(--color-primary);
+    stroke-width: .01rem;
+    cursor: pointer;
+}
+/* active */
+.filter-horizontal.active-btn > *,
+.filter-grid.active-btn > *  {
+ background-color: var(--color-secondary);
+}
+.filter-new.active-btn > .filter-arrow {
+    color: red;
+    stroke: var(--color-secondary);
+}

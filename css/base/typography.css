@@ -1,3 +1,26 @@
   @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Lato:wght@100&family=Noto+Serif:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 /* Roboto, sans-serif 100 300 400 500 700 900 */
+/* Open Sans, sans-serif 300 400 500 600 700 800 300 */
+/* Cinzel, sans-serif 400 500 600 700 800 900 */
+/* Noto Serif, sans-serif 100 200 300 400 500 600 700 800 900 */
+
+.heading-primary {
+  color: #333;
+  font-size: 3.5rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 800;
+}
+.heading-primary > span {
+  display: block;
+}
+.heading-primary > span:not(:last-child) {
+  margin-bottom: .8rem;
+}
+
+.heading-secondary {
+  color: var(--color-fifth);
+  font-size: 3.5rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 800;
+}
