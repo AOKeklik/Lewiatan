@@ -13,8 +13,12 @@
     height: 80px;
     margin: 0 auto;
 }
-.menu{
+.nav-menu {
     align-self: stretch;
+    display: flex;
+    background-color: var(--color-primary);
+}
+.menu{
     display: flex;
     align-items: center;
 }
@@ -29,16 +33,16 @@
     font-size: 1.7rem;
     font-weight: 700;
 }
-.search{
+.nav-search{
     align-self: stretch;
     display: flex;
     align-items: center;
 }
-.search-label{
+.nav-search--label{
     font-size: 1.7rem;
     color: var(--color-white);
 }
-.search-input{
+.nav-search--input{
     align-self: flex-end;
     background-color: var(--color-primary);
     border: none;
@@ -51,14 +55,106 @@
     letter-spacing: .7px;
     color: var(--color-white);
 }
-.social{}
-.social-icon{
+.nav-social{}
+.nav-social--icon{
     width: 5rem;
     height: 5rem;
     fill: var(--color-white);
     cursor: pointer;
 }
+/* burger */
+.nav-burger {
+	cursor: pointer;
+	display: none;
+}
+.nav-burger > * {
+	display: block;
+	width: 2.5rem;
+	height: 3px;
+	background-color: var(--color-white);
+	transition: transform 0.3s;
+}
+.nav-burger > *:not(:last-child) {
+	margin-bottom: 0.5rem;
+}
+/* burger */
+/* burger line */
+.active-nav .nav-line1 {
+	transform: rotate(-45deg) translate(-5px, 6px);
+}
+.active-nav .nav-line2 {
+	opacity: 0;
+	transform: rotate(45deg);
+}
+.active-nav .nav-line3 {
+	transform: rotate(45deg) translate(-5px, -6px);
+}
+/* burger line */
+/* marker */
+.menu {
+	position: relative;
+    z-index: 999;
+}
+.marker {
+	position: absolute;
+	z-index: -1;
+	bottom: 0;
+	height: 0px;
+	width: 0px;
+	background-color: var(--color-secondary);
+	transform: scaleX(0);
+	backface-visibility: hidden;
+	transition: left 0.3s, transform 0.3s, width 0s;
+	pointer-events: none;
+}
 /* active */
 .active {
-    background-color: var(--color-secondary);
+	background-color: var(--color-secondary);
+	font-weight: 700;
+}
+/* query */
+@media (max-width: 800px) {
+    .nav-search {
+        display: none;
+    }
+    .nav-social {
+        display: none;
+    }
+	.nav-burger {
+        margin-left: auto;
+        margin-right: 3rem;
+		display: block;
+	}
+	.nav-menu {
+		display: block;
+		position: absolute;
+		z-index: 999;
+		top: 80px;
+		right: -100%;
+		width: 50vh;
+		height: calc(100vh - 90px);
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: 0.3s;
+	}
+    .menu {
+		display: flex;
+		flex-direction: column;
+	}
+    .menu-item {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+	#menu-header .menu-item:not(:last-child) {
+		margin-bottom: 2rem;
+	}
+	.active-nav .nav-menu {
+		right: 0%;
+	}
+	/* marker */
+	.marker {
+		transition: left 0s 0s, width 0s 0s, top 0.2s 0s, transform 0.3s;
+	}
 }
