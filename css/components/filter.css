@@ -47,8 +47,8 @@
     cursor: pointer;
 }
 /* active */
-.filter-horizontal.active-filter > *,
-.filter-grid.active-filter > *,
+.filter-horizontal.active-layout > *,
+.filter-grid.active-layout > *,
 .filter-horizontal:hover > *,
 .filter-grid:hover > *  {
  background-color: var(--color-secondary);

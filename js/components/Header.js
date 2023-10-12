@@ -20,8 +20,8 @@ class Header {
 		const theNode = e.target.closest(".menu-item")
 		if (!theNode) return
 
-		this.navItems.forEach(item => item.classList.remove("active"))
-		theNode.classList.add("active")
+		this.navItems.forEach(item => item.classList.remove("active-item"))
+		theNode.classList.add("active-item")
 	}
 
 	handleBurgerToggle(e) {

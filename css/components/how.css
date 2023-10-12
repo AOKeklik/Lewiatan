@@ -1,7 +1,7 @@
 .how {
     display: grid;
     grid-template-columns: 1.3fr 1fr;
-    max-width: 110rem;
+    max-width: 120rem;
     margin: 0 auto;
     padding: 5rem 8rem;
 }

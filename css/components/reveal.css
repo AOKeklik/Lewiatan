@@ -1,0 +1,36 @@
+/* fadeup */
+.reveal-fadeup-50 {
+	transform: translateY(50%);
+	opacity: 0;
+	transition: 0s;
+}
+.reveal-fadeup-50.active-reveal {
+	opacity: 1;
+	transform: translateY(0);
+	transition: 0.8s;
+	transition-property: opacity, transform;
+}
+/* fadeRight */
+.reveal-fadeRight-30 {
+	transform: translateX(-30%);
+	opacity: 0;
+	transition: 0s;
+}
+.reveal-fadeRight-30.active-reveal {
+	opacity: 1;
+	transform: translateY(0);
+	transition: 0.8s;
+	transition-property: opacity, transform;
+}
+/* fadeRight */
+.reveal-fadeLeft-30 {
+	transform: translateX(30%);
+	opacity: 0;
+	transition: 0s;
+}
+.reveal-fadeLeft-30.active-reveal {
+	opacity: 1;
+	transform: translateY(0);
+	transition: 0.8s;
+	transition-property: opacity, transform;
+}
