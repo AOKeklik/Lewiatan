@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Lewiatan</title>
+    <title>Blog</title>
 </head>
 <body>
     <header class="header">
@@ -12,8 +12,8 @@
             <div class="nav-menu">
                 <ul id="menu-header" class="menu">
                     <span class="marker"></span>
-                    <li class="menu-item active"><a href="">Blog</a></li>
-                    <li class="menu-item"><a href="">Lokalność w Lewiatanie</a></li>
+                    <li class="menu-item"><a href="">Blog</a></li>
+                    <li class="menu-item active"><a href="">Lokalność w Lewiatanie</a></li>
                     <li class="menu-item"><a href="">Eksperci w lokalności</a></li>
                 </ul>
             </div>
@@ -38,7 +38,7 @@
             <li style="background-image: url('./img/slider/2.jpg');"></li>
             <li style="background-image: url('./img/slider/3.jpg');"></li>
             <li style="background-image: url('./img/slider/4.jpg');"></li>
-        </div>
+        </ul>
     </div>
     <div class="section-banner">
         <div class="container">
@@ -46,93 +46,151 @@
                 <figure class="banner-image">
                     <img src="./img/banner/banner-image.jpg" alt="">
                 </figure>
-                <h1 class="banner-text heading-primary">
-                    <span class="banner-title">NAJLEPSZE PRODUKTY</span>
-                    <span class="banner-title">POCHODZĄ</span>
-                    <span class="banner-title">Z NAJBLIŻSZEJ OKOLICY!</span>
+                <h1 class="banner-text heading-primary text-bigger">
+                    <span class="color-quaternary">LOKALNOŚĆ</span>
+                    <span class="color-fifth">W LEWIATANIE</span>
                 </h1>   
             </div>
         </div>
     </div>
     <main class="main">
-        <div class="container">
-            <div class="filter m-b-s">
-                <div class="filter-new">
-                    <span class="filter-sort-text">Najnowsze</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="filter-arrow" viewBox="3 3 17 17"><path d="M18 6.41L16.59 5L12 9.58L7.41 5L6 6.41l6 6z"/><path d="m18 13l-1.41-1.41L12 16.17l-4.59-4.58L6 13l6 6z"/></svg>
-                </div>
-                <div class="filter-horizontal">
-                    <span class="filter-h-line"></span>
-                    <span class="filter-h-line"></span>
-                    <span class="filter-h-line"></span>
-                </div>
-                <div class="filter-grid active-btn">
-                    <span class="filter-g-line"></span>
-                    <span class="filter-g-line"></span>
-                    <span class="filter-g-line"></span>
-                    <span class="filter-g-line"></span>
-                    <span class="filter-g-line"></span>
-                    <span class="filter-g-line"></span>
-                    <span class="filter-g-line"></span>
-                    <span class="filter-g-line"></span>
-                    <span class="filter-g-line"></span>
+        <section class="section-product-lists">
+            <div class="container">
+                <div class="filter m-b-s">
+                    <div class="filter-cat">
+                        <span class="filter-sort-text">Wszystkie kategorie</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="filter-arrow" viewBox="3 3 17 17"><path d="M18 6.41L16.59 5L12 9.58L7.41 5L6 6.41l6 6z"/><path d="m18 13l-1.41-1.41L12 16.17l-4.59-4.58L6 13l6 6z"/></svg>
+                    </div>
+                    <div class="filter-date">
+                        <span class="filter-sort-text">Najnowsze</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="filter-arrow" viewBox="3 3 17 17"><path d="M18 6.41L16.59 5L12 9.58L7.41 5L6 6.41l6 6z"/><path d="m18 13l-1.41-1.41L12 16.17l-4.59-4.58L6 13l6 6z"/></svg>
+                    </div>
+                    <div class="filter-horizontal active-filter">
+                        <span class="filter-h-line"></span>
+                        <span class="filter-h-line"></span>
+                        <span class="filter-h-line"></span>
+                    </div>
+                    <div class="filter-grid">
+                        <span class="filter-g-line"></span>
+                        <span class="filter-g-line"></span>
+                        <span class="filter-g-line"></span>
+                        <span class="filter-g-line"></span>
+                        <span class="filter-g-line"></span>
+                        <span class="filter-g-line"></span>
+                        <span class="filter-g-line"></span>
+                        <span class="filter-g-line"></span>
+                        <span class="filter-g-line"></span>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="grid">
-            <div class="m-b-m text-center">
-                <h2 class="heading-secondary">Lokalność w Lewiatanie</h2>
-            </div>
-            <div class="row">
-                <div class="col-1-of-3">
-                    <div class="card-h">
-                        <span class="card-date">3 dni temu</span>
-                        <div class="card-img" style="background-image:url('./img/card/1.jpg');"></div>
-                        <div class="card-text">
+            <div class="grid m-b-l">
+                <div class="row">
+                    <div class="col-1-of-1 bg-paper layout-h">
+                        <div class="card-header">
+                            <span class="card-date">3 dni temu</span>
+                            <div class="card-img" style="background-image:url('./img/card/1.jpg');"></div>
+                        </div>
+                        <div class="card-body">
                             <h3 class="card-title">Festiwal produktów lokalnych</h3>
                             <p class="card-desc">
-                                Lokalne produkty to dla mnie gwarancja świeżości i wspaniałego smaku potraw. Wybieram właśnie takie – których dostarczenie do sklepu zajęło pół godziny...
+                                Lokalne produkty to dla mnie gwarancja świeżości i wspaniałego smaku potraw.
+Wybieram właśnie takie – których dostarczenie do sklepu zajęło pół godziny. Po co mam kupować produkty transportowane tysiące kilometrów, skoro w  ewiatanie znajduję lokalne perełki?Bus deriaep ratur? Aperum et latinul labore, ium rest, quias disincture, aliquibusdae dolorec escipici odi odigniat mos eos aditi nimusae...
                             </p>
                             <div class="card-btn">
+                                <p class="card-btn-category">
+                                    eksperci <span class="card-separator">|</span> działania Lewiatana
+                                </p>
                                 <a href="" class="btn btn-primary">czytaj dalej...</a>
                             </div>
-                        </div>
+                        </div>                        
                     </div>
-                </div>
-                <div class="col-1-of-3">
-                    <div class="card-h">
-                        <span class="card-date">12.09.2023</span>
-                        <div class="card-img" style="background-image:url('./img/card/2.jpg');"></div>
-                        <div class="card-text">
+                    <div class="col-1-of-1 bg-paper layout-h">
+                        <div class="card-header">
+                            <span class="card-date">12.09.2023</span>
+                            <div class="card-img" style="background-image:url('./img/card/3.jpg');"></div>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Eksozycja na półkach sklepowych</h3>
+                            <p class="card-desc">Lokalne produkty to dla mnie gwarancja świeżości i wspaniałego smaku potraw. Wybieram właśnie takie – których dostarczenie do sklepu zajęło pół godziny. Po co mam kupować produkty transportowane tysiące kilometrów, skoro w Lewiatanie znajduję lokalne perełki?Bus deriaep ratur? Aperum et latinul labore, ium rest, quias disincture, aliquibusdae dolorec escipici odi odigniat mos eos aditi nimusae...
+                            </p>
+                            <div class="card-btn">
+                                <p class="card-btn-category">
+                                    eksperci <span class="card-separator">|</span> działania Lewiatana
+                                </p>
+                                <a href="" class="btn btn-primary">czytaj dalej...</a>
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="col-1-of-1 bg-paper layout-h">
+                        <div class="card-header">
+                            <span class="card-date">05.09.2023</span>
+                            <div class="card-img" style="background-image:url('./img/card/1.jpg');"></div>
+                        </div>
+                        <div class="card-body">
                             <h3 class="card-title">Ekspozycja na stoisku warzywa i owoce</h3>
-                            <p class="card-desc">
-                                Lokalne produkty to dla mnie gwarancja świeżości i wspaniałego smaku potraw. Wybieram właśnie takie – których dostarczenie do sklepu zajęło pół godziny...
+                            <p class="card-desc">Lokalne produkty to dla mnie gwarancja świeżości i wspaniałego smaku potraw. Wybieram właśnie takie – których dostarczenie do sklepu zajęło pół godziny. Po co mam kupować produkty transportowane tysiące kilometrów, skoro w ewiatanie znajduję lokalne perełki?Bus deriaep ratur? Aperum et latinul labore, ium rest, quias disincture, aliquibusdae dolorec escipici odi odigniat mos eos aditi nimusae...
                             </p>
                             <div class="card-btn">
+                                <p class="card-btn-category">
+                                    eksperci <span class="card-separator">|</span> działania Lewiatana
+                                </p>
                                 <a href="" class="btn btn-primary">czytaj dalej...</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-1-of-3">
-                    <div class="card-h">
-                        <span class="card-date">05.09.2023</span>
-                        <div class="card-img" style="background-image:url('./img/card/1.jpg');"></div>
-                        <div class="card-text">
-                            <h3 class="card-title">Wksozycja na półkach sklepowych</h3>
-                            <p class="card-desc">
-                                Lokalne produkty to dla mnie gwarancja świeżości i wspaniałego smaku potraw. Wybieram właśnie takie – których dostarczenie do sklepu zajęło pół godziny...
-                            </p>
-                            <div class="card-btn">
-                                <a href="" class="btn btn-primary">czytaj dalej...</a>
-                            </div>
+                <div class="m-t-m">
+                    <div class="pagination">
+                        <div class="pagination-left">
+                            <span class="pagination-text">Strona <span class="color-secondary">1</span> z <span class="color-secondary">4</span> </span>	
+				            <button class="pagination-btn pagination-btn-page active-pagination" data-page="1">1</button>	
+				            <button class="pagination-btn pagination-btn-page" data-page="1">2</button>	
+				            <button class="pagination-btn pagination-btn-page" data-page="1">3</button>	
                         </div>
+				        <button class="pagination-btn" data-page="2">następna strona</button>
                     </div>
                 </div>
             </div>
-        </div>
-        
+        </section>
     </main>
+    <footer class="footer">
+        <div class="container footer-wrap m-b-m">
+            <div class="footer-text">
+                <h3 class="heading-tertiary m-b-s">Lewiatan Holding S.A.</h3>
+                <p class="footer-adress">
+                    Lewiatan Holding S.A.
+                    <br/>
+                    ul. Kilińskiego 10
+                    <br/>
+                    87-800 Włocławek
+                </p>
+                <p class="footer-adress">
+                    telefon: +48 54 412 78 21
+                    <br/>
+                    e-mail: sekretariat@lewiatan.pl
+                </p>
+                <p class="footer-adress">
+                    Kontakt dla mediów:
+                    <br/>                
+                    Adam Imielski: adam.imielski@lewiatan.pl
+                </p>
+            </div>
+            <div class="footer-logo">
+                <div class="footer-img bg-image" style="background-image: url('./img/footer/footer-logo.png');"></div>
+            </div>
+        </div>
+        <div class="footer-nav bg-primary">
+            <div class="container">
+                <ul class="menu">
+                    <li class="menu-item"><a href="">www.lewiatan.pl</a></li>
+                    <li class="menu-item"><a href="">www.gotujezlewiatanem.pl</a></li>
+                    <li class="menu-item"><a href="">www.mojlewiatan.pl</a></li>
+                    <li class="menu-item"><a href="">www.lewiatan.pl</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
 
 
     <script type="module" src="./js/app.js"></script>

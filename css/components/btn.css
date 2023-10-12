@@ -5,7 +5,26 @@
     font-weight: 600;
     letter-spacing: .7px;
 }
+/* btn primary */
 .btn-primary {
     color: var(--color-white);
     background-color: var(--color-secondary);
+}
+/* btn arrow */
+.btn-arrow {
+    position: relative;
+    font-weight: 800;
+}
+.btn-arrow-icon {
+    position: absolute;
+    top: 23%;
+    right: -1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: var(--color-primary);
+    margin-left: 1rem;
+    transition: right .3s;
+}
+.btn-arrow:hover > .btn-arrow-icon{
+    right: -1.5rem;
 }

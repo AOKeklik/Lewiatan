@@ -1,4 +1,6 @@
-.card-h {
+.card-header {
+    max-width: 40rem;
+    width: 100%;
 }
 .card-date {
     display: inline-block;
@@ -8,13 +10,13 @@
     margin-bottom: 2rem;
 }
 .card-img {
-    max-width: 40rem;
-    height: 20rem;
+    width: 100%;
+    min-height: 20rem;
     background-size: cover;
     background-position: center;
     margin-bottom: 2.2rem;
 }
-.card-text {
+.card-body {
     padding: 0 2rem;
 }
 .card-title {
@@ -32,5 +34,29 @@
     margin-bottom: 2rem;
 }
 .card-btn {
-    text-align: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card-btn-category {
+    font-size: 1.8rem;
+    color: var(--color-secondary);
+}
+.card-separator {
+    color: var(--color-primary);
+}
+/* grid - h */
+.layout-h {
+    display: flex;
+    align-items: start;
+}
+.layout-h .card-header {
+  min-width: 40rem;
+}
+.layout-h .card-body {
+    flex-grow: 1;
+    margin-top: 3rem;
+}
+.layout-h .card-title {
+    font-size: 4rem;
 }

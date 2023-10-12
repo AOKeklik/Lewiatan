@@ -14,10 +14,17 @@
 } 
 .main{
     width: 100%;
-    padding: 2rem 0;
-
     background-image: url("../../img/main/background-main.png");
     background-size: 50px 50px;
     background-position: top left;
     background-repeat: repeat;
+}
+.section-product-lists {
+    padding: 2.5rem 0;
+}
+.section-features {
+    padding: 2.5rem 0;
+}
+.section-location {
+    padding: 2.5rem 0;
 }

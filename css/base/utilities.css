@@ -4,6 +4,52 @@
 .m-b-m{
     margin-bottom: 4rem;
 }
+.m-b-l{
+    margin-bottom: 8rem;
+}
+.m-t-m{
+    margin-top: 4rem;
+}
 .text-center {
     text-align: center;
+}
+.text-right {
+    text-align: right;
+}
+.text-bolder {
+    font-weight: 800;
+}
+.text-bigger {
+    font-size: 4rem;
+}
+.color-primary {
+    color: var(--color-primary);
+}
+.color-secondary {
+    color: var(--color-secondary);
+}
+.color-tertiary {
+    color: var(--color-tertiary);
+}
+.color-quaternary {
+    color: var(--color-quaternary);
+}
+.color-fifth {
+    color: var(--color-fifth);
+}
+.bg-primary {
+    background-color: var(--color-primary);
+}
+.bg-paper {
+    padding: 4rem 2.6rem;
+    background-image: url("../../img/banner/background-banner.png");
+    background-size: 50px 50px;
+    background-position: top left;
+    background-repeat: repeat;
+    box-shadow: 0 1rem 2rem 0 rgba(0,0,0,.12);
+}
+.bg-image {
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
 }

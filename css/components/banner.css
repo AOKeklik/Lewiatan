@@ -14,12 +14,3 @@
 .banner-text{
     text-align: right;
 }
-.banner-title:nth-child(1) {
-    color: var(--color-quaternary);
-}
-.banner-title:nth-child(2) {
-    color: var(--color-primary);
-}
-.banner-title:nth-child(3) {
-    color: var(--color-secondary);
-}

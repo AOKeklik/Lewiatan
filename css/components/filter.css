@@ -9,7 +9,6 @@
     height: 4rem;
     display: flex;
     justify-content: space-between;
-    cursor: pointer;
 }
 .filter-horizontal {    
     flex-direction: column;
@@ -27,14 +26,12 @@
     width: 1.24rem;
     background-color: var(--color-primary);
 }
-.filter-new {
+.filter-date,
+.filter-cat {
     display: flex;
     gap: 1.5rem;
     align-items: center;
     margin-right: 2rem;
-}
-.filter-new {
-    align-items: center;
 }
 .filter-sort-text {
     font-size: 1.7rem;
@@ -45,14 +42,19 @@
     height: 2.5rem;
     stroke: var(--color-primary);
     stroke-width: .01rem;
+}
+[class^=filter-]:hover {
     cursor: pointer;
 }
 /* active */
-.filter-horizontal.active-btn > *,
-.filter-grid.active-btn > *  {
+.filter-horizontal.active-filter > *,
+.filter-grid.active-filter > *,
+.filter-horizontal:hover > *,
+.filter-grid:hover > *  {
  background-color: var(--color-secondary);
 }
-.filter-new.active-btn > .filter-arrow {
-    color: red;
-    stroke: var(--color-secondary);
+
+.filter-date:hover .filter-arrow,
+.filter-cat:hover .filter-arrow {
+ fill: var(--color-secondary);
 }

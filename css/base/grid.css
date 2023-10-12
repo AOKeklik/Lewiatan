@@ -1,19 +1,12 @@
 .container {
-    max-width: 110rem;
+    max-width: 120rem;
     height: 100%;
     margin: 0 auto;
-    padding: 0 2rem;
 }
 .grid {
     position: relative;
     max-width: 120rem;
     margin: 0 auto;
-    padding: 4rem 2.6rem;
-    background-image: url("../../img/banner/background-banner.png");
-    background-size: 50px 50px;
-    background-position: top left;
-    background-repeat: repeat;
-    box-shadow: 0 1rem 2rem 0 rgba(0,0,0,.12);
 }
 .row {
     display: flex;
@@ -28,3 +21,7 @@
 .col-1-of-3 {
     flex: 0 1 calc((100% - 9rem) / 3);
 }
+.col-1-of-1 {
+    flex: 0 1 100%;
+}
+

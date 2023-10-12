@@ -1,8 +1,12 @@
+@import "./components/pagination.css";
+@import "./components/footer.css";
+@import "./components/how.css";
 @import "./components/filter.css";
 @import "./components/banner.css";
 @import "./components/slider.css";
 @import "./components/header.css";
 @import "./components/btn.css";
+@import "./components/card-feature.css";
 @import "./components/card.css";
 
 @import "./pages/home.css";
@@ -10,6 +14,6 @@
 
 @import "./base/grid.css";
 @import "./base/veriables.css";
-@import "./base/utilities.css";
 @import "./base/base.css";
 @import "./base/typography.css";
+@import "./base/utilities.css";

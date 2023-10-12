@@ -1,0 +1,24 @@
+.card-feature{
+    text-align: center;
+}
+.card-feature-image{
+    display: inline-block;
+    width: 16rem;
+    height: 16rem;
+    margin-bottom: 6rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.card-feature-text{
+    text-align: left;
+}
+.card-feature-title{
+    font-size: 4rem;
+    margin-bottom: 2rem;
+}
+.card-feature-desc{
+    font-size: 1.7rem;
+    line-height: 1.55;
+    font-weight: 500;
+}
