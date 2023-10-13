@@ -1,62 +1,76 @@
 .card-header {
-    max-width: 40rem;
-    width: 100%;
+	max-width: 40rem;
+	width: 100%;
 }
 .card-date {
-    display: inline-block;
-    color: var(--color-primary);
-    font-size: 2rem;
-    padding: 0 2rem;
-    margin-bottom: 2rem;
+	display: inline-block;
+	color: var(--color-primary);
+	font-size: 2rem;
+	padding: 0 2rem;
+	margin-bottom: 2rem;
 }
 .card-img {
-    width: 100%;
-    min-height: 20rem;
-    background-size: cover;
-    background-position: center;
-    margin-bottom: 2.2rem;
+	width: 100%;
+	min-height: 20rem;
+	background-size: cover;
+	background-position: center;
+	margin-bottom: 2.2rem;
 }
 .card-body {
-    padding: 0 2rem;
+	padding: 0 2rem;
 }
 .card-title {
-    color: var(--color-fifth);
-    font-size: 2.5rem;
-    line-height: 1.2;
-    font-family: "Open Sans", sans-serif;
-    font-weight: 700;
-    margin-bottom: 2rem;
+	color: var(--color-fifth);
+	font-size: 2.5rem;
+	line-height: 1.2;
+	font-family: "Open Sans", sans-serif;
+	font-weight: 700;
+	margin-bottom: 2rem;
 }
 .card-desc {
-    font-size: 1.8rem;
-    line-height: 1.5;
-    font-weight: 500;
-    margin-bottom: 2rem;
+	font-size: 1.8rem;
+	line-height: 1.5;
+	font-weight: 500;
+	margin-bottom: 2rem;
 }
 .card-btn {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 .card-btn-category {
-    font-size: 1.8rem;
-    color: var(--color-secondary);
+	font-size: 1.8rem;
+	color: var(--color-secondary);
 }
 .card-separator {
-    color: var(--color-primary);
+	color: var(--color-primary);
 }
 /* grid - h */
-.layout-h {
-    display: flex;
-    align-items: start;
+/* .layout-h {
+	display: flex;
+	align-items: start;
 }
 .layout-h .card-header {
-  min-width: 40rem;
+	min-width: 40rem;
 }
 .layout-h .card-body {
-    flex-grow: 1;
-    margin-top: 3rem;
+	flex-grow: 1;
+	margin-top: 3rem;
 }
 .layout-h .card-title {
-    font-size: 4rem;
+	font-size: 4rem;
+} */
+.col-1-of-1 {
+	display: flex;
+	align-items: start;
+}
+.col-1-of-1 .card-header {
+	min-width: 40rem;
+}
+.col-1-of-1.card-body {
+	flex-grow: 1;
+	margin-top: 3rem;
+}
+.col-1-of-1 .card-title {
+	font-size: 4rem;
 }

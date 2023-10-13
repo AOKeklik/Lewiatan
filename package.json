@@ -1,23 +1,23 @@
 {
-  "name": "Leviatan-Blog",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "server": "json-server -p 3001 --watch db.json"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AOKeklik/Lewiatan.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/AOKeklik/Lewiatan/issues"
-  },
-  "homepage": "https://github.com/AOKeklik/Lewiatan#readme",
-  "devDependencies": {
-    "json-server": "^0.17.4"
-  }
+	"name": "LEWIATAN",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.html",
+	"scripts": {
+		"server": "json-server -p 3001 --watch db.json"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/AOKeklik/Lewiatan.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/AOKeklik/Lewiatan/issues"
+	},
+	"homepage": "https://github.com/AOKeklik/Lewiatan#readme",
+	"devDependencies": {
+		"json-server": "^0.17.4"
+	}
 }

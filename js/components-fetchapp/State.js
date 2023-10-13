@@ -2,8 +2,8 @@ import { POSTS_PER_PAGE } from "./config.js"
 
 export const state = {
 	data: [],
-	layout: "false",
-	sortDate: "false",
+	layout: localStorage.getItem("layout") ?? "false",
+	sortDate: localStorage.getItem("sortDate") ?? "false",
 	sortCategories: {
 		sort: [],
 		currentSort: null,
@@ -29,6 +29,7 @@ export function createStateObject(posts, categories) {
 				return categories.filter(m => m.id === n)[0].name
 			}),
 			title: el.title.rendered,
+			img: el.img,
 			content: el.content.rendered,
 			excerpt: el.excerpt.rendered,
 			name: el.name,
@@ -82,5 +83,6 @@ export function saveStateObjectByPage(page = state.pagination.page) {
 
 export function saveStateObjectByLayout() {
 	state.layout = state.layout === "false" ? "true" : "false"
+	console.log(state.layout)
 	localStorage.setItem("layout", state.layout)
 }
