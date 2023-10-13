@@ -80,5 +80,4 @@ class Header2 {
 			el.offsetTop + el.offsetHeight - this.marker.offsetHeight + "px"
 	}
 }
-
 new Header2()
