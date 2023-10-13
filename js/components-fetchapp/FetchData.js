@@ -36,9 +36,9 @@ export async function loadResults() {
 		state.pagination.page = localStorage.getItem("page")
 			? +localStorage.getItem("page")
 			: 1
-		state.sortDate = localStorage.getItem("sortDate") ?? "false"
+		// state.sortDate = localStorage.getItem("sortDate") ?? "false"
 		state.sortCategories = createCategoriesObject(categories)
-		state.layout = localStorage.getItem("layout") ?? "false"
+		// state.layout = localStorage.getItem("layout") ?? "false"
 	} catch (err) {
 		return err
 	}

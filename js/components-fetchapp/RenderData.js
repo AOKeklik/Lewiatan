@@ -1,25 +1,32 @@
 import { state } from "./State.js"
+import { convertedDate, stripHtml } from "./Utilities.js"
 
 export function renderSpiner(parentElement) {
-	const markup = `<span class="spinner">Loading..</span>`
+	const markup = `<span class="spinner">&#9697;</span>`
 	parentElement.innerHTML = ""
 	parentElement.insertAdjacentHTML("afterbegin", markup)
 }
 export function renderResults(parentElement, data) {
+	console.log(state.layout)
+	if (state.layout === "true") parentElement.classList.remove("bg-paper")
+	if (state.layout === "false") parentElement.classList.add("bg-paper")
 	const renderData = data
 		.map(
 			d => `<div class="${
-				state.layout === "false" ? "col-1-of-4" : "col-1-of-1"
+				state.layout === "false" ? "col-1-of-3" : "col-1-of-1 bg-paper"
 			}">
-					<p>
-						<a href="${d.link}"><strong>${d.title}</strong></a>
-						<br>
-						<span>${d.date}</span>
-						<br>
-						<span>${d.categories.join(", ")}</span>
-					</p>
-					<p>${d.content}</p>
-				</div>
+					<div class="card-header">
+						<span class="card-date">${convertedDate(d.date)}</span>
+						<div class="card-img" style="background-image:url('${d.img}');"></div>
+					</div>
+					<div class="card-body">
+						<h3 class="card-title">${d.title}</h3>
+						<p class="card-desc">${stripHtml(d.content)}</p>
+						<div class="card-btn">
+							<a href="${d.link}" class="btn btn-primary">czytaj dalej...</a>
+						</div>
+					</div>
+			</div>
 			`
 		)
 		.join("")
@@ -60,39 +67,40 @@ export function renderPagination(parentElement) {
 	parentElement.innerHTML = ""
 	parentElement.insertAdjacentHTML("beforeend", markup)
 }
-export function renderFilterNames() {
-	const parentDate = document.querySelector(".filter-date")
-	const parentCategories = document.querySelector(".filter-cat")
-
-	console.log(state.sortCategories.currentSort)
-
+export function renderFilterNames(type = "all") {
+	const parentDate = document.querySelector(
+		".filter-date > .filter-sort-text"
+	)
 	parentDate.innerHTML =
 		state.sortDate === "false" ? "Najnowszy" : "Najstarszy"
 
+	if (type !== "all") return
+
+	const parentCategories = document.querySelector(
+		".filter-cat > .filter-sort-text"
+	)
 	parentCategories.innerHTML = !state.sortCategories.currentSort
 		? "Wszystkie Kategorie"
 		: state.sortCategories.currentSort
 }
-export function renderLayout(theClone, parent, e) {
-	const theNode = e.target
-	const theName = theNode.className
-
+export function renderLayout(theClone, parent) {
 	parent.innerHTML = ""
+	if (state.layout === "true") parent.classList.remove("bg-paper")
 
 	let i = 0
 	while (i < theClone.children.length) {
-		state.layout && theName === "btn-grid"
-			? (theClone.children[i].className = "col-1-of-4")
-			: (theClone.children[i].className = "col-1-of-1")
-		parent.insertAdjacentElement(
-			"afterbegin",
-			theClone.children[i].cloneNode(true)
-		)
+		state.layout && state.layout === "false"
+			? (theClone.children[i].className = "col-1-of-3")
+			: (theClone.children[i].className = "col-1-of-1 bg-paper")
+		parent.append(theClone.children[i].cloneNode(true))
 		i++
 	}
+
+	if (state.layout === "false") parent.classList.add("bg-paper")
 }
 export function renderLayoutBtn() {
-	const theName = state.layout === "false" ? ".filter-grid" : ".filter-horizontal"
+	const theName =
+		state.layout === "false" ? ".filter-grid" : ".filter-horizontal"
 	document.querySelector(".active-layout")?.classList.remove("active-layout")
 	document.querySelector(theName).classList.add("active-layout")
 }

@@ -1,16 +1,16 @@
 .banner {
-    height: 100%;
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    align-items: center;
-    /* gap: 6rem; */
+	height: 19rem;
+	display: grid;
+	grid-template-columns: 1.2fr 1fr;
+	align-items: center;
+	/* gap: 6rem; */
 }
-.banner-image{
-    max-width: 55rem;
+.banner-image {
+	max-width: 55rem;
 }
 .banner-image img {
-    width: 100%;
+	width: 100%;
 }
-.banner-text{
-    text-align: right;
+.banner-text {
+	text-align: right;
 }

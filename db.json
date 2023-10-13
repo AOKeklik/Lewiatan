@@ -1,5 +1,5 @@
 {
-	"blog": [
+	"posts": [
 		{
 			"id": 35,
 			"date": "2023-10-08T10:27:25",
@@ -7,8 +7,8 @@
 			"guid": {
 				"rendered": "http://test-site-1.local/?p=35"
 			},
-			"modified": "2023-10-08T10:27:36",
-			"modified_gmt": "2023-10-08T10:27:36",
+			"modified": "2023-10-12T17:03:50",
+			"modified_gmt": "2023-10-12T17:03:50",
 			"slug": "blog-posts-10",
 			"status": "publish",
 			"type": "post",
@@ -25,7 +25,7 @@
 				"protected": false
 			},
 			"author": 1,
-			"featured_media": 0,
+			"featured_media": 38,
 			"comment_status": "open",
 			"ping_status": "open",
 			"sticky": false,
@@ -36,6 +36,7 @@
 			},
 			"categories": [2],
 			"tags": [],
+			"img": "http://test-site-1.local/wp-content/uploads/2023/10/2.jpg",
 			"_links": {
 				"self": [
 					{
@@ -76,6 +77,12 @@
 						"href": "http://test-site-1.local/wp-json/wp/v2/posts/35/revisions/36"
 					}
 				],
+				"wp:featuredmedia": [
+					{
+						"embeddable": true,
+						"href": "http://test-site-1.local/wp-json/wp/v2/media/38"
+					}
+				],
 				"wp:attachment": [
 					{
 						"href": "http://test-site-1.local/wp-json/wp/v2/media?parent=35"
@@ -109,8 +116,8 @@
 			"guid": {
 				"rendered": "http://test-site-1.local/?p=33"
 			},
-			"modified": "2023-10-08T10:26:29",
-			"modified_gmt": "2023-10-08T10:26:29",
+			"modified": "2023-10-12T17:03:03",
+			"modified_gmt": "2023-10-12T17:03:03",
 			"slug": "blog-posts-9",
 			"status": "publish",
 			"type": "post",
@@ -127,7 +134,7 @@
 				"protected": false
 			},
 			"author": 1,
-			"featured_media": 0,
+			"featured_media": 37,
 			"comment_status": "open",
 			"ping_status": "open",
 			"sticky": false,
@@ -138,6 +145,7 @@
 			},
 			"categories": [1],
 			"tags": [],
+			"img": "http://test-site-1.local/wp-content/uploads/2023/10/1.jpg",
 			"_links": {
 				"self": [
 					{
@@ -178,6 +186,12 @@
 						"href": "http://test-site-1.local/wp-json/wp/v2/posts/33/revisions/34"
 					}
 				],
+				"wp:featuredmedia": [
+					{
+						"embeddable": true,
+						"href": "http://test-site-1.local/wp-json/wp/v2/media/37"
+					}
+				],
 				"wp:attachment": [
 					{
 						"href": "http://test-site-1.local/wp-json/wp/v2/media?parent=33"
@@ -211,8 +225,8 @@
 			"guid": {
 				"rendered": "http://test-site-1.local/?p=31"
 			},
-			"modified": "2023-10-08T10:28:08",
-			"modified_gmt": "2023-10-08T10:28:08",
+			"modified": "2023-10-12T17:04:00",
+			"modified_gmt": "2023-10-12T17:04:00",
 			"slug": "blog-posts-8",
 			"status": "publish",
 			"type": "post",
@@ -229,7 +243,7 @@
 				"protected": false
 			},
 			"author": 1,
-			"featured_media": 0,
+			"featured_media": 39,
 			"comment_status": "open",
 			"ping_status": "open",
 			"sticky": false,
@@ -240,6 +254,7 @@
 			},
 			"categories": [1, 2],
 			"tags": [],
+			"img": "http://test-site-1.local/wp-content/uploads/2023/10/3.jpg",
 			"_links": {
 				"self": [
 					{
@@ -280,6 +295,12 @@
 						"href": "http://test-site-1.local/wp-json/wp/v2/posts/31/revisions/32"
 					}
 				],
+				"wp:featuredmedia": [
+					{
+						"embeddable": true,
+						"href": "http://test-site-1.local/wp-json/wp/v2/media/39"
+					}
+				],
 				"wp:attachment": [
 					{
 						"href": "http://test-site-1.local/wp-json/wp/v2/media?parent=31"
@@ -313,8 +334,8 @@
 			"guid": {
 				"rendered": "http://test-site-1.local/?p=29"
 			},
-			"modified": "2023-10-08T10:25:03",
-			"modified_gmt": "2023-10-08T10:25:03",
+			"modified": "2023-10-12T17:04:09",
+			"modified_gmt": "2023-10-12T17:04:09",
 			"slug": "blog-posts-7",
 			"status": "publish",
 			"type": "post",
@@ -331,7 +352,7 @@
 				"protected": false
 			},
 			"author": 1,
-			"featured_media": 0,
+			"featured_media": 39,
 			"comment_status": "open",
 			"ping_status": "open",
 			"sticky": false,
@@ -342,6 +363,7 @@
 			},
 			"categories": [1],
 			"tags": [],
+			"img": "http://test-site-1.local/wp-content/uploads/2023/10/3.jpg",
 			"_links": {
 				"self": [
 					{
@@ -382,6 +404,12 @@
 						"href": "http://test-site-1.local/wp-json/wp/v2/posts/29/revisions/30"
 					}
 				],
+				"wp:featuredmedia": [
+					{
+						"embeddable": true,
+						"href": "http://test-site-1.local/wp-json/wp/v2/media/39"
+					}
+				],
 				"wp:attachment": [
 					{
 						"href": "http://test-site-1.local/wp-json/wp/v2/media?parent=29"
@@ -415,8 +443,8 @@
 			"guid": {
 				"rendered": "http://test-site-1.local/?p=23"
 			},
-			"modified": "2023-10-08T10:26:52",
-			"modified_gmt": "2023-10-08T10:26:52",
+			"modified": "2023-10-12T17:04:18",
+			"modified_gmt": "2023-10-12T17:04:18",
 			"slug": "blog-posts-6",
 			"status": "publish",
 			"type": "post",
@@ -433,7 +461,7 @@
 				"protected": false
 			},
 			"author": 1,
-			"featured_media": 0,
+			"featured_media": 40,
 			"comment_status": "open",
 			"ping_status": "open",
 			"sticky": false,
@@ -444,6 +472,7 @@
 			},
 			"categories": [2],
 			"tags": [],
+			"img": "http://test-site-1.local/wp-content/uploads/2023/10/4.jpg",
 			"_links": {
 				"self": [
 					{
@@ -484,6 +513,12 @@
 						"href": "http://test-site-1.local/wp-json/wp/v2/posts/23/revisions/24"
 					}
 				],
+				"wp:featuredmedia": [
+					{
+						"embeddable": true,
+						"href": "http://test-site-1.local/wp-json/wp/v2/media/40"
+					}
+				],
 				"wp:attachment": [
 					{
 						"href": "http://test-site-1.local/wp-json/wp/v2/media?parent=23"
@@ -517,8 +552,8 @@
 			"guid": {
 				"rendered": "http://test-site-1.local/?p=19"
 			},
-			"modified": "2023-10-06T17:06:15",
-			"modified_gmt": "2023-10-06T17:06:15",
+			"modified": "2023-10-12T17:04:26",
+			"modified_gmt": "2023-10-12T17:04:26",
 			"slug": "blog-posts-5",
 			"status": "publish",
 			"type": "post",
@@ -535,7 +570,7 @@
 				"protected": false
 			},
 			"author": 1,
-			"featured_media": 0,
+			"featured_media": 41,
 			"comment_status": "open",
 			"ping_status": "open",
 			"sticky": false,
@@ -546,6 +581,7 @@
 			},
 			"categories": [1],
 			"tags": [],
+			"img": "http://test-site-1.local/wp-content/uploads/2023/10/5.jpg",
 			"_links": {
 				"self": [
 					{
@@ -586,6 +622,12 @@
 						"href": "http://test-site-1.local/wp-json/wp/v2/posts/19/revisions/20"
 					}
 				],
+				"wp:featuredmedia": [
+					{
+						"embeddable": true,
+						"href": "http://test-site-1.local/wp-json/wp/v2/media/41"
+					}
+				],
 				"wp:attachment": [
 					{
 						"href": "http://test-site-1.local/wp-json/wp/v2/media?parent=19"
@@ -619,8 +661,8 @@
 			"guid": {
 				"rendered": "http://test-site-1.local/?p=16"
 			},
-			"modified": "2023-10-08T10:24:05",
-			"modified_gmt": "2023-10-08T10:24:05",
+			"modified": "2023-10-12T17:04:35",
+			"modified_gmt": "2023-10-12T17:04:35",
 			"slug": "blog-posts-4",
 			"status": "publish",
 			"type": "post",
@@ -637,7 +679,7 @@
 				"protected": false
 			},
 			"author": 1,
-			"featured_media": 0,
+			"featured_media": 42,
 			"comment_status": "open",
 			"ping_status": "open",
 			"sticky": false,
@@ -648,6 +690,7 @@
 			},
 			"categories": [2],
 			"tags": [],
+			"img": "http://test-site-1.local/wp-content/uploads/2023/10/6.jpg",
 			"_links": {
 				"self": [
 					{
@@ -688,6 +731,12 @@
 						"href": "http://test-site-1.local/wp-json/wp/v2/posts/16/revisions/25"
 					}
 				],
+				"wp:featuredmedia": [
+					{
+						"embeddable": true,
+						"href": "http://test-site-1.local/wp-json/wp/v2/media/42"
+					}
+				],
 				"wp:attachment": [
 					{
 						"href": "http://test-site-1.local/wp-json/wp/v2/media?parent=16"
@@ -721,8 +770,8 @@
 			"guid": {
 				"rendered": "http://test-site-1.local/?p=13"
 			},
-			"modified": "2023-10-08T10:24:12",
-			"modified_gmt": "2023-10-08T10:24:12",
+			"modified": "2023-10-12T17:04:44",
+			"modified_gmt": "2023-10-12T17:04:44",
 			"slug": "blog-posts-3",
 			"status": "publish",
 			"type": "post",
@@ -739,7 +788,7 @@
 				"protected": false
 			},
 			"author": 1,
-			"featured_media": 0,
+			"featured_media": 37,
 			"comment_status": "open",
 			"ping_status": "open",
 			"sticky": false,
@@ -750,6 +799,7 @@
 			},
 			"categories": [1],
 			"tags": [],
+			"img": "http://test-site-1.local/wp-content/uploads/2023/10/1.jpg",
 			"_links": {
 				"self": [
 					{
@@ -780,7 +830,7 @@
 				],
 				"version-history": [
 					{
-						"count": 3,
+						"count": 2,
 						"href": "http://test-site-1.local/wp-json/wp/v2/posts/13/revisions"
 					}
 				],
@@ -788,6 +838,12 @@
 					{
 						"id": 26,
 						"href": "http://test-site-1.local/wp-json/wp/v2/posts/13/revisions/26"
+					}
+				],
+				"wp:featuredmedia": [
+					{
+						"embeddable": true,
+						"href": "http://test-site-1.local/wp-json/wp/v2/media/37"
 					}
 				],
 				"wp:attachment": [
@@ -823,8 +879,8 @@
 			"guid": {
 				"rendered": "http://test-site-1.local/?p=10"
 			},
-			"modified": "2023-10-08T10:24:21",
-			"modified_gmt": "2023-10-08T10:24:21",
+			"modified": "2023-10-12T17:04:52",
+			"modified_gmt": "2023-10-12T17:04:52",
 			"slug": "blog-posts-2",
 			"status": "publish",
 			"type": "post",
@@ -841,7 +897,7 @@
 				"protected": false
 			},
 			"author": 1,
-			"featured_media": 0,
+			"featured_media": 38,
 			"comment_status": "open",
 			"ping_status": "open",
 			"sticky": false,
@@ -852,6 +908,7 @@
 			},
 			"categories": [1, 2],
 			"tags": [],
+			"img": "http://test-site-1.local/wp-content/uploads/2023/10/2.jpg",
 			"_links": {
 				"self": [
 					{
@@ -892,6 +949,12 @@
 						"href": "http://test-site-1.local/wp-json/wp/v2/posts/10/revisions/27"
 					}
 				],
+				"wp:featuredmedia": [
+					{
+						"embeddable": true,
+						"href": "http://test-site-1.local/wp-json/wp/v2/media/38"
+					}
+				],
 				"wp:attachment": [
 					{
 						"href": "http://test-site-1.local/wp-json/wp/v2/media?parent=10"
@@ -925,8 +988,8 @@
 			"guid": {
 				"rendered": "http://test-site-1.local/?p=1"
 			},
-			"modified": "2023-10-08T10:24:28",
-			"modified_gmt": "2023-10-08T10:24:28",
+			"modified": "2023-10-12T17:05:02",
+			"modified_gmt": "2023-10-12T17:05:02",
 			"slug": "blog-posts-1",
 			"status": "publish",
 			"type": "post",
@@ -943,7 +1006,7 @@
 				"protected": false
 			},
 			"author": 1,
-			"featured_media": 0,
+			"featured_media": 41,
 			"comment_status": "open",
 			"ping_status": "open",
 			"sticky": false,
@@ -954,6 +1017,7 @@
 			},
 			"categories": [2],
 			"tags": [],
+			"img": "http://test-site-1.local/wp-content/uploads/2023/10/5.jpg",
 			"_links": {
 				"self": [
 					{
@@ -984,7 +1048,7 @@
 				],
 				"version-history": [
 					{
-						"count": 4,
+						"count": 3,
 						"href": "http://test-site-1.local/wp-json/wp/v2/posts/1/revisions"
 					}
 				],
@@ -992,6 +1056,12 @@
 					{
 						"id": 28,
 						"href": "http://test-site-1.local/wp-json/wp/v2/posts/1/revisions/28"
+					}
+				],
+				"wp:featuredmedia": [
+					{
+						"embeddable": true,
+						"href": "http://test-site-1.local/wp-json/wp/v2/media/41"
 					}
 				],
 				"wp:attachment": [

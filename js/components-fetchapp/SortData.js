@@ -13,8 +13,12 @@ export function sortDataByDate(date = state.sortDate) {
 
 	state.data = sortedData
 }
-export function sortDataByCategory() {
+export function sortDataByCategory(cat = null) {
 	let sortedData
+
+	state.sortCategories.currentSort = !cat
+		? state.sortCategories.currentSort
+		: cat
 
 	sortedData = !state.sortCategories.currentSort
 		? state.data.slice()
@@ -34,4 +38,7 @@ export function sortDataByPagination(page = state.pagination.page) {
 	const newData = state.data.slice(start, end)
 
 	return newData
+}
+export function sortDataByLimit(limit = -1) {
+	return state.data.slice(0, limit)
 }
