@@ -1,0 +1,19 @@
+.singlepage-column {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+}
+.singlepage-text {
+    font-size: 1.8rem;
+    line-height: 1.7;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+}
+.singlepage-img img {
+    width: 100%;
+}
+/* wp */
+.wp-block-columns {
+    margin-bottom: 4rem;
+    gap: 4rem;
+}

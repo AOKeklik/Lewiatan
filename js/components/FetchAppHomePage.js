@@ -30,10 +30,11 @@ async function controllerLoadResults(direct) {
 
 		sortDataByDate()
 		sortDataByCategory(
-			direct === "top" ? "działania lewiatana" : "owoce i warzywa"
+			direct === "top" ? "Eksperci w lokalności" : "Lokalność w Lewiatanie"
 		)
 
 		renderResults(parentResults, sortDataByLimit(3))
+		console.log(state.data)
 	} catch (err) {
 		console.log(err)
 	}
@@ -50,7 +51,7 @@ async function controllerLoadResultsByDate(direct) {
 
 		sortDataByDate()
 		sortDataByCategory(
-			direct === "top" ? "działania lewiatana" : "owoce i warzywa"
+			direct === "top" ? "Eksperci w lokalności" : "Lokalność w Lewiatanie"
 		)
 
 		renderResults(parentResults, sortDataByLimit(3))

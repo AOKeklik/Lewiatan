@@ -13,10 +13,12 @@ export function convertedDate(date) {
 		Math.abs(toDay - theDay) / (1000 * 60 * 60 * 24)
 	)
 	const results =
-		howManyDay === 1
-			? howManyDay + " dzień temu"
-			: howManyDay > 3
-			? theDay.toLocaleDateString("pl")
-			: howManyDay + " dni temu"
+		howManyDay === 0
+		? "Dzisiaj"
+		: howManyDay === 1
+		? howManyDay + " dzień temu"
+		: howManyDay > 3
+		? theDay.toLocaleDateString("pl")
+		: howManyDay + " dni temu"
 	return results
 }

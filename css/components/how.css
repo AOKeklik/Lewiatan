@@ -1,9 +1,14 @@
 .how {
+    max-width: 130rem;
+    margin: 0 auto;
+}
+.how.bg-paper {
+    padding: unset;
+}
+.how-wrap {
+    padding: 5rem 8rem;
     display: grid;
     grid-template-columns: 1.3fr 1fr;
-    max-width: 120rem;
-    margin: 0 auto;
-    padding: 5rem 8rem;
 }
 .how-box{
     display: flex;

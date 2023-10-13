@@ -4,6 +4,7 @@
 }
 .section-banner {
 	position: relative;
+	padding: 2.5rem 0;
 	width: 100%;
 	background-image: url("../../img/banner/background-banner.png");
 	background-size: 50px 50px;

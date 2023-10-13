@@ -14,17 +14,29 @@
 .btn-arrow {
     position: relative;
     font-weight: 800;
+    padding-left: unset;
+    padding-right: unset;
 }
-.btn-arrow-icon {
+.btn-arrow-icon,
+.btn-arrow-icon-right {
     position: absolute;
     top: 23%;
-    right: -1rem;
     width: 2.5rem;
     height: 2.5rem;
     fill: var(--color-primary);
-    margin-left: 1rem;
+}
+.btn-arrow-icon {
+    right: -4rem;    
     transition: right .3s;
 }
+.btn-arrow-icon-right {    
+    left: -4.2rem;
+    transition: left .3s;
+}
+/* hover */
 .btn-arrow:hover > .btn-arrow-icon{
-    right: -1.5rem;
+    right: -4.5rem;
+}
+.btn-arrow:hover > .btn-arrow-icon-right{
+    left: -4.5rem;
 }

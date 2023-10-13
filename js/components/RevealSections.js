@@ -1,8 +1,6 @@
 window.onload = function () {
-	// if (window.location.pathname !== "/") return
-
 	const sections = document.querySelectorAll(
-		".reveal-fadeup-50, .reveal-fadeRight-30, .reveal-fadeLeft-30"
+		".reveal-fadeup-50, .reveal-fadeup-10, .reveal-fadeRight-30, .reveal-fadeLeft-30"
 	)
 
 	function updateActiveSection() {

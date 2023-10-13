@@ -23,6 +23,9 @@ export function renderResults(parentElement, data) {
 						<h3 class="card-title">${d.title}</h3>
 						<p class="card-desc">${stripHtml(d.content)}</p>
 						<div class="card-btn">
+							${state.layout === "true" ? `<p class="card-btn-category">
+									${d.categories?.join('<span class="card-separator"> | </span>')}
+								</p>` : ""}
 							<a href="${d.link}" class="btn btn-primary">czytaj dalej...</a>
 						</div>
 					</div>

@@ -1,5 +1,4 @@
 .banner {
-	height: 19rem;
 	display: grid;
 	grid-template-columns: 1.2fr 1fr;
 	align-items: center;

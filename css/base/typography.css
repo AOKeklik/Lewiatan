@@ -12,10 +12,13 @@
   font-weight: 800;
 }
 /* primary */
-.heading-primary {
+.heading-primary,
+.heading-primary-bigger {
   color: #333;
-  font-size: 3.5rem;
   font-family: "Open Sans", sans-serif;
+}
+.heading-primary {
+  font-size: 3.5rem;
   font-weight: 800;
 }
 .heading-primary > span {
@@ -23,6 +26,10 @@
 }
 .heading-primary > span:not(:last-child) {
   margin-bottom: .8rem;
+}
+.heading-primary-bigger {
+  font-size: 5rem;
+  font-weight: 700;
 }
 /* secondary */
 .heading-secondary {
