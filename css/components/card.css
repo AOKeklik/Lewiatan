@@ -38,28 +38,17 @@
 	justify-content: space-between;
 	align-items: center;
 }
-.card-btn-category {
+.card-btn-tags a {
 	font-size: 1.8rem;
 	color: var(--color-secondary);
 }
 .card-separator {
+	font-family: Arial, sans-serif;
+	font-size: 1.8rem;
+	font-weight: bold;
 	color: var(--color-primary);
 }
 /* grid - h */
-/* .layout-h {
-	display: flex;
-	align-items: start;
-}
-.layout-h .card-header {
-	min-width: 40rem;
-}
-.layout-h .card-body {
-	flex-grow: 1;
-	margin-top: 3rem;
-}
-.layout-h .card-title {
-	font-size: 4rem;
-} */
 .col-1-of-1 {
 	display: flex;
 	align-items: start;

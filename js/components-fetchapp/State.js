@@ -6,7 +6,9 @@ export const state = {
 	sortDate: localStorage.getItem("sortDate") ?? "false",
 	sortCategories: {
 		sort: [],
-		currentSort: null,
+		currentSort:
+			JSON.parse(localStorage.getItem("categories")) &&
+			JSON.parse(localStorage.getItem("categories")).currentSort,
 		categoryLength: 0,
 		counter: null,
 	},
@@ -19,14 +21,19 @@ export const state = {
 	},
 }
 
-export function createStateObject(posts, categories) {
+export function createStateObject(posts, categories, tags) {
 	const newData = posts.map(el => {
 		return {
 			id: el.id,
 			link: el.link,
 			date: el.date,
 			categories: el.categories.map(n => {
-				return categories.filter(m => m.id === n)[0].name
+				const { name } = categories.filter(m => m.id === n)[0]
+				return name
+			}),
+			tags: el.tags.map(n => {
+				const { name, link } = tags.filter(m => m.id === n)[0]
+				return { name, link }
 			}),
 			title: el.title.rendered,
 			img: el.img,
@@ -35,6 +42,7 @@ export function createStateObject(posts, categories) {
 			name: el.name,
 		}
 	})
+	console.log(newData)
 	return newData
 }
 

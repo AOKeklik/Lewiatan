@@ -27,9 +27,6 @@ import {
 // 		const parentResults = document.querySelector(".results")
 // 		const parentPagination = document.querySelector(".pagination")
 
-// 		console.log(parentPagination)
-
-// 		console.log(parentPagination)
 // 		renderFilterNames()
 // 		renderLayoutBtn()
 // 		renderSpiner(parentResults)

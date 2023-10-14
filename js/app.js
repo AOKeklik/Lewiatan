@@ -1,4 +1,5 @@
 // import "./components/FetchAppHomePage.js"
+import "./components/FetchAppCategoryPage.js"
 import "./components/RevealSections.js"
 import "./components/Header.js"
 import "./components/HeroSlider.js"

@@ -1,7 +1,6 @@
 import { loadResults, wait } from "../components-fetchapp/FetchData.js"
 import {
 	renderFilterNames,
-	renderLayout,
 	renderLayoutBtn,
 	renderResults,
 	renderSpiner,
@@ -30,7 +29,9 @@ async function controllerLoadResults(direct) {
 
 		sortDataByDate()
 		sortDataByCategory(
-			direct === "top" ? "Eksperci w lokalności" : "Lokalność w Lewiatanie"
+			direct === "top"
+				? "Eksperci w lokalności"
+				: "Lokalność w Lewiatanie"
 		)
 
 		renderResults(parentResults, sortDataByLimit(3))
@@ -51,7 +52,9 @@ async function controllerLoadResultsByDate(direct) {
 
 		sortDataByDate()
 		sortDataByCategory(
-			direct === "top" ? "Eksperci w lokalności" : "Lokalność w Lewiatanie"
+			direct === "top"
+				? "Eksperci w lokalności"
+				: "Lokalność w Lewiatanie"
 		)
 
 		renderResults(parentResults, sortDataByLimit(3))
@@ -66,14 +69,13 @@ if (window.location.pathname === "/") {
 }
 async function controllerLayout(e, direct) {
 	const parentElement = document.querySelector(`.results-${direct}`)
-	const parendClone = parentElement.cloneNode(true)
 
 	if (direct === "top") saveStateObjectByLayout()
 
 	renderSpiner(parentElement)
 	await wait(5)
 
-	renderLayout(parendClone, parentElement)
+	renderResults(parentElement, sortDataByLimit(3))
 	renderLayoutBtn()
 }
 /* events */

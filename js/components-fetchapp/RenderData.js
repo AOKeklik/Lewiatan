@@ -7,12 +7,12 @@ export function renderSpiner(parentElement) {
 	parentElement.insertAdjacentHTML("afterbegin", markup)
 }
 export function renderResults(parentElement, data) {
-	console.log(state.layout)
 	if (state.layout === "true") parentElement.classList.remove("bg-paper")
 	if (state.layout === "false") parentElement.classList.add("bg-paper")
+
 	const renderData = data
-		.map(
-			d => `<div class="${
+		.map((d, i) => {
+			return `<div class="${
 				state.layout === "false" ? "col-1-of-3" : "col-1-of-1 bg-paper"
 			}">
 					<div class="card-header">
@@ -23,15 +23,29 @@ export function renderResults(parentElement, data) {
 						<h3 class="card-title">${d.title}</h3>
 						<p class="card-desc">${stripHtml(d.content)}</p>
 						<div class="card-btn">
-							${state.layout === "true" ? `<p class="card-btn-category">
-									${d.categories?.join('<span class="card-separator"> | </span>')}
-								</p>` : ""}
+							<p class="card-btn-tags">
+								${
+									state.layout === "true"
+										? d.tags
+												.map(
+													el =>
+														`
+												<a href="${el.link}">
+													${el.name}
+												</a>`
+												)
+												.join(
+													'<span class="card-separator"> | </span>'
+												)
+										: ""
+								}
+							</p>
 							<a href="${d.link}" class="btn btn-primary">czytaj dalej...</a>
 						</div>
 					</div>
-			</div>
+				</div>
 			`
-		)
+		})
 		.join("")
 	parentElement.innerHTML = ""
 	parentElement.insertAdjacentHTML("afterbegin", renderData)
@@ -48,23 +62,42 @@ export function renderPagination(parentElement) {
 
 	if (pageCurrent === 1 && pageLength > 1)
 		markup = `
-			<span class="pagination-text">Strona ${pageCurrent} z ${pageLength}</span>	
-			<button class="pagination-btn active-pagination" data-page=" ${pageCurrent}">${pageCurrent}</button>	
-			<button class="pagination-btn" data-page="${pageNext}">następna strona</button>
+			<div class="pagination-left">
+				<span class="pagination-text">
+					Strona <span class="color-secondary">${pageCurrent}</span> z 
+					<span class="color-secondary">${pageLength}</span>
+				</span>	
+				<button class="pagination-btn pagination-btn-page active-pagination" data-page="${pageCurrent}">${pageCurrent}</button>	
+				<button class="pagination-btn pagination-btn-page" data-page="${pageNext}">${pageNext}</button>
+			</div>
+			<button class="pagination-btn pagination-btn-page" data-page="${pageNext}">następna strona</button>
 		`
 	else if (pageCurrent === pageLength && pageLength > 1)
 		markup = `
-				<span class="pagination-text">Strona ${pageCurrent} z ${pageLength}</span>	
-				<button class="pagination-btn" data-page="${pagePrev}">poprzednia strona</button>
-				<button class="pagination-btn active-pagination" data-page=" ${pageCurrent}">${pageCurrent}</button>	
-			`
+			<div class="pagination-left">
+				<span class="pagination-text">
+					Strona <span class="color-secondary">${pageCurrent}</span> z 
+					<span class="color-secondary">${pageLength}</span>
+				</span>		
+				<button class="pagination-btn pagination-btn-page" data-page="${pagePrev}">poprzednia strona</button>
+				<button class="pagination-btn pagination-btn-page" data-page="${pagePrev}">${pagePrev}</button>
+				<button class="pagination-btn pagination-btn-page active-pagination" data-page=" ${pageCurrent}">${pageCurrent}</button>
+			</div>	
+		`
 	else if (pageCurrent < pageLength)
 		markup = `
-				<span class="pagination-text">Strona ${pageCurrent} z ${pageLength}</span>	
-				<button class="pagination-btn" data-page="${pagePrev}">poprzednia strona</button>
-				<button class="pagination-btn active-pagination" data-page=" ${pageCurrent}">${pageCurrent}</button>	
-				<button class="pagination-btn" data-page="${pageNext}">następna strona</button>
-			`
+			<div class="pagination-left">
+				<span class="pagination-text">
+					Strona <span class="color-secondary">${pageCurrent}</span> z 
+					<span class="color-secondary">${pageLength}</span>
+				</span>	
+				<button class="pagination-btn pagination-btn-page" data-page="${pagePrev}">poprzednia strona</button>
+				<button class="pagination-btn pagination-btn-page" data-page="${pagePrev}">${pagePrev}</button>
+				<button class="pagination-btn pagination-btn-page active-pagination" data-page=" ${pageCurrent}">${pageCurrent}</button>
+				<button class="pagination-btn pagination-btn-page" data-page="${pageNext}">${pageNext}</button>
+			</div>	
+			<button class="pagination-btn pagination-btn-page" data-page="${pageNext}">następna strona</button>
+		`
 	else markup
 
 	parentElement.innerHTML = ""
@@ -85,21 +118,6 @@ export function renderFilterNames(type = "all") {
 	parentCategories.innerHTML = !state.sortCategories.currentSort
 		? "Wszystkie Kategorie"
 		: state.sortCategories.currentSort
-}
-export function renderLayout(theClone, parent) {
-	parent.innerHTML = ""
-	if (state.layout === "true") parent.classList.remove("bg-paper")
-
-	let i = 0
-	while (i < theClone.children.length) {
-		state.layout && state.layout === "false"
-			? (theClone.children[i].className = "col-1-of-3")
-			: (theClone.children[i].className = "col-1-of-1 bg-paper")
-		parent.append(theClone.children[i].cloneNode(true))
-		i++
-	}
-
-	if (state.layout === "false") parent.classList.add("bg-paper")
 }
 export function renderLayoutBtn() {
 	const theName =

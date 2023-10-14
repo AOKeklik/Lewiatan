@@ -1,27 +1,26 @@
 .container {
-    max-width: 120rem;
-    margin: 0 auto;
+	max-width: 120rem;
+	margin: 0 auto;
 }
 .grid {
-    position: relative;
-    max-width: 130rem;
-    margin: 0 auto;
-    overflow: hidden;
+	position: relative;
+	max-width: 130rem;
+	margin: 0 auto;
+	overflow: hidden;
 }
 .row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 3rem;
 }
 .row:not(:last-child) {
-    margin-bottom: 2rem;
+	margin-bottom: 2rem;
 }
 .col-1-of-3 {
-    flex: 0 1 calc((100% - 9rem) / 3);
+	flex: 0 1 calc((100% - 9rem) / 3);
 }
 .col-1-of-1 {
-    flex: 0 1 100%;
+	flex: 0 1 100%;
 }
-
