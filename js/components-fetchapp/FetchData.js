@@ -39,11 +39,26 @@ export async function loadResults() {
 			"tags"
 		)
 		state.results.posts = createStateObject(posts, categories, tags)
+		state.sortCategories = createCategoriesObject(categories)
 		state.pagination.page = localStorage.getItem("page")
 			? +localStorage.getItem("page")
 			: 1
-		state.sortCategories = createCategoriesObject(categories)
 	} catch (err) {
-		return err
+		throw err
+	}
+}
+export async function loadSearchResults(query) {
+	try {
+		console.log(query)
+		const { posts, categories, tags } = await fetchPosts(
+			"posts?search=" + query,
+			"categories",
+			"tags"
+		)
+		state.results.posts = createStateObject(posts, categories, tags)
+		state.sortCategories = createCategoriesObject(categories)
+		state.pagination.page = 1
+	} catch (err) {
+		throw err
 	}
 }

@@ -28,21 +28,19 @@ export function createStateObject(posts, categories, tags) {
 			link: el.link,
 			date: el.date,
 			categories: el.categories.map(n => {
-				const { name } = categories.filter(m => m.id === n)[0]
+				const { name } = categories.filter(nn => nn.id === n)[0]
 				return name
 			}),
 			tags: el.tags.map(n => {
-				const { name, link } = tags.filter(m => m.id === n)[0]
+				const { name, link } = tags.filter(nn => nn.id === n)[0]
 				return { name, link }
 			}),
 			title: el.title.rendered,
 			img: el.img,
 			content: el.content.rendered,
 			excerpt: el.excerpt.rendered,
-			name: el.name,
 		}
 	})
-	console.log(newData)
 	return newData
 }
 
