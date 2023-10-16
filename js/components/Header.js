@@ -14,8 +14,8 @@ class Header {
 		this.handleBurgerToggle(e)
 		this.addActiveClass(e)
 	}
-    addActiveClass(e) {
-        e.preventDefault()
+	addActiveClass(e) {
+		e.preventDefault()
 
 		const theNode = e.target.closest(".menu-item")
 		if (!theNode) return
@@ -29,7 +29,7 @@ class Header {
 		if (!theNode) return
 
 		theNode.classList.toggle("toggle")
-		this.navHeader.classList.toggle("active-nav")
+		document.body.classList.toggle("active-nav")
 	}
 }
 new Header()
@@ -57,9 +57,7 @@ class Header2 {
 	showMarker(e) {
 		const theNode = e.target
 
-		if (
-			e.type === "mouseleave" && theNode === this.nav
-		) {
+		if (e.type === "mouseleave" && theNode === this.nav) {
 			this.marker.style.transformOrigin = "right"
 			this.marker.style.transform = "scaleX(0)"
 			return

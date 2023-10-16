@@ -1,29 +1,22 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: inherit;
+	padding: 0;
+	margin: 0;
+	box-sizing: inherit;
 }
 html {
-    font-size: 62.5%;
-    overflow-x: hidden;
+	font-size: 62.5%;
 }
 body {
-    overflow-x: hidden;
-    font-family: "Roboto", sans-serif;
-    line-height: 1;
-    font-weight: 400;
-    color: var(--color-primary);
+	font-family: "Roboto", sans-serif;
+	line-height: 1;
+	font-weight: 400;
+	color: var(--color-primary);
 }
 ul {
-    list-style-type: none;
+	list-style-type: none;
 }
 a {
-    text-decoration: none;
-    color: #333;
-    font-size: 1rem;
-}
-@media (max-width: 1000px) {
-    html {
-        font-size: 50%;
-    }
+	text-decoration: none;
+	color: #333;
+	font-size: 1rem;
 }

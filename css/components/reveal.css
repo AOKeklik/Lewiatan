@@ -10,7 +10,7 @@
 	transition: 0s;
 }
 .reveal-fadeup-50.active-reveal,
-.reveal-fadeup-10.active-reveal{
+.reveal-fadeup-10.active-reveal {
 	opacity: 1;
 	transform: translateY(0);
 	transition: 0.8s;
@@ -33,9 +33,4 @@
 	transform: translateY(0);
 	transition: 0.8s;
 	transition-property: opacity, transform;
-}
-@media (max-width: 800px) {
-	.reveal-fadeup-50 {
-		transform: translateY(10%);
-	}
 }

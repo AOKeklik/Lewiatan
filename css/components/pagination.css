@@ -1,6 +1,7 @@
 .pagination {
 	display: inline-block;
 	width: 60%;
+	padding-right: 2rem;
 	display: flex;
 	align-items: center;
 	margin-left: auto;

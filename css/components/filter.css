@@ -7,6 +7,7 @@
 .filter-horizontal,
 .filter-grid {
 	width: 4rem;
+	min-width: 4rem;
 	height: 4rem;
 	display: flex;
 	justify-content: space-between;

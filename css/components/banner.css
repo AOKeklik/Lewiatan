@@ -12,11 +12,3 @@
 .banner-text {
 	text-align: right;
 }
-@media (max-width: 800px) {
-	.banner {
-		grid-template-columns: 1fr;
-		align-items: center;
-		gap: 2rem 0;
-		justify-items: center;
-	}
-  }
