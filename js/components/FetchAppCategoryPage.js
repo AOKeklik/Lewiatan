@@ -24,6 +24,7 @@ async function controllerLoadResults() {
 		const parentResults = document.querySelector(`.results`)
 		const parentPagination = document.querySelector(".pagination")
 
+		// renderFilterNames("all", "Eksperci w lokalności")
 		renderFilterNames()
 		renderLayoutBtn()
 		renderSpiner(parentResults)
@@ -31,8 +32,9 @@ async function controllerLoadResults() {
 		await wait(3)
 		await loadResults()
 
+		// saveStateObjectByCategory(0)
+
 		sortDataByDate()
-		sortDataByCategory()
 		sortDataByCategory()
 
 		renderResults(parentResults, sortDataByPagination())
@@ -47,12 +49,12 @@ async function controllerLoadResultsByDate() {
 		const parentPagination = document.querySelector(".pagination")
 
 		saveStateObjectByDate()
-		saveStateObjectByCategory()
 
 		renderSpiner(parentResults)
 		await wait(5)
 
 		sortDataByDate()
+		sortDataByCategory()
 
 		renderResults(parentResults, sortDataByPagination())
 		renderPagination(parentPagination)

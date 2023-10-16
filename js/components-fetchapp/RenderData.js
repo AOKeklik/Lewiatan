@@ -103,7 +103,7 @@ export function renderPagination(parentElement) {
 	parentElement.innerHTML = ""
 	parentElement.insertAdjacentHTML("beforeend", markup)
 }
-export function renderFilterNames(type = "all") {
+export function renderFilterNames(type = "all", catName = null) {
 	const parentDate = document.querySelector(
 		".filter-date > .filter-sort-text"
 	)
@@ -115,9 +115,13 @@ export function renderFilterNames(type = "all") {
 	const parentCategories = document.querySelector(
 		".filter-cat > .filter-sort-text"
 	)
-	parentCategories.innerHTML = !state.sortCategories.currentSort
-		? "Wszystkie Kategorie"
-		: state.sortCategories.currentSort
+
+	parentCategories.innerHTML =
+		catName !== null
+			? catName
+			: !state.sortCategories.currentSort
+			? "Wszystkie Kategorie"
+			: state.sortCategories.currentSort
 }
 export function renderLayoutBtn() {
 	const theName =

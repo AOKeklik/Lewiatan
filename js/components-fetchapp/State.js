@@ -64,11 +64,12 @@ export function saveStateObjectByDate() {
 }
 
 export function saveStateObjectByCategory(resetCategory = false) {
-	state.sortCategories.counter = resetCategory
-		? state.sortCategories.categoryLength
-		: state.sortCategories.counter < state.sortCategories.categoryLength
-		? state.sortCategories.counter + 1
-		: 0
+	state.sortCategories.counter =
+		resetCategory !== false
+			? resetCategory
+			: state.sortCategories.counter < state.sortCategories.categoryLength
+			? state.sortCategories.counter + 1
+			: 0
 
 	state.sortCategories.currentSort =
 		state.sortCategories.sort[state.sortCategories.counter]

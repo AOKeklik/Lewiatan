@@ -7,8 +7,8 @@ export function sortDataByDate(date = state.sortDate) {
 		.slice()
 		.sort(
 			(a, b) =>
-			new Date(date === "true" ? a.date : b.date) -
-			new Date(date === "true" ? b.date : a.date)
+				new Date(date === "true" ? a.date : b.date) -
+				new Date(date === "true" ? b.date : a.date)
 		)
 
 	state.data = sortedData
@@ -16,9 +16,9 @@ export function sortDataByDate(date = state.sortDate) {
 export function sortDataByCategory(cat = null) {
 	let sortedData
 
-	state.sortCategories.currentSort = !cat
-		? state.sortCategories.currentSort
-		: cat
+	// state.sortCategories.currentSort = !cat
+	// 	? state.sortCategories.currentSort
+	// 	: cat
 
 	sortedData = !state.sortCategories.currentSort
 		? state.data.slice()
