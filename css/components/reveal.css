@@ -34,3 +34,8 @@
 	transition: 0.8s;
 	transition-property: opacity, transform;
 }
+@media (max-width: 800px) {
+	.reveal-fadeup-50 {
+		transform: translateY(10%);
+	}
+}

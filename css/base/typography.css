@@ -45,3 +45,8 @@
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
 }
+@media (max-width: 800px) {
+  .heading-primary {
+    font-size: 2.5rem;
+  }
+}

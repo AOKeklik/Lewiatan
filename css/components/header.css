@@ -129,7 +129,7 @@
 		position: absolute;
 		z-index: 999;
 		top: 80px;
-		right: -100%;
+		right: -120%;
 		width: 50vh;
 		height: calc(100vh - 90px);
 

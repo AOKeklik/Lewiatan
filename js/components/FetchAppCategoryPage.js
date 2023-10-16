@@ -18,7 +18,6 @@ import {
 	saveStateObjectByLayout,
 	saveStateObjectByPage,
 } from "../components-fetchapp/State.js"
-import { POSTS_PER_CATEGORY_PAGE } from "../components-fetchapp/config.js"
 
 async function controllerLoadResults() {
 	try {

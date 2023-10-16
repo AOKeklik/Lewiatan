@@ -63,3 +63,27 @@
 .col-1-of-1 .card-title {
 	font-size: 4rem;
 }
+@media (max-width: 800px) {
+	.col-1-of-1 {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	.col-1-of-1 .card-header {
+		max-width: 60rem;
+		min-width: unset;
+	}
+	.col-1-of-1 .card-img {
+		min-height: 30rem;
+	}
+	.col-1-of-1 .card-title {
+		font-size: 3.5rem;
+	}
+}
+@media (max-width: 400px) {
+	.col-1-of-1 .card-btn {
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 2rem;
+	}
+}

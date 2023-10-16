@@ -5,8 +5,10 @@
 }
 html {
     font-size: 62.5%;
+    overflow-x: hidden;
 }
 body {
+    overflow-x: hidden;
     font-family: "Roboto", sans-serif;
     line-height: 1;
     font-weight: 400;
@@ -19,4 +21,9 @@ a {
     text-decoration: none;
     color: #333;
     font-size: 1rem;
+}
+@media (max-width: 1000px) {
+    html {
+        font-size: 50%;
+    }
 }
