@@ -1,0 +1,50 @@
+.searchpop {
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background-color: rgba(255,255,255, .8);
+    box-sizing: border-box;
+    transition: .5s;
+    overflow-y: scroll;
+}
+.searchpop-icon {
+    text-align: right;
+}
+.searchpop-icon  svg {
+    width: 5rem;
+    height: 5rem;
+    margin: 5rem;
+    fill: var(--color-secondary);
+    cursor: pointer;
+}
+#results-pop {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 4rem;
+}
+/* #results-pop .col-1-of-1 {
+    width: 100%;
+}
+#results-pop .card-header {
+    max-width: 40rem;
+    height: 5rem;
+}
+#results-pop .card-img {
+    width: 100%;
+    height: 100%;
+}
+#results-pop .card-title {
+    font-size: 2rem;
+}
+#results-pop .card-desc {
+    font-size: 1.5rem;
+}
+#results-pop .btn {
+    padding: .5rem 1rem;
+    font-size: 1.5rem;
+} */
+#pagination-pop {
+    width: 90%;
+    margin: 2rem auto;
+    text-align: center;
+}

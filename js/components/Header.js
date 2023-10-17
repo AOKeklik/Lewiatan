@@ -15,7 +15,7 @@ class Header {
 		this.addActiveClass(e)
 	}
 	addActiveClass(e) {
-		e.preventDefault()
+		// e.preventDefault()
 
 		const theNode = e.target.closest(".menu-item")
 		if (!theNode) return
@@ -73,7 +73,7 @@ class Header2 {
 		this.marker.style.transform = "scaleX(1)"
 		this.marker.style.width = el.offsetWidth + "px"
 		this.marker.style.height = el.offsetHeight + "px"
-		this.marker.style.left = el.offsetLeft + "px"
+		this.marker.style.left = (el.offsetLeft - 1) + "px"
 		this.marker.style.top =
 			el.offsetTop + el.offsetHeight - this.marker.offsetHeight + "px"
 	}

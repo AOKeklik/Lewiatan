@@ -35,7 +35,6 @@ async function controllerLoadResults(direct) {
 		)
 
 		renderResults(parentResults, sortDataByLimit(3))
-		console.log(state.data)
 	} catch (err) {
 		console.log(err)
 	}
@@ -43,7 +42,6 @@ async function controllerLoadResults(direct) {
 async function controllerLoadResultsByDate(direct) {
 	try {
 		const parentResults = document.querySelector(`.results-${direct}`)
-		console.log(parentResults)
 
 		if (direct === "top") saveStateObjectByDate()
 
@@ -63,10 +61,6 @@ async function controllerLoadResultsByDate(direct) {
 		console.log(err)
 	}
 }
-if (window.location.pathname === "/") {
-	controllerLoadResults("top")
-	controllerLoadResults("bottom")
-}
 async function controllerLayout(e, direct) {
 	const parentElement = document.querySelector(`.results-${direct}`)
 
@@ -79,6 +73,10 @@ async function controllerLayout(e, direct) {
 	renderLayoutBtn()
 }
 /* events */
+if (window.location.pathname === "/") {
+	controllerLoadResults("top")
+	controllerLoadResults("bottom")
+}
 function executeClickEvents(e) {
 	e.preventDefault()
 	let theNode = e.target.closest("[class^=filter-]")
