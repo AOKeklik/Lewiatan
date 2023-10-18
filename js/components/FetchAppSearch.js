@@ -39,7 +39,9 @@ async function controllerLoadResultsBySearchInHomePage(e) {
 		const theValue = searchElement.value
 		if (!theValue) return
 
-		document.body.insertAdjacentHTML ("afterbegin", `
+		document.body.insertAdjacentHTML(
+			"afterbegin",
+			`
 			<div class="searchpop">
 				<div class="searchpop-icon">
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M2.93 17.07A10 10 0 1 1 17.07 2.93A10 10 0 0 1 2.93 17.07zm1.41-1.41A8 8 0 1 0 15.66 4.34A8 8 0 0 0 4.34 15.66zm9.9-8.49L11.41 10l2.83 2.83l-1.41 1.41L10 11.41l-2.83 2.83l-1.41-1.41L8.59 10L5.76 7.17l1.41-1.41L10 8.59l2.83-2.83l1.41 1.41z"/></svg>
@@ -50,17 +52,20 @@ async function controllerLoadResultsBySearchInHomePage(e) {
 				<div class="pagination" id="pagination-pop">
 				</div>
 			</div>
-		`)
+		`
+		)
 		document.body.style.overflow = "hidden"
-		document.querySelector(".searchpop-icon").addEventListener("click", async function () {
-			e.preventDefault()
-			const popup = document.querySelector(".searchpop")
-			document.body.style = ""
-			popup.style.transform = "translateY(-5rem)"
-			popup.style.opacity = "0"
-			await wait(3)
-			popup.remove()
-		})
+		document
+			.querySelector(".searchpop-icon")
+			.addEventListener("click", async function () {
+				e.preventDefault()
+				const popup = document.querySelector(".searchpop")
+				document.body.style = ""
+				popup.style.transform = "translateY(-5rem)"
+				popup.style.opacity = "0"
+				await wait(3)
+				popup.remove()
+			})
 
 		const root = document.querySelector("#results-pop")
 		const paginationElement = document.querySelector("#pagination-pop")
@@ -96,10 +101,16 @@ function controllerPagination() {
 	})
 }
 /* events */
-if (window.location.pathname === "/category/lokalnosc-w-lewiatanie/" || window.location.pathname === "/category/eksperci-w-lokalnosci/")
-searchElement.addEventListener("keyup", controllerLoadResultsBySearch)
+if (
+	window.location.pathname !== "/category/lokalnosc-w-lewiatanie/" ||
+	window.location.pathname !== "/category/eksperci-w-lokalnosci/"
+)
+	searchElement.addEventListener("keyup", controllerLoadResultsBySearch)
 else {
-	searchform.addEventListener("submit", controllerLoadResultsBySearchInHomePage)
+	searchform.addEventListener(
+		"submit",
+		controllerLoadResultsBySearchInHomePage
+	)
 }
 searchform.addEventListener("submit", function (e) {
 	e.preventDefault()

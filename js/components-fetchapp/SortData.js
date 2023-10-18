@@ -13,18 +13,27 @@ export function sortDataByDate(date = state.sortDate) {
 
 	state.data = sortedData
 }
-export function sortDataByCategory(cat = null) {
+export function sortDataByCategory() {
 	let sortedData
-
-	// state.sortCategories.currentSort = !cat
-	// 	? state.sortCategories.currentSort
-	// 	: cat
 
 	sortedData = !state.sortCategories.currentSort
 		? state.data.slice()
 		: state.data.slice().filter(el => {
 				return el.categories.some(n => {
 					return n === state.sortCategories.currentSort
+				})
+		  })
+
+	state.data = sortedData
+}
+export function sortDataByTag() {
+	let sortedData
+
+	sortedData = !state.sortTags.currentSort
+		? state.data.slice()
+		: state.data.slice().filter(el => {
+				return el.tags.some(n => {
+					return n.name === state.sortTags.currentSort
 				})
 		  })
 

@@ -5,7 +5,7 @@
 .section-banner {
 	position: relative;
 	padding: 2.5rem 2rem;
-	
+
 	background-image: url("../../img/banner/background-banner.png");
 	background-size: 50px 50px;
 	background-position: top left;
@@ -14,7 +14,7 @@
 }
 .main {
 	width: 100%;
-	background-image: url("../../img/main/paper\ texture\ 400.jpg");
+	background-image: url("../../img/main/papertexture400.jpg");
 	background-size: 50px 50px;
 	background-position: top left;
 	background-repeat: repeat;

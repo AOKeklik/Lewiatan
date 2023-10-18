@@ -11,6 +11,7 @@ import {
 	sortDataByLimit,
 } from "../components-fetchapp/SortData.js"
 import {
+	saveStateObjectByCategory,
 	saveStateObjectByDate,
 	saveStateObjectByLayout,
 	state,
@@ -27,12 +28,16 @@ async function controllerLoadResults(direct) {
 		await wait(3)
 		await loadResults()
 
-		sortDataByDate()
-		sortDataByCategory(
+		saveStateObjectByCategory(
 			direct === "top"
-				? "Eksperci w lokalności"
-				: "Lokalność w Lewiatanie"
+				? /* Lokalność w Lewiatanie */ 1
+				: /* Eksperci w lokalności */ 0
 		)
+
+		sortDataByDate()
+		sortDataByCategory()
+
+		// console.log(direct, state.data)
 
 		renderResults(parentResults, sortDataByLimit(3))
 	} catch (err) {
@@ -48,12 +53,16 @@ async function controllerLoadResultsByDate(direct) {
 		renderSpiner(parentResults)
 		await wait(5)
 
-		sortDataByDate()
-		sortDataByCategory(
+		saveStateObjectByCategory(
 			direct === "top"
-				? "Eksperci w lokalności"
-				: "Lokalność w Lewiatanie"
+				? /* Lokalność w Lewiatanie */ 1
+				: /* Eksperci w lokalności */ 0
 		)
+
+		sortDataByDate()
+		sortDataByCategory()
+
+		console.log(direct, state.data)
 
 		renderResults(parentResults, sortDataByLimit(3))
 		renderFilterNames("date")
@@ -68,6 +77,15 @@ async function controllerLayout(e, direct) {
 
 	renderSpiner(parentElement)
 	await wait(5)
+
+	saveStateObjectByCategory(
+		direct === "top"
+			? /* Lokalność w Lewiatanie */ 1
+			: /* Eksperci w lokalności */ 0
+	)
+
+	sortDataByDate()
+	sortDataByCategory()
 
 	renderResults(parentElement, sortDataByLimit(3))
 	renderLayoutBtn()

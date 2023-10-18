@@ -71,9 +71,9 @@ class Header2 {
 	reLocateMarker(el) {
 		this.marker.style.transformOrigin = "left"
 		this.marker.style.transform = "scaleX(1)"
-		this.marker.style.width = el.offsetWidth + "px"
+		this.marker.style.width = el.offsetWidth + 1 + "px"
 		this.marker.style.height = el.offsetHeight + "px"
-		this.marker.style.left = (el.offsetLeft - 1) + "px"
+		this.marker.style.left = el.offsetLeft - 1 + "px"
 		this.marker.style.top =
 			el.offsetTop + el.offsetHeight - this.marker.offsetHeight + "px"
 	}

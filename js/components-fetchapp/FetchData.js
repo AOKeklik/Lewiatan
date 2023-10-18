@@ -1,5 +1,10 @@
 import { API_URL } from "./config.js"
-import { state, createStateObject, createCategoriesObject } from "./State.js"
+import {
+	state,
+	createStateObject,
+	createCategoriesObject,
+	createTagsObject,
+} from "./State.js"
 
 export async function fetchPosts(u1, u2, u3) {
 	try {
@@ -40,6 +45,7 @@ export async function loadResults() {
 		)
 		state.results.posts = createStateObject(posts, categories, tags)
 		state.sortCategories = createCategoriesObject(categories)
+		state.sortTags = createTagsObject(tags)
 		state.pagination.page = localStorage.getItem("page")
 			? +localStorage.getItem("page")
 			: 1

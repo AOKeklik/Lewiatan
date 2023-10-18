@@ -12,6 +12,14 @@ export const state = {
 		categoryLength: 0,
 		counter: null,
 	},
+	sortTags: {
+		sort: [],
+		currentSort:
+			JSON.parse(localStorage.getItem("tags")) &&
+			JSON.parse(localStorage.getItem("tags")).currentSort,
+		tagLength: 0,
+		counter: null,
+	},
 	pagination: {
 		page: 1,
 		resultsPerPage: POSTS_PER_PAGE,
@@ -58,6 +66,20 @@ export function createCategoriesObject(categories) {
 	return newData
 }
 
+export function createTagsObject(tags) {
+	const newData = {}
+	newData.sort = tags.map(el => el.name)
+	newData.currentSort =
+		JSON.parse(localStorage.getItem("tags")) &&
+		JSON.parse(localStorage.getItem("tags")).currentSort
+	newData.tagLength = tags.length
+	newData.counter =
+		JSON.parse(localStorage.getItem("tags")) &&
+		+JSON.parse(localStorage.getItem("tags")).counter
+
+	return newData
+}
+
 export function saveStateObjectByDate() {
 	state.sortDate = state.sortDate === "false" ? "true" : "false"
 	localStorage.setItem("sortDate", state.sortDate)
@@ -82,7 +104,24 @@ export function saveStateObjectByCategory(resetCategory = false) {
 		})
 	)
 }
+export function saveStateObjectByTag(resetTag = false) {
+	state.sortTags.counter =
+		resetTag !== false
+			? resetTag
+			: state.sortTags.counter < state.sortTags.tagLength
+			? state.sortTags.counter + 1
+			: 0
 
+	state.sortTags.currentSort = state.sortTags.sort[state.sortTags.counter]
+
+	localStorage.setItem(
+		"tags",
+		JSON.stringify({
+			currentSort: state.sortTags.currentSort,
+			counter: state.sortTags.counter,
+		})
+	)
+}
 export function saveStateObjectByPage(page = state.pagination.page) {
 	state.pagination.page = page
 	localStorage.setItem("page", page)
@@ -90,6 +129,5 @@ export function saveStateObjectByPage(page = state.pagination.page) {
 
 export function saveStateObjectByLayout() {
 	state.layout = state.layout === "false" ? "true" : "false"
-	console.log(state.layout)
 	localStorage.setItem("layout", state.layout)
 }

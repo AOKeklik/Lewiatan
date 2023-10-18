@@ -47,6 +47,7 @@ export function renderResults(parentElement, data) {
 			`
 		})
 		.join("")
+
 	parentElement.innerHTML = ""
 	parentElement.insertAdjacentHTML("afterbegin", renderData)
 }
@@ -122,6 +123,26 @@ export function renderFilterNames(type = "all", catName = null) {
 			: !state.sortCategories.currentSort
 			? "Wszystkie Kategorie"
 			: state.sortCategories.currentSort
+}
+export function renderFilterTagNames(type = "all", catName = null) {
+	const parentDate = document.querySelector(
+		".filter-date > .filter-sort-text"
+	)
+	parentDate.innerHTML =
+		state.sortDate === "false" ? "Najnowszy" : "Najstarszy"
+
+	if (type !== "all") return
+
+	const parentCategories = document.querySelector(
+		".filter-cat > .filter-sort-text"
+	)
+
+	parentCategories.innerHTML =
+		catName !== null
+			? catName
+			: !state.sortTags.currentSort
+			? "Wszystkie Tagi"
+			: state.sortTags.currentSort
 }
 export function renderLayoutBtn() {
 	const theName =

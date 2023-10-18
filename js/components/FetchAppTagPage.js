@@ -1,6 +1,6 @@
 import { loadResults, wait } from "../components-fetchapp/FetchData.js"
 import {
-	renderFilterNames,
+	renderFilterTagNames,
 	renderLayoutBtn,
 	renderPagination,
 	renderResults,
@@ -10,12 +10,14 @@ import {
 	sortDataByCategory,
 	sortDataByDate,
 	sortDataByPagination,
+	sortDataByTag,
 } from "../components-fetchapp/SortData.js"
 import {
-	saveStateObjectByCategory,
 	saveStateObjectByDate,
 	saveStateObjectByLayout,
 	saveStateObjectByPage,
+	saveStateObjectByTag,
+	state,
 } from "../components-fetchapp/State.js"
 
 async function controllerLoadResults() {
@@ -23,20 +25,20 @@ async function controllerLoadResults() {
 		const parentResults = document.querySelector(`.results`)
 		const parentPagination = document.querySelector(".pagination")
 
-		// renderFilterNames("all", "Lokalność w Lewiatanie")
-		renderFilterNames()
+		// renderFilterTagNames("all", "działania Lewiatana")
+		renderFilterTagNames()
 		renderLayoutBtn()
 		renderSpiner(parentResults)
 
 		await wait(3)
 		await loadResults()
 
-		/* Eksperci w lokalności 0 */
-		/* Lokalność w Lewiatanie 1 */
+		/* działania Lewiatana 0 */
+		/* owoce i warzywa 1 */
 		// saveStateObjectByCategory(1)
 
 		sortDataByDate()
-		sortDataByCategory()
+		sortDataByTag()
 
 		renderResults(parentResults, sortDataByPagination())
 		renderPagination(parentPagination)
@@ -55,32 +57,33 @@ async function controllerLoadResultsByDate() {
 		await wait(5)
 
 		sortDataByDate()
-		sortDataByCategory()
+		sortDataByTag()
 
 		renderResults(parentResults, sortDataByPagination())
 		renderPagination(parentPagination)
-		renderFilterNames()
+		renderFilterTagNames()
 	} catch (err) {
 		console.log(err)
 	}
 }
-async function controllerLoadResultsByCategory() {
+async function controllerLoadResultsByTag() {
 	try {
 		const parentResults = document.querySelector(".results")
 		const parentPagination = document.querySelector(".pagination")
 
-		saveStateObjectByCategory()
+		saveStateObjectByTag()
 		saveStateObjectByPage(1)
 
 		renderSpiner(parentResults)
 		await wait(3)
 
 		sortDataByDate()
-		sortDataByCategory()
+		sortDataByTag()
+		console.log(state.data)
 
 		renderResults(parentResults, sortDataByPagination())
 		renderPagination(parentPagination)
-		renderFilterNames()
+		renderFilterTagNames()
 	} catch (err) {
 		console.log(err)
 	}
@@ -120,7 +123,7 @@ function executeClickEvents(e) {
 	if (!theNode) return
 
 	if (theNode.closest(".filter-date")) controllerLoadResultsByDate()
-	if (theNode.closest(".filter-cat")) controllerLoadResultsByCategory()
+	if (theNode.closest(".filter-cat")) controllerLoadResultsByTag()
 
 	if (
 		theNode.closest(".filter-grid") ||
