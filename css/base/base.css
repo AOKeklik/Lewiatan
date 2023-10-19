@@ -5,8 +5,10 @@
 }
 html {
 	font-size: 62.5%;
+	overflow-x: auto;
 }
 body {
+	overflow-x: hidden;
 	font-family: "Roboto", sans-serif;
 	line-height: 1;
 	font-weight: 400;

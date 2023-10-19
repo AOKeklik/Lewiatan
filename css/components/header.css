@@ -116,15 +116,19 @@
 }
 /* query */
 @media (max-width: 800px) {
-	.nav-search {
-		display: none;
+	.nav {
+		gap: 2rem;
+		padding: 0 3rem;
+	}
+	.nav-search input {
+		width: 100%;
+		max-width: 30rem;
 	}
 	.nav-social {
 		display: none;
 	}
 	.nav-burger {
 		margin-left: auto;
-		margin-right: 3rem;
 		display: block;
 		position: relative;
 		z-index: 9999;
@@ -157,14 +161,16 @@
 	.active-nav .nav-menu {
 		right: 0%;
 	}
-	body {
-		overflow-y: scroll;
-	}
 	body.active-nav {
-		overflow: hidden;
+		overflow-y: hidden;
 	}
 	/* marker */
 	.marker {
 		transition: left 0s 0s, width 0s 0s, top 0.2s 0s, transform 0.3s;
+	}
+}
+@media (max-width: 350px) {
+	.nav-menu {
+		right: -170%;
 	}
 }

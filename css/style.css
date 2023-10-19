@@ -7,7 +7,6 @@
 @import "./components/filter.css";
 @import "./components/banner.css";
 @import "./components/slider.css";
-@import "./components/header.css";
 @import "./components/btn.css";
 @import "./components/card-feature.css";
 @import "./components/card.css";
@@ -20,3 +19,4 @@
 @import "./base/typography.css";
 @import "./base/utilities.css";
 @import "./base/queries.css";
+@import "./components/header.css";
