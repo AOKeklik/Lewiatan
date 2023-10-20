@@ -32,4 +32,8 @@
 	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 	transition-delay: 0s;
 }
+.slider li.start {
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+	transition: 0s;
+}
 /* animation */

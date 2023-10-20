@@ -22,27 +22,6 @@
     margin: 0 auto;
     margin-top: 4rem;
 }
-/* #results-pop .col-1-of-1 {
-    width: 100%;
-}
-#results-pop .card-header {
-    max-width: 40rem;
-    height: 5rem;
-}
-#results-pop .card-img {
-    width: 100%;
-    height: 100%;
-}
-#results-pop .card-title {
-    font-size: 2rem;
-}
-#results-pop .card-desc {
-    font-size: 1.5rem;
-}
-#results-pop .btn {
-    padding: .5rem 1rem;
-    font-size: 1.5rem;
-} */
 #pagination-pop {
     width: 90%;
     margin: 2rem auto;

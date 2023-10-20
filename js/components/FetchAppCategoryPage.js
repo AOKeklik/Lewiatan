@@ -33,7 +33,7 @@ async function controllerLoadResults() {
 
 		/* Eksperci w lokalności 0 */
 		/* Lokalność w Lewiatanie 1 */
-		// saveStateObjectByCategory(1)
+		// saveStateObjectByCategory(1) /* null - 0 - 1 - 2 */
 
 		sortDataByDate()
 		sortDataByCategory()
@@ -129,8 +129,8 @@ function executeClickEvents(e) {
 		controllerLayout()
 	}
 }
-document.querySelector(".filter").addEventListener("click", executeClickEvents)
 if (window.location.pathname === "/") {
 	controllerLoadResults()
 	controllerPagination()
+	document.querySelector(".filter").addEventListener("click", executeClickEvents)
 }

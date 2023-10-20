@@ -1,7 +1,7 @@
 // import "./components/FetchAppHomePage.js"
 import "./components/FetchAppSearch.js"
 // import "./components/FetchAppCategoryPage.js"
-import "./components/FetchAppTagPage.js"
+// import "./components/FetchAppTagPage.js"
 import "./components/RevealSections.js"
 import "./components/Header.js"
 import "./components/HeroSlider.js"

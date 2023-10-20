@@ -5,6 +5,7 @@ export const state = {
 	layout: localStorage.getItem("layout") ?? "false",
 	sortDate: localStorage.getItem("sortDate") ?? "false",
 	sortCategories: {
+		categories: [],
 		sort: [],
 		currentSort:
 			JSON.parse(localStorage.getItem("categories")) &&
@@ -54,6 +55,7 @@ export function createStateObject(posts, categories, tags) {
 
 export function createCategoriesObject(categories) {
 	const newData = {}
+	newData.categories = categories
 	newData.sort = categories.map(el => el.name)
 	newData.currentSort =
 		JSON.parse(localStorage.getItem("categories")) &&
@@ -85,9 +87,9 @@ export function saveStateObjectByDate() {
 	localStorage.setItem("sortDate", state.sortDate)
 }
 
-export function saveStateObjectByCategory(resetCategory = false) {
+export function saveStateObjectByCategory(resetCategory = null) {
 	state.sortCategories.counter =
-		resetCategory !== false
+		resetCategory !== null
 			? resetCategory
 			: state.sortCategories.counter < state.sortCategories.categoryLength
 			? state.sortCategories.counter + 1
@@ -130,4 +132,7 @@ export function saveStateObjectByPage(page = state.pagination.page) {
 export function saveStateObjectByLayout() {
 	state.layout = state.layout === "false" ? "true" : "false"
 	localStorage.setItem("layout", state.layout)
+}
+export function saveStateObjectByLink (link) {
+	localStorage.setItem("link", link)
 }

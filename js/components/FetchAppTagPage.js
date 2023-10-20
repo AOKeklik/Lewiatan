@@ -7,7 +7,6 @@ import {
 	renderSpiner,
 } from "../components-fetchapp/RenderData.js"
 import {
-	sortDataByCategory,
 	sortDataByDate,
 	sortDataByPagination,
 	sortDataByTag,
@@ -132,8 +131,8 @@ function executeClickEvents(e) {
 		controllerLayout()
 	}
 }
-document.querySelector(".filter").addEventListener("click", executeClickEvents)
 if (window.location.pathname === "/") {
 	controllerLoadResults()
 	controllerPagination()
+	document.querySelector(".filter").addEventListener("click", executeClickEvents)
 }

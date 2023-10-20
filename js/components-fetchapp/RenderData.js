@@ -9,9 +9,8 @@ export function renderSpiner(parentElement) {
 export function renderResults(parentElement, data) {
 	if (state.layout === "true") parentElement.classList.remove("bg-paper")
 	if (state.layout === "false") parentElement.classList.add("bg-paper")
-
 	const renderData = data
-		.map((d, i) => {
+		.map(d => {
 			return `<div class="${
 				state.layout === "false" ? "col-1-of-3" : "col-1-of-1 bg-paper"
 			}">
@@ -20,7 +19,7 @@ export function renderResults(parentElement, data) {
 						<div class="card-img" style="background-image:url('${d.img}');"></div>
 					</div>
 					<div class="card-body">
-						<h3 class="card-title">${d.title}</h3>
+						<a id="post-link" href="${d.link}" data-cat="${d.categories[0]}"><h3 class="card-title">${d.title}</h3></a>
 						<p class="card-desc">${stripHtml(d.content)}</p>
 						<div class="card-btn">
 							<p class="card-btn-tags">

@@ -9,7 +9,7 @@ import {
 	sortDataByDate,
 	sortDataByPagination,
 } from "../components-fetchapp/SortData.js"
-import { saveStateObjectByPage } from "../components-fetchapp/State.js"
+import { saveStateObjectByLink, saveStateObjectByPage, state } from "../components-fetchapp/State.js"
 
 const root = document.querySelector(".results")
 const paginationElement = document.querySelector(".pagination")
@@ -100,6 +100,20 @@ function controllerPagination() {
 		renderPagination(parentPagination)
 	})
 }
+function controllerGetPostId (e) {
+	const theNode = e.target.closest("#post-link")
+	if (!theNode) return
+
+	const theCat = theNode.dataset.cat
+	const theLink = state.sortCategories.categories.find(n => {
+		return n.name === theCat
+	})?.link
+
+	const path = theLink.split('/').filter(Boolean)
+	const pathLenght = path.length - 1
+
+	saveStateObjectByLink(path[pathLenght])
+}
 /* events */
 if (
 	window.location.pathname !== "/category/lokalnosc-w-lewiatanie/" ||
@@ -115,3 +129,4 @@ else {
 searchform.addEventListener("submit", function (e) {
 	e.preventDefault()
 })
+document.querySelector(".grid")?.addEventListener("click", controllerGetPostId)

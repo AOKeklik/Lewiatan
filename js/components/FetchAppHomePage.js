@@ -91,10 +91,6 @@ async function controllerLayout(e, direct) {
 	renderLayoutBtn()
 }
 /* events */
-if (window.location.pathname === "/") {
-	controllerLoadResults("top")
-	controllerLoadResults("bottom")
-}
 function executeClickEvents(e) {
 	e.preventDefault()
 	let theNode = e.target.closest("[class^=filter-]")
@@ -114,4 +110,8 @@ function executeClickEvents(e) {
 		controllerLayout(e, "bottom")
 	}
 }
-document.querySelector(".filter").addEventListener("click", executeClickEvents)
+if (window.location.pathname === "/") {
+	controllerLoadResults("top")
+	controllerLoadResults("bottom")
+	document.querySelector(".filter").addEventListener("click", executeClickEvents)
+}

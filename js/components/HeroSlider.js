@@ -4,10 +4,9 @@ let current = 0
 const length = slide.length - 1
 let redirect = true
 
-function executeSlide(dir) {
-	slide[current].className = "slider-active"
-	if (length > 1) slide[length - 1].className = "slider-prev"
+slide[current].className = "start"
 
+function executeSlide(dir) {
 	let prev
 	let next
 	if (dir === "next") current = current < slide.length - 1 ? current + 1 : 0
@@ -20,7 +19,6 @@ function executeSlide(dir) {
 	slide[current].className = "slider-active"
 	slide[next].className = ""
 }
-window.addEventListener("load", () => executeSlide("next"))
 
 setInterval(() => {
 	if (redirect) {

@@ -12,6 +12,7 @@
 	max-width: 110rem;
 	height: 80px;
 	margin: 0 auto;
+	padding: 0 3rem;
 }
 .nav-menu {
 	align-self: stretch;
@@ -58,12 +59,36 @@
 }
 .nav-social {
 	flex-shrink: 0;
+	display: flex;
+	align-items: center;
 }
 .nav-social--icon {
 	width: 5rem;
 	height: 5rem;
 	fill: var(--color-white);
 	cursor: pointer;
+}
+.nav-social--icon-f {
+	width: 4.5rem;
+    height: 4.5rem;
+	margin-right: -.8rem;
+}
+.nav-social--icon-y {
+	align-self: end;
+	width: 4.5rem;
+    height: 4.5rem;
+}
+.nav-social--icon-y svg{
+    width: 4.5rem;
+    height: 4.5rem;
+}
+.nav-social--icon-i {
+	align-self: end;
+    margin-bottom: .4rem;
+}
+.nav-social--icon-i svg {
+    width: 3rem;
+    height: 3rem;
 }
 /* burger */
 .nav-burger {
@@ -118,7 +143,6 @@
 @media (max-width: 800px) {
 	.nav {
 		gap: 2rem;
-		padding: 0 3rem;
 	}
 	.nav-search input {
 		width: 100%;
