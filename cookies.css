@@ -1,0 +1,73 @@
+.cky-consent-bar {
+    padding: 0 6rem .5rem 2rem !important;
+}
+.cky-banner-btn-close {
+    top: 50% !important;
+    right: 2rem !important;
+    transform: translate(-50%,-50%);
+}
+.cky-notice {
+    max-width: 110rem;
+    margin: 0 auto;
+}
+.cky-btn {
+    padding: 5px 27px !important;
+}
+.politico-btn {
+    color: var(--contrast-color);
+    font-weight: 700;
+}
+/* politico */
+.politico {
+    padding: 5rem 0;
+}
+.politico ul {
+    padding: 0 0 2rem 3rem;
+}
+.politico li ul {
+    padding-top: 2rem;
+}
+.politico li {
+    position: relative;
+}
+.politico li::before {
+    content: ">";
+    position: absolute;
+    line-height: 1.3;
+    top: 0;
+    left: -2rem;
+    transform: translate(-50%, 0%);
+    font-size: 2rem;
+    color: var(--contrast-color);
+}
+.politico li ul li::before {
+    content: ">>";
+    line-height: 1.3;
+    position: absolute;
+    top: 0;
+    left: -2rem;
+    transform: translate(-50%,0%);
+    font-size: 2rem;
+    color: var(--contrast-color);
+}
+.politico li:not(:last-child) {
+    margin-bottom: 1rem;
+}
+.politico p,
+.politico li {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    letter-spacing: .14rem;
+	color: #333;
+}
+.politico p:not(:last-child){
+    margin-bottom: 2rem;
+}
+.politico.politico a {
+    color: var(--contrast-color);
+    font-weight: 700;
+}
+.politico strong {
+    font-size: inherit;
+    font-weight: 700;
+}
