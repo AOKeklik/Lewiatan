@@ -1,7 +1,8 @@
 class Header {
 	constructor() {
 		this.navHeader = document.querySelector(".nav")
-		this.navItems = document.querySelectorAll(".menu-item")
+		this.navItems = document.querySelectorAll("#menu-header .menu-item")
+		this.navLinks = document.querySelectorAll("#menu-header .menu-item a")
 		this.footerNav = document.querySelectorAll(".footer-nav .menu-item a")
 		this.bannerTitle = document.querySelector(".banner-text")
 		this.events()
@@ -31,30 +32,18 @@ class Header {
 		theNode.classList.add("active-item")
 	}
 	addActiveClassOnload () {
-		if(window.location.pathname.split('/').filter(Boolean)[0] === "tag") {
-			this.navItems.forEach(el => {
-				const theLink = el.children[0].href
-				const theOrigin = window.location.origin + "/"	
-				
-				el.classList.remove("active-item")
-	
-				if (theLink === theOrigin)
-				el.classList.add("active-item")
-				
-			})
+		let currentPath = window.location.pathname.split("/").filter(Boolean)
+		currentPath = currentPath.map(e => e.replace(/\.(html|php)/, ''))
 
-		} /* tag page */
-
-		if(window.location.pathname.split('/').filter(Boolean).length !== 1) return /* singlepage */
-		this.navItems.forEach(el => {
-			const theLink = el.children[0].href.split('/').filter(Boolean)
-			const linkLenght = theLink.length - 1			
-			
+		this.navItems.forEach ((el,_,arr) => {
 			el.classList.remove("active-item")
-
-			if (theLink[linkLenght] === localStorage.getItem("link"))
-			el.classList.add("active-item")
+			const link = el.querySelector("a")
+			
+			if (currentPath.length === 0) return arr[0].classList.add("active-item")
+			if (link.href.includes(currentPath)) el.classList.add("active-item")
 		})
+
+		console.log(this.navLinks)
 	}
 	addattributeToFooterNavLinks () {
 		this.footerNav.forEach(e => {
