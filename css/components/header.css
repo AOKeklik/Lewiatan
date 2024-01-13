@@ -9,10 +9,10 @@
 	justify-content: space-between;
 	align-items: center;
 
-	max-width: 110rem;
+	max-width: 120rem;
 	height: 80px;
 	margin: 0 auto;
-	padding: 0 3rem;
+	padding: 0 2rem;
 }
 .nav-menu {
 	align-self: stretch;
@@ -29,6 +29,8 @@
 .menu-item a {
 	display: flex;
 	align-items: center;
+	justify-content: center;
+	text-align: center;
 	height: 100%;
 	padding: 0 4rem;
 	color: var(--color-white);
@@ -61,34 +63,6 @@
 	flex-shrink: 0;
 	display: flex;
 	align-items: center;
-}
-.nav-social--icon {
-	width: 5rem;
-	height: 5rem;
-	fill: var(--color-white);
-	cursor: pointer;
-}
-.nav-social--icon-f {
-	width: 4.5rem;
-    height: 4.5rem;
-	margin-right: -.8rem;
-}
-.nav-social--icon-y {
-	align-self: end;
-	width: 4.5rem;
-    height: 4.5rem;
-}
-.nav-social--icon-y svg{
-    width: 4.5rem;
-    height: 4.5rem;
-}
-.nav-social--icon-i {
-	align-self: end;
-    margin-bottom: .4rem;
-}
-.nav-social--icon-i svg {
-    width: 3rem;
-    height: 3rem;
 }
 /* burger */
 .nav-burger {
@@ -175,12 +149,12 @@
 		display: flex;
 		flex-direction: column;
 	}
+	.menu-item {
+		width: 100%;
+	}
 	.menu-item a {
 		padding-top: 2rem;
 		padding-bottom: 2rem;
-	}
-	#menu-header .menu-item:not(:last-child) {
-		margin-bottom: 2rem;
 	}
 	.active-nav .nav-menu {
 		right: 0%;

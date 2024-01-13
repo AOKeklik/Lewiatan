@@ -1,3 +1,4 @@
+/* space */
 .m-b-s {
 	margin-bottom: 2rem;
 }
@@ -17,13 +18,25 @@
 	padding-left: 2rem;
 	padding-right: 2rem;
 }
+.p-y-s {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
 .p-b-s {
 	padding-bottom: 2rem;
+}
+.p-b-m {
+	padding-bottom: 4rem;
+}
+.p-b-l {
+	padding-bottom: 8rem;
 }
 .m-x-s {
 	margin-right: 2rem;
 	margin-left: 2rem;
 }
+/* space */
+/* text */
 .text-center {
 	text-align: center;
 }
@@ -59,7 +72,7 @@
 }
 .bg-paper {
 	padding: 4rem 2.6rem;
-	background-image: url("../../img/banner/papertexture400light.jpg");
+	background-image: url("../../assets/img/banner/papertexture400light.jpg");
 	background-size: 50px 50px;
 	background-position: top left;
 	background-repeat: repeat;
@@ -69,4 +82,32 @@
 	background-size: contain;
 	background-position: center center;
 	background-repeat: no-repeat;
+}
+/* bg */
+.bg-papier {
+	background-image: url("../../assets/img/main/papertexture400.jpg");
+	background-size: 50px 50px;
+	background-position: top left;
+	background-repeat: repeat;
+}
+/* icon */
+.icon-s,
+.icon-m,
+.icon-l {
+	cursor: pointer;
+}
+.icon-s {
+	width: 3rem;
+	height: 3rem;
+}
+.icon-m {
+	width: 5rem;
+	height: 5rem;
+}
+.icon-l {
+	width: 10rem;
+	height: 10rem;
+}
+.icon-white {
+	fill: var(--color-white);
 }

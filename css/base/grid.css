@@ -24,3 +24,8 @@
 .col-1-of-1 {
 	flex: 0 1 100%;
 }
+@media (max-width: 120rem) {
+	.container {
+		padding: 0 2rem;
+	}
+}

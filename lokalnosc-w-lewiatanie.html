@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <!-- header -->
     <header class="header">
         <nav class="nav">
             <div class="nav-menu">
@@ -24,18 +25,18 @@
                 <input type="text" class="nav-search--input">
             </form>
             <div class="nav-social">
-                <a href="https://www.facebook.com" target="_blank">
-                    <svg class="nav-social--icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path
-                            d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5Z" />
-                    </svg>
-                </a>
-                <a href="https://www.linkedin.com" target="_blank">
-                    <svg class="nav-social--icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path
-                            d="M6.94 5a2 2 0 1 1-4-.002a2 2 0 0 1 4 .002ZM7 8.48H3V21h4V8.48Zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68Z" />
-                    </svg>
-                </a>
+                <svg class="icon-m icon-white">
+                    <use href="./assets/icons.svg#icon-facebook" />
+                </svg>
+                <svg class="icon-m icon-white">
+                    <use href="./assets/icons.svg#icon-linkedin" />
+                </svg>
+                <svg class="icon-m icon-white">
+                    <use href="./assets/icons.svg#icon-youtube" />
+                </svg>
+                <svg class="icon-m icon-white">
+                    <use href="./assets/icons.svg#icon-instagram" />
+                </svg>
             </div>
             <div class="nav-burger">
                 <span class="nav-line1"></span>
@@ -44,27 +45,30 @@
             </div>
         </nav>
     </header>
+    <!-- hero section -->
     <div class="section-hero">
         <ul class="slider">
-            <li style="background-image: url('./img/slider/1.jpg');"></li>
-            <li style="background-image: url('./img/slider/2.jpg');"></li>
-            <li style="background-image: url('./img/slider/3.jpg');"></li>
-            <li style="background-image: url('./img/slider/4.jpg');"></li>
+            <li style="background-image: url('./assets/img/slider/1.jpg');"></li>
+            <li style="background-image: url('./assets/img/slider/2.jpg');"></li>
+            <li style="background-image: url('./assets/img/slider/3.jpg');"></li>
+            <li style="background-image: url('./assets/img/slider/4.jpg');"></li>
         </ul>
     </div>
+    <!-- banner section -->
     <div class="section-banner">
         <div class="container">
             <div class="banner">
                 <figure class="banner-image reveal-fadeRight-30">
-                    <img src="./img/banner/banner-image.jpg" alt="">
+                    <img src="./assets/img/banner/banner-image.jpg" alt="">
                 </figure>
-                <h1 class="banner-text heading-primary text-bigger reveal-fadeLeft-30">
-                    <span class="color-quaternary">LOKALNOŚĆ</span>
-                    <span class="color-fifth">W LEWIATANIE</span>
+                <h1 role="listbox" data-item="span" data-type="experci"
+                    class="banner-text heading-primary text-bigger reveal-fadeLeft-30">
+                    LOKALNOŚĆ, W LEWIATANIE
                 </h1>
             </div>
         </div>
     </div>
+    <!-- main -->
     <main class="main">
         <section class="section-product-lists">
             <div class="container">
@@ -106,7 +110,7 @@
                     <div class="col-1-of-1 bg-paper reveal-fadeup-50">
                         <div class="card-header">
                             <span class="card-date">3 dni temu</span>
-                            <div class="card-img" style="background-image:url('./img/card/1.jpg');"></div>
+                            <div class="card-img" style="background-image:url('./assets/img/card/1.jpg');"></div>
                         </div>
                         <div class="card-body">
                             <h3 class="card-title">Festiwal produktów lokalnych</h3>
@@ -128,7 +132,7 @@
                     <div class="col-1-of-1 bg-paper reveal-fadeup-50">
                         <div class="card-header">
                             <span class="card-date">12.09.2023</span>
-                            <div class="card-img" style="background-image:url('./img/card/3.jpg');"></div>
+                            <div class="card-img" style="background-image:url('./assets/img/card/3.jpg');"></div>
                         </div>
                         <div class="card-body">
                             <h3 class="card-title">Eksozycja na półkach sklepowych</h3>
@@ -149,7 +153,7 @@
                     <div class="col-1-of-1 bg-paper reveal-fadeup-50">
                         <div class="card-header">
                             <span class="card-date">05.09.2023</span>
-                            <div class="card-img" style="background-image:url('./img/card/1.jpg');"></div>
+                            <div class="card-img" style="background-image:url('./assets/img/card/1.jpg');"></div>
                         </div>
                         <div class="card-body">
                             <h3 class="card-title">Ekspozycja na stoisku warzywa i owoce</h3>
@@ -175,6 +179,7 @@
             </div>
         </section>
     </main>
+    <!-- footer -->
     <footer class="footer">
         <div class="container footer-wrap m-b-m">
             <div class="footer-text reveal-fadeRight-30">
@@ -198,7 +203,8 @@
                 </p>
             </div>
             <div class="footer-logo reveal-fadeLeft-30">
-                <div class="footer-img bg-image" style="background-image: url('./img/footer/footer-logo.png');"></div>
+                <div class="footer-img bg-image" style="background-image: url('./assets/img/footer/footer-logo.png');">
+                </div>
             </div>
         </div>
         <div class="footer-nav bg-primary">

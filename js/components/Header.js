@@ -2,8 +2,12 @@ class Header {
 	constructor() {
 		this.navHeader = document.querySelector(".nav")
 		this.navItems = document.querySelectorAll("#menu-header .menu-item")
-		this.navLinks = document.querySelectorAll("#menu-header .menu-item a")
-		this.footerNav = document.querySelectorAll(".footer-nav .menu-item a")
+		this.navLinks = document.querySelectorAll(
+			"#menu-header .menu-item a"
+		)
+		this.footerNav = document.querySelectorAll(
+			".footer-nav .menu-item a"
+		)
 		this.bannerTitle = document.querySelector(".banner-text")
 		this.events()
 	}
@@ -15,7 +19,6 @@ class Header {
 		window.addEventListener("load", () => {
 			this.addActiveClassOnload.bind(this)()
 			this.addattributeToFooterNavLinks.bind(this)()
-			this.addHeadingToBanner.bind(this)()
 		})
 	}
 	handleEventClickOnNav(e) {
@@ -31,67 +34,27 @@ class Header {
 		this.navItems.forEach(item => item.classList.remove("active-item"))
 		theNode.classList.add("active-item")
 	}
-	addActiveClassOnload () {
-		let currentPath = window.location.pathname.split("/").filter(Boolean)
-		currentPath = currentPath.map(e => e.replace(/\.(html|php)/, ''))
+	addActiveClassOnload() {
+		let currentPath = window.location.pathname
+			.split("/")
+			.filter(Boolean)
+		currentPath = currentPath.map(e => e.replace(/\.(html|php)/, ""))
 
-		this.navItems.forEach ((el,_,arr) => {
+		this.navItems.forEach((el, _, arr) => {
 			el.classList.remove("active-item")
 			const link = el.querySelector("a")
-			
-			if (currentPath.length === 0) return arr[0].classList.add("active-item")
-			if (link.href.includes(currentPath)) el.classList.add("active-item")
-		})
 
-		console.log(this.navLinks)
+			if (currentPath.length === 0)
+				return arr[0].classList.add("active-item")
+
+			if (link.href.includes(currentPath[0]))
+				el.classList.add("active-item")
+		})
 	}
-	addattributeToFooterNavLinks () {
+	addattributeToFooterNavLinks() {
 		this.footerNav.forEach(e => {
 			e.setAttribute("target", "_blank")
-		}) 
-	}
-	addHeadingToBanner () {
-		const pageLink = window.location.pathname	
-		const link = localStorage.getItem("link")
-		if (
-			pageLink !== "/" && 
-			!pageLink.startsWith("/tag")
-		) {
-			if (pageLink === "/category/eksperci-w-lokalnosci/") {
-				this.bannerTitle.innerHTML = `
-					<span class="color-quaternary">EKSPERCI</span>
-					<span class="color-fifth">W LEWIATANIE</span>
-				`
-				return
-			}
-			if (pageLink === "/category/lokalnosc-w-lewiatanie/") {
-				this.bannerTitle.innerHTML = `
-					<span class="color-quaternary">LOKALNOŚĆ</span>
-					<span class="color-fifth">W LEWIATANIE</span>
-				`
-				return
-			}
-			if (link && link === "lokalnosc-w-lewiatanie") {
-				this.bannerTitle.innerHTML = `
-					<span class="color-quaternary">LOKALNOŚĆ</span>
-					<span class="color-fifth">W LEWIATANIE</span>
-				`
-				return
-			}
-			if (link && link === "eksperci-w-lokalnosci") {
-				this.bannerTitle.innerHTML = `
-					<span class="color-quaternary">EKSPERCI</span>
-					<span class="color-fifth">W LEWIATANIE</span>
-				`
-				return
-			}
-		} else {
-			this.bannerTitle.innerHTML = `
-				<span class="color-quaternary">NAJLEPSZE PRODUKTY</span>
-				<span class="color-primary">POCHODZĄ</span>
-				<span class="color-secondary">Z NAJBLIŻSZEJ OKOLICY!</span>
-			`
-		}		
+		})
 	}
 	handleBurgerToggle(e) {
 		const theNode = e.target.closest(".nav-burger")
@@ -144,7 +107,10 @@ class Header2 {
 		this.marker.style.height = el.offsetHeight + "px"
 		this.marker.style.left = el.offsetLeft - 1 + "px"
 		this.marker.style.top =
-			el.offsetTop + el.offsetHeight - this.marker.offsetHeight + "px"
+			el.offsetTop +
+			el.offsetHeight -
+			this.marker.offsetHeight +
+			"px"
 	}
 }
 
