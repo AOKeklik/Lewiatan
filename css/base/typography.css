@@ -5,13 +5,18 @@
 /* Cinzel, sans-serif 400 500 600 700 800 900 */
 /* Noto Serif, sans-serif 100 200 300 400 500 600 700 800 900 */
 
-/* huge */
+body {
+	font-family: "Roboto", sans-serif;
+	line-height: 1;
+	font-weight: 400;
+	color: var(--color-primary);
+}
+/* heading */
 .heading-huge {
 	font-size: 6rem;
 	font-family: "Open Sans", sans-serif;
 	font-weight: 800;
 }
-/* primary */
 .heading-primary,
 .heading-primary-bigger {
 	color: #333;
@@ -31,17 +36,33 @@
 	font-size: 5rem;
 	font-weight: 700;
 }
-/* secondary */
-.heading-secondary {
-	color: var(--color-fifth);
-	font-size: 3.5rem;
+.heading-secondary,
+.heading-secondary-bigger {
 	font-family: "Open Sans", sans-serif;
 	font-weight: 800;
 }
-/* heading tertiary */
+.heading-secondary {
+	font-size: 3.5rem;
+}
+.heading-secondary-bigger {
+	font-size: 4rem;
+	font-weight: 700;
+}
 .heading-tertiary {
 	color: var(--color-white);
 	font-size: 3.2rem;
 	font-family: "Open Sans", sans-serif;
 	font-weight: 700;
+}
+.heading-quaternary {
+	color: var(--color-white);
+	font-size: 2.5rem;
+	font-family: "Open Sans", sans-serif;
+	font-weight: 700;
+}
+/* heading */
+.paragraph-primary {
+	font-size: 1.8rem;
+	line-height: 1.5;
+	font-weight: 500;
 }

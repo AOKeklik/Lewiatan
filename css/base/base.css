@@ -9,10 +9,6 @@ html {
 }
 body {
 	overflow-x: hidden;
-	font-family: "Roboto", sans-serif;
-	line-height: 1;
-	font-weight: 400;
-	color: var(--color-primary);
 }
 ul {
 	list-style-type: none;

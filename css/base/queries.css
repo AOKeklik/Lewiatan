@@ -21,10 +21,6 @@
 	}
 }
 @media (max-width: 800px) {
-	/* grid */
-	.col-1-of-3 {
-		flex: 0 1 calc((100% - 3rem) / 2);
-	}
 	/* banner */
 	.banner {
 		grid-template-columns: 1fr;
@@ -73,13 +69,6 @@
 	}
 }
 @media (max-width: 700px) {
-	/* grid */
-	.row {
-		gap: 5rem;
-	}
-	.col-1-of-3 {
-		flex: 0 1 80%;
-	}
 	/* card feature */
 	.card-feature-text {
 		text-align: center;

@@ -3,13 +3,10 @@
 @import "./components/reveal.css";
 @import "./components/pagination.css";
 @import "./components/footer.css";
-@import "./components/how.css";
 @import "./components/filter.css";
 @import "./components/banner.css";
 @import "./components/slider.css";
 @import "./components/btn.css";
-@import "./components/card-feature.css";
-@import "./components/card.css";
 
 @import "./pages/home.css";
 
