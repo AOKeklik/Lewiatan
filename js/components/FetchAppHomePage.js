@@ -113,5 +113,7 @@ function executeClickEvents(e) {
 if (window.location.pathname === "/") {
 	controllerLoadResults("top")
 	controllerLoadResults("bottom")
-	document.querySelector(".filter").addEventListener("click", executeClickEvents)
+	document
+		.querySelector(".filter")
+		.addEventListener("click", executeClickEvents)
 }

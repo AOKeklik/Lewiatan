@@ -20,7 +20,8 @@ export async function fetchPosts(u1, u2, u3) {
 			fetch(API_URL + u2, features),
 			fetch(API_URL + u3, features),
 		])
-		if (res.every(data => !data.ok)) throw new Error("Error Fetch Posts!!")
+		if (res.every(data => !data.ok))
+			throw new Error("Error Fetch Posts!!")
 		const data = {
 			posts: await res[0].json(),
 			categories: await res[1].json(),
