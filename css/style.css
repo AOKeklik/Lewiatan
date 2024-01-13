@@ -1,15 +1,13 @@
+/* components */
 @import "./components/searchpop.css";
 @import "./components/singlepage.css";
 @import "./components/reveal.css";
 @import "./components/pagination.css";
-@import "./components/footer.css";
 @import "./components/filter.css";
 @import "./components/banner.css";
 @import "./components/slider.css";
 @import "./components/btn.css";
-
-@import "./pages/home.css";
-
+/* base */
 @import "./base/grid.css";
 @import "./base/veriables.css";
 @import "./base/base.css";

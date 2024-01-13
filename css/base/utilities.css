@@ -58,6 +58,10 @@
 	max-width: 30rem;
 	width: 100%;
 }
+.w40 {
+	width: 100%;
+	max-width: 40rem;
+}
 .w50 {
 	width: 100%;
 	max-width: 50rem;
@@ -118,6 +122,9 @@
 }
 .box-block {
 	display: block;
+}
+.box-shadow {
+	box-shadow: 0 1rem 2rem 0 rgba(0, 0, 0, 0.12);
 }
 /* box */
 /* icon */
