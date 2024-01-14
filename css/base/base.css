@@ -9,6 +9,7 @@ html {
 }
 body {
 	overflow-x: hidden;
+	box-sizing: border-box;
 }
 ul {
 	list-style-type: none;

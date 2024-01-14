@@ -16,13 +16,16 @@ export function sortDataByDate(date = state.sortDate) {
 export function sortDataByCategory() {
 	let sortedData
 
-	sortedData = !state.sortCategories.currentSort
-		? state.data.slice()
-		: state.data.slice().filter(el => {
-				return el.categories.some(n => {
-					return n === state.sortCategories.currentSort
-				})
-		  })
+	sortedData =
+		state.sortCategories.currentCategory.id === 0
+			? state.data.slice()
+			: state.data.slice().filter(el => {
+					return el.categories.some(n => {
+						return (
+							n === state.sortCategories.currentSort
+						)
+					})
+			  })
 
 	state.data = sortedData
 }

@@ -1,0 +1,41 @@
+[role="selectoption"] {
+	position: relative;
+	font-size: 1.7rem;
+	font-weight: 600;
+	user-select: none;
+	cursor: pointer;
+
+	display: flex;
+	gap: 1.5rem;
+	align-items: center;
+	margin-right: 2rem;
+}
+[role="selectoption"]:hover .filter-arrow {
+	fill: var(--color-secondary);
+}
+[role="selectoption"] select {
+	display: none;
+}
+.select-items {
+	padding: 2rem 0;
+	position: absolute;
+	top: 3.5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100px;
+	background-color: var(--color-primary);
+	color: var(--color-tertiary);
+}
+.select-items.select-hide {
+	display: none;
+}
+.select-item {
+	width: 100%;
+	padding: 1rem 0;
+	text-align: center;
+}
+.select-item[aria-selected="true"],
+.select-item:hover {
+	background-color: #6c5f5c;
+}

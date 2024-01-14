@@ -18,8 +18,6 @@ class ListBox {
 			.map(n => n.trim())
 		const classNames = this.classNames && this.classNames.split("_")
 
-		console.log(items)
-
 		this.parent.innerHTML = ""
 
 		items.forEach((el, i, arr) => {

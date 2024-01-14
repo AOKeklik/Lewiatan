@@ -27,16 +27,11 @@
 	width: 1.24rem;
 	background-color: var(--color-primary);
 }
-.filter-date,
 .filter-cat {
 	display: flex;
 	gap: 1.5rem;
 	align-items: center;
 	margin-right: 2rem;
-}
-.filter-sort-text {
-	font-size: 1.7rem;
-	font-weight: 600;
 }
 .filter-arrow {
 	width: 2.5rem;
@@ -51,14 +46,13 @@
 .active-layout {
 	pointer-events: none;
 }
-.filter-horizontal.active-layout > *,
-.filter-grid.active-layout > *,
+.filter-horizontal[aria-current="true"] > *,
+.filter-grid[aria-current="true"] > *,
 .filter-horizontal:hover > *,
 .filter-grid:hover > * {
 	background-color: var(--color-secondary);
 }
 
-.filter-date:hover .filter-arrow,
 .filter-cat:hover .filter-arrow {
 	fill: var(--color-secondary);
 }

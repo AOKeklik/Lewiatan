@@ -1,51 +1,94 @@
 import { state } from "./State.js"
 import { convertedDate, stripHtml } from "./Utilities.js"
 
-export function renderSpiner(parentElement) {
-	const markup = `<span class="spinner">&#9697;</span>`
-	parentElement.innerHTML = ""
-	parentElement.insertAdjacentHTML("afterbegin", markup)
+export function renderSpiner(parent) {
+	const markup = `<div class="p-y-l flex flex-center">
+		<span class="spinner">&#9697;</span>
+	</div>`
+	parent.innerHTML = ""
+	parent.insertAdjacentHTML("afterbegin", markup)
 }
+// export function renderResults(parentElement, data) {
+// 	if (state.layout === "true") parentElement.classList.remove("bg-paper")
+// 	if (state.layout === "false") parentElement.classList.add("bg-paper")
+// 	const renderData = data
+// 		.map(d => {
+// 			return `<div class="${
+// 				state.layout === "false"
+// 					? "col-1-of-3"
+// 					: "col-1-of-1 bg-paper"
+// 			}">
+// 					<div class="card-header">
+// 						<span class="card-date">${convertedDate(d.date)}</span>
+// 						<div class="card-img" style="background-image:url('${d.img}');"></div>
+// 					</div>
+// 					<div class="card-body">
+// 						<a id="post-link" href="${d.link}" data-cat="${
+// 				d.categories[0]
+// 			}"><h3 class="card-title">${d.title}</h3></a>
+// 						<p class="card-desc">${stripHtml(d.content)}</p>
+// 						<div class="card-btn">
+// 							<p class="card-btn-tags">
+// 								${
+// 									state.layout === "true"
+// 										? d.tags
+// 												.map(
+// 													el =>
+// 														`
+// 												<a href="${el.link}">
+// 													${el.name}
+// 												</a>`
+// 												)
+// 												.join(
+// 													'<span class="card-separator"> | </span>'
+// 												)
+// 										: ""
+// 								}
+// 							</p>
+// 							<a href="${d.link}" class="btn btn-primary">czytaj dalej...</a>
+// 						</div>
+// 					</div>
+// 				</div>
+// 			`
+// 		})
+// 		.join("")
+
+// 	parentElement.innerHTML = ""
+// 	parentElement.insertAdjacentHTML("afterbegin", renderData)
+// }
 export function renderResults(parentElement, data) {
-	if (state.layout === "true") parentElement.classList.remove("bg-paper")
-	if (state.layout === "false") parentElement.classList.add("bg-paper")
-	const renderData = data
-		.map(d => {
-			return `<div class="${
-				state.layout === "false" ? "col-1-of-3" : "col-1-of-1 bg-paper"
-			}">
-					<div class="card-header">
-						<span class="card-date">${convertedDate(d.date)}</span>
-						<div class="card-img" style="background-image:url('${d.img}');"></div>
-					</div>
-					<div class="card-body">
-						<a id="post-link" href="${d.link}" data-cat="${d.categories[0]}"><h3 class="card-title">${d.title}</h3></a>
-						<p class="card-desc">${stripHtml(d.content)}</p>
-						<div class="card-btn">
-							<p class="card-btn-tags">
-								${
-									state.layout === "true"
-										? d.tags
-												.map(
-													el =>
-														`
-												<a href="${el.link}">
-													${el.name}
-												</a>`
-												)
-												.join(
-													'<span class="card-separator"> | </span>'
-												)
-										: ""
-								}
-							</p>
-							<a href="${d.link}" class="btn btn-primary">czytaj dalej...</a>
-						</div>
-					</div>
+	let renderPostsGrid = () => {
+		return data
+			.map(d => {
+				console.log(d)
+				return `<div class="col1of3">
+			<div class="flex flex-center">
+				<div class="w50">
+					<span class="text-s m-b-s box-i-block">${convertedDate(d.date)}</span>
+					<div class="bg-img-cov h20 m-b-s"
+						style="background-image:url('${d.img}');"></div>
+					<a href="${d.link}">
+						<h3 class="heading-quaternary text-fifth m-b-s">${d.title}</h3>
+					</a>
+					<p class="paragraph-primary m-b-s">
+						Lokalne produkty to dla mnie gwarancja świeżości i wspaniałego smaku potraw.
+						Wybieram
+						właśnie takie – których dostarczenie do sklepu zajęło pół godziny...
+					</p>
+					<a href="${d.link}" class="btn btn-primary">czytaj dalej...</a>
 				</div>
-			`
-		})
-		.join("")
+			</div>
+		</div>`
+			})
+			.join("")
+	}
+	let renderData = `<div class="container-bigger bg-paper-light">
+			<div class="container p-y-s">
+				<div class="row results-top">
+					${renderPostsGrid()}
+				</div>
+			</div>
+		</div>`
 
 	parentElement.innerHTML = ""
 	parentElement.insertAdjacentHTML("afterbegin", renderData)
@@ -103,14 +146,28 @@ export function renderPagination(parentElement) {
 	parentElement.innerHTML = ""
 	parentElement.insertAdjacentHTML("beforeend", markup)
 }
-export function renderFilterNames(type = "all", catName = null) {
-	const parentDate = document.querySelector(
-		".filter-date > .filter-sort-text"
-	)
-	parentDate.innerHTML =
-		state.sortDate === "false" ? "Najnowszy" : "Najstarszy"
+export function renderFilterNames(parent) {
+	const isDateLabel = parent.getAttribute("aria-filter-date")
+	const isCategoryLabel = parent.getAttribute("aria-filter-category")
 
-	if (type !== "all") return
+	/* sort by just date */
+	if (isDateLabel === "true") {
+		const status = state.sortDate === "false"
+		const theSelect = parent.querySelector("[aria-select-type=date]")
+		const theSelectLabel = parent.querySelector(".select-label")
+		const theSelecItem = parent.querySelectorAll(".select-item")
+
+		theSelect.selectedIndex = status ? 0 : 1
+		theSelectLabel.innerHTML = status ? "Najnowsze" : "Najstarszy"
+		theSelecItem.forEach(el => {
+			el.setAttribute("aria-selected", "false")
+			if (el.innerHTML === theSelectLabel.innerHTML)
+				el.setAttribute("aria-selected", "true")
+		})
+	}
+
+	/* sort by ... */
+	if (isCategoryLabel === "false") return
 
 	const parentCategories = document.querySelector(
 		".filter-cat > .filter-sort-text"
@@ -143,9 +200,14 @@ export function renderFilterTagNames(type = "all", catName = null) {
 			? "Wszystkie Tagi"
 			: state.sortTags.currentSort
 }
-export function renderLayoutBtn() {
-	const theName =
-		state.layout === "false" ? ".filter-grid" : ".filter-horizontal"
-	document.querySelector(".active-layout")?.classList.remove("active-layout")
-	document.querySelector(theName).classList.add("active-layout")
+export function renderLayoutBtn(parent) {
+	const theButtons = parent.querySelectorAll("[aria-controls]")
+
+	const theName = state.layout === "false" ? "grid" : "line"
+
+	theButtons.forEach(el => {
+		if (el.getAttribute("aria-controls") === theName)
+			el.setAttribute("aria-current", "true")
+		else el.setAttribute("aria-current", "false")
+	})
 }

@@ -32,11 +32,6 @@ export async function fetchPosts(u1, u2, u3) {
 		throw err
 	}
 }
-
-export function wait(ms) {
-	return new Promise(resolve => setTimeout(resolve, 100 * ms))
-}
-
 export async function loadResults() {
 	try {
 		const { posts, categories, tags } = await fetchPosts(
@@ -68,4 +63,7 @@ export async function loadSearchResults(query) {
 	} catch (err) {
 		throw err
 	}
+}
+export function wait(ms) {
+	return new Promise(resolve => setTimeout(resolve, 100 * ms))
 }
