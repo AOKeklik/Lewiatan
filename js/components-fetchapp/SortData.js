@@ -7,8 +7,8 @@ export function sortDataByDate(date = state.sortDate) {
 		.slice()
 		.sort(
 			(a, b) =>
-				new Date(date === "true" ? a.date : b.date) -
-				new Date(date === "true" ? b.date : a.date)
+				new Date(date === 1 ? a.date : b.date) -
+				new Date(date === 1 ? b.date : a.date)
 		)
 
 	state.data = sortedData

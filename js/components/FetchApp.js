@@ -1,4 +1,4 @@
-import * as fetch from "../components-fetchapp/FetchData.js"
+import * as fetchs from "../components-fetchapp/FetchData.js"
 import * as renders from "../components-fetchapp/RenderData.js"
 import * as sort from "../components-fetchapp/SortData.js"
 import * as state from "../components-fetchapp/State.js"
@@ -13,8 +13,8 @@ class FetchApp {
 		this.executer(renders.renderLayoutBtn, "filter")
 		this.executer(renders.renderSpiner, "root")
 
-		await fetch.loadResults()
-		await fetch.wait(3)
+		await fetchs.loadResults()
+		await fetchs.wait(3)
 
 		this.executer(state.saveStateObjectByCategory, "root")
 

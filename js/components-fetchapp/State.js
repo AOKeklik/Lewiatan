@@ -3,7 +3,7 @@ import { POSTS_PER_PAGE } from "./config.js"
 export const state = {
 	data: [],
 	layout: localStorage.getItem("layout") ?? "false",
-	sortDate: localStorage.getItem("sortDate") ?? "false",
+	sortDate: +localStorage.getItem("sortDate") ?? 0,
 	sortCategories: {
 		categories: [],
 		sort: [],
@@ -97,8 +97,8 @@ export function createTagsObject(tags) {
 }
 
 /* saving */
-export function saveStateObjectByDate() {
-	state.sortDate = state.sortDate === "false" ? "true" : "false"
+export function saveStateObjectByDate(newDate) {
+	state.sortDate = newDate
 	localStorage.setItem("sortDate", state.sortDate)
 }
 export function saveStateObjectByCategory(parent) {

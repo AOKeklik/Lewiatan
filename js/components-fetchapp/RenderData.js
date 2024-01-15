@@ -60,7 +60,6 @@ export function renderResults(parentElement, data) {
 	let renderPostsGrid = () => {
 		return data
 			.map(d => {
-				console.log(d)
 				return `<div class="col1of3">
 			<div class="flex flex-center">
 				<div class="w50">
