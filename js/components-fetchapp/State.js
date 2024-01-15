@@ -1,13 +1,15 @@
 import { POSTS_PER_PAGE } from "./config.js"
 
+/* oldest 0 - newest - 1 */
+/* grid 0 - line - 1 */
 export const state = {
 	data: [],
-	layout: localStorage.getItem("layout") ?? "false",
+	layout: +localStorage.getItem("layout") ?? 0,
 	sortDate: +localStorage.getItem("sortDate") ?? 0,
 	sortCategories: {
 		categories: [],
 		sort: [],
-		currentSort:
+		currentCategory:
 			JSON.parse(localStorage.getItem("categories")) &&
 			JSON.parse(localStorage.getItem("categories")).currentSort,
 		categoryLength: 0,
@@ -15,7 +17,7 @@ export const state = {
 	},
 	sortTags: {
 		sort: [],
-		currentSort:
+		currentTag:
 			JSON.parse(localStorage.getItem("tags")) &&
 			JSON.parse(localStorage.getItem("tags")).currentSort,
 		tagLength: 0,
@@ -103,10 +105,11 @@ export function saveStateObjectByDate(newDate) {
 }
 export function saveStateObjectByCategory(parent) {
 	const categoryId = +parent.getAttribute("data-category-id")
-	// console.log(categoryId)
 
 	state.sortCategories.currentCategory =
-		state.sortCategories.categories.find(e => e.id === categoryId)
+		state.sortCategories.categories.find(e => {
+			return e.id === categoryId
+		})
 
 	localStorage.setItem(
 		"categories",
@@ -135,8 +138,8 @@ export function saveStateObjectByPage(page = state.pagination.page) {
 	state.pagination.page = page
 	localStorage.setItem("page", page)
 }
-export function saveStateObjectByLayout() {
-	state.layout = state.layout === "false" ? "true" : "false"
+export function saveStateObjectByLayout(layout) {
+	state.layout = layout
 	localStorage.setItem("layout", state.layout)
 }
 export function saveStateObjectByLink(link) {

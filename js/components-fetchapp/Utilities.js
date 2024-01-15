@@ -14,11 +14,11 @@ export function convertedDate(date) {
 	)
 	const results =
 		howManyDay === 0
-		? "Dzisiaj"
-		: howManyDay === 1
-		? howManyDay + " dzień temu"
-		: howManyDay > 3
-		? theDay.toLocaleDateString("pl")
-		: howManyDay + " dni temu"
+			? "Dzisiaj"
+			: howManyDay === 1
+			? howManyDay + " dzień temu"
+			: howManyDay > 3
+			? theDay.toLocaleDateString("pl")
+			: howManyDay + " dni temu"
 	return results
 }

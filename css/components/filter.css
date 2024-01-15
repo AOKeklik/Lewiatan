@@ -39,7 +39,7 @@
 	stroke: var(--color-primary);
 	stroke-width: 0.01rem;
 }
-[class^="filter-"]:hover {
+[class^="filter-"] {
 	cursor: pointer;
 }
 /* active */

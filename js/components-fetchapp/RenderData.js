@@ -1,5 +1,5 @@
 import { state } from "./State.js"
-import { convertedDate, stripHtml } from "./Utilities.js"
+import * as utls from "./Utilities.js"
 
 export function renderSpiner(parent) {
 	const markup = `<div class="p-y-l flex flex-center">
@@ -58,26 +58,22 @@ export function renderSpiner(parent) {
 // }
 export function renderResults(parentElement, data) {
 	let renderPostsGrid = () => {
-		return data
+		return data(parentElement)
 			.map(d => {
 				return `<div class="col1of3">
-			<div class="flex flex-center">
-				<div class="w50">
-					<span class="text-s m-b-s box-i-block">${convertedDate(d.date)}</span>
-					<div class="bg-img-cov h20 m-b-s"
-						style="background-image:url('${d.img}');"></div>
-					<a href="${d.link}">
-						<h3 class="heading-quaternary text-fifth m-b-s">${d.title}</h3>
-					</a>
-					<p class="paragraph-primary m-b-s">
-						Lokalne produkty to dla mnie gwarancja świeżości i wspaniałego smaku potraw.
-						Wybieram
-						właśnie takie – których dostarczenie do sklepu zajęło pół godziny...
-					</p>
-					<a href="${d.link}" class="btn btn-primary">czytaj dalej...</a>
-				</div>
-			</div>
-		</div>`
+					<div class="flex flex-center">
+						<div class="w50">
+							<span class="text-s m-b-s box-i-block">${utls.convertedDate(d.date)}</span>
+							<div class="bg-img-cov h20 m-b-s"
+								style="background-image:url('${d.img}');"></div>
+							<a href="${d.link}">
+								<h3 class="heading-quaternary text-fifth m-b-s">${d.title}</h3>
+							</a>
+							<p class="paragraph-primary m-b-s">${utls.stripHtml(d.content)}</p>
+							<a href="${d.link}" class="btn btn-primary">czytaj dalej...</a>
+						</div>
+					</div>
+				</div>`
 			})
 			.join("")
 	}
@@ -151,13 +147,13 @@ export function renderFilterNames(parent) {
 
 	/* sort by just date */
 	if (isDateLabel === "true") {
-		const status = state.sortDate === "false"
+		const status = state.sortDate === 0
 		const theSelect = parent.querySelector("[aria-select-type=date]")
 		const theSelectLabel = parent.querySelector(".select-label")
 		const theSelecItem = parent.querySelectorAll(".select-item")
 
-		theSelect.selectedIndex = status ? 0 : 1
-		theSelectLabel.innerHTML = status ? "Najnowsze" : "Najstarszy"
+		theSelect.selectedIndex = status ? 1 : 0
+		theSelectLabel.innerHTML = status ? "Najstarszy" : "Najnowsze"
 		theSelecItem.forEach(el => {
 			el.setAttribute("aria-selected", "false")
 			if (el.innerHTML === theSelectLabel.innerHTML)
@@ -200,12 +196,11 @@ export function renderFilterTagNames(type = "all", catName = null) {
 			: state.sortTags.currentSort
 }
 export function renderLayoutBtn(parent) {
+	const type = state.layout === 0 ? "grid" : "line"
 	const theButtons = parent.querySelectorAll("[aria-controls]")
 
-	const theName = state.layout === "false" ? "grid" : "line"
-
 	theButtons.forEach(el => {
-		if (el.getAttribute("aria-controls") === theName)
+		if (el.getAttribute("aria-controls") === type)
 			el.setAttribute("aria-current", "true")
 		else el.setAttribute("aria-current", "false")
 	})

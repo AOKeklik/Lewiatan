@@ -71,12 +71,11 @@
         <!-- section sort -->
         <section class="m-b-s">
             <div class="container">
-                <div class="filter" role="filter" aria-filter-date="true" aria-filter-category="false"
-                    aria-filter-limit="3">
+                <div class="filter" role="filter" aria-filter-date="true" aria-filter-category="false">
                     <div role="selectoption" aria-select-type="date">
                         <select aria-select-type="date">
-                            <option value="oldest" selected="selected">Najnowsze</option>
-                            <option value="newest">Najstarszy</option>
+                            <option value="oldest" selected="selected">Najstarszy</option>
+                            <option value="newest">Najnowsze</option>
                         </select>
                         <svg xmlns="http://www.w3.org/2000/svg" class="filter-arrow" viewBox="3 3 17 17">
                             <path d="M18 6.41L16.59 5L12 9.58L7.41 5L6 6.41l6 6z" />
@@ -84,21 +83,23 @@
                         </svg>
                     </div>
 
-                    <div aria-controls="line" aria-current="false" class="filter-horizontal">
-                        <span class="filter-h-line"></span>
-                        <span class="filter-h-line"></span>
-                        <span class="filter-h-line"></span>
-                    </div>
-                    <div aria-controls="grid" aria-current="true" class="filter-grid">
-                        <span class="filter-g-line"></span>
-                        <span class="filter-g-line"></span>
-                        <span class="filter-g-line"></span>
-                        <span class="filter-g-line"></span>
-                        <span class="filter-g-line"></span>
-                        <span class="filter-g-line"></span>
-                        <span class="filter-g-line"></span>
-                        <span class="filter-g-line"></span>
-                        <span class="filter-g-line"></span>
+                    <div role="selectlayout" class="flex flex-gap1">
+                        <div aria-controls="line" aria-current="false" class="filter-horizontal">
+                            <span class="filter-h-line"></span>
+                            <span class="filter-h-line"></span>
+                            <span class="filter-h-line"></span>
+                        </div>
+                        <div aria-controls="grid" aria-current="true" class="filter-grid">
+                            <span class="filter-g-line"></span>
+                            <span class="filter-g-line"></span>
+                            <span class="filter-g-line"></span>
+                            <span class="filter-g-line"></span>
+                            <span class="filter-g-line"></span>
+                            <span class="filter-g-line"></span>
+                            <span class="filter-g-line"></span>
+                            <span class="filter-g-line"></span>
+                            <span class="filter-g-line"></span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -110,7 +111,76 @@
                     <h2 class="heading-secondary">Lokalność w Lewiatanie</h2>
                 </div>
             </div>
-            <div role="root" data-category-id="0">
+            <!-- <div role="root" data-category-id="1" aria-data-limit="3">
+                <div class="container-bigger bg-paper-light">
+                    <div class="container p-y-s">
+                        <div class="row reveal-fadeup-50 results-top">
+                            <div class="col1of3">
+                                <div class="flex flex-center">
+                                    <div class="w50">
+                                        <span class="text-s m-b-s box-i-block">3 dni temu</span>
+                                        <div class="bg-img-cov h20 m-b-s"
+                                            style="background-image:url('./assets/img/card/1.jpg');">
+                                        </div>
+                                        <a href="#">
+                                            <h3 class="heading-quaternary text-fifth m-b-s">Festiwal produktów lokalnych
+                                            </h3>
+                                        </a>
+                                        <p class="paragraph-primary m-b-s">
+                                            Lokalne produkty to dla mnie gwarancja świeżości i wspaniałego smaku potraw.
+                                            Wybieram
+                                            właśnie takie – których dostarczenie do sklepu zajęło pół godziny...
+                                        </p>
+                                        <a href="" class="btn btn-primary">czytaj dalej...</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col1of3">
+                                <div class="flex flex-center">
+                                    <div class="w50">
+                                        <span class="text-s m-b-s box-i-block">12.09.2023</span>
+                                        <div class="bg-img-cov h20 m-b-s"
+                                            style="background-image:url('./assets/img/card/2.jpg');"></div>
+                                        <a href="#">
+                                            <h3 class="heading-quaternary text-fifth m-b-s">Ekspozycja na stoisku
+                                                warzywa i
+                                                owoce
+                                            </h3>
+                                        </a>
+                                        <p class="paragraph-primary m-b-s">
+                                            Lokalne produkty to dla mnie gwarancja świeżości i wspaniałego smaku potraw.
+                                            Wybieram
+                                            właśnie takie – których dostarczenie do sklepu zajęło pół godziny...
+                                        </p>
+                                        <a href="" class="btn btn-primary">czytaj dalej...</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col1of3">
+                                <div class="flex flex-center">
+                                    <div class="w50">
+                                        <span class="text-s m-b-s box-i-block">05.09.2023</span>
+                                        <div class="bg-img-cov h20 m-b-s"
+                                            style="background-image:url('./assets/img/card/3.jpg');"></div>
+                                        <a href="#">
+                                            <h3 class="heading-quaternary text-fifth m-b-s">Wksozycja na półkach
+                                                sklepowych
+                                            </h3>
+                                        </a>
+                                        <p class="paragraph-primary m-b-s">
+                                            Lokalne produkty to dla mnie gwarancja świeżości i wspaniałego smaku potraw.
+                                            Wybieram
+                                            właśnie takie – których dostarczenie do sklepu zajęło pół godziny...
+                                        </p>
+                                        <a href="" class="btn btn-primary">czytaj dalej...</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <div role="root" data-category-id="1" aria-data-limit="3">
                 <div class="container-bigger bg-paper-light">
                     <div class="container p-y-s">
                         <div class="row reveal-fadeup-50 results-top">
@@ -199,64 +269,69 @@
                     <h2 class="heading-secondary">Eksperci w lokalności</h2>
                 </div>
             </div>
-            <div class="container-bigger bg-paper-light">
-                <div class="container p-y-s">
-                    <div class="row reveal-fadeup-50 results-top">
-                        <div class="col1of3">
-                            <div class="flex flex-center">
-                                <div class="w50">
-                                    <span class="text-s m-b-s box-i-block">3 dni temu</span>
-                                    <div class="bg-img-cov h20 m-b-s"
-                                        style="background-image:url('./assets/img/card/4.jpg');">
+            <div role="root" data-category-id="4" aria-data-limit="3">
+                <div class="container-bigger bg-paper-light">
+                    <div class="container p-y-s">
+                        <div class="row reveal-fadeup-50 results-top">
+                            <div class="col1of3">
+                                <div class="flex flex-center">
+                                    <div class="w50">
+                                        <span class="text-s m-b-s box-i-block">3 dni temu</span>
+                                        <div class="bg-img-cov h20 m-b-s"
+                                            style="background-image:url('./assets/img/card/1.jpg');">
+                                        </div>
+                                        <a href="#">
+                                            <h3 class="heading-quaternary text-fifth m-b-s">Festiwal produktów lokalnych
+                                            </h3>
+                                        </a>
+                                        <p class="paragraph-primary m-b-s">
+                                            Lokalne produkty to dla mnie gwarancja świeżości i wspaniałego smaku potraw.
+                                            Wybieram
+                                            właśnie takie – których dostarczenie do sklepu zajęło pół godziny...
+                                        </p>
+                                        <a href="" class="btn btn-primary">czytaj dalej...</a>
                                     </div>
-                                    <a href="#">
-                                        <h3 class="heading-quaternary text-fifth m-b-s">Produkty prosto od rolnika</h3>
-                                    </a>
-                                    <p class="paragraph-primary m-b-s">
-                                        Lokalne produkty to dla mnie gwarancja świeżości i wspaniałego smaku potraw.
-                                        Wybieram
-                                        właśnie takie – których dostarczenie do sklepu zajęło pół godziny...
-                                    </p>
-                                    <a href="" class="btn btn-primary">czytaj dalej...</a>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col1of3">
-                            <div class="flex flex-center">
-                                <div class="w50">
-                                    <span class="text-s m-b-s box-i-block">12.09.2023</span>
-                                    <div class="bg-img-cov h20 m-b-s"
-                                        style="background-image:url('./assets/img/card/5.jpg');"></div>
-                                    <a href="#">
-                                        <h3 class="heading-quaternary text-fifth m-b-s">Lokalni przetwórcy owoców
-                                            miękkich
-                                        </h3>
-                                    </a>
-                                    <p class="paragraph-primary m-b-s">
-                                        Lokalne produkty to dla mnie gwarancja świeżości i wspaniałego smaku potraw.
-                                        Wybieram
-                                        właśnie takie – których dostarczenie do sklepu zajęło pół godziny...
-                                    </p>
-                                    <a href="" class="btn btn-primary">czytaj dalej...</a>
+                            <div class="col1of3">
+                                <div class="flex flex-center">
+                                    <div class="w50">
+                                        <span class="text-s m-b-s box-i-block">12.09.2023</span>
+                                        <div class="bg-img-cov h20 m-b-s"
+                                            style="background-image:url('./assets/img/card/2.jpg');"></div>
+                                        <a href="#">
+                                            <h3 class="heading-quaternary text-fifth m-b-s">Ekspozycja na stoisku
+                                                warzywa i
+                                                owoce
+                                            </h3>
+                                        </a>
+                                        <p class="paragraph-primary m-b-s">
+                                            Lokalne produkty to dla mnie gwarancja świeżości i wspaniałego smaku potraw.
+                                            Wybieram
+                                            właśnie takie – których dostarczenie do sklepu zajęło pół godziny...
+                                        </p>
+                                        <a href="" class="btn btn-primary">czytaj dalej...</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col1of3">
-                            <div class="flex flex-center">
-                                <div class="w50">
-                                    <span class="text-s m-b-s box-i-block">05.09.2023</span>
-                                    <div class="bg-img-cov h20 m-b-s"
-                                        style="background-image:url('./assets/img/card/6.jpg');"></div>
-                                    <a href="#">
-                                        <h3 class="heading-quaternary text-fifth m-b-s">Wizyta u Państwa Jabłońskich
-                                        </h3>
-                                    </a>
-                                    <p class="paragraph-primary m-b-s">
-                                        Lokalne produkty to dla mnie gwarancja świeżości i wspaniałego smaku potraw.
-                                        Wybieram
-                                        właśnie takie – których dostarczenie do sklepu zajęło pół godziny...
-                                    </p>
-                                    <a href="" class="btn btn-primary">czytaj dalej...</a>
+                            <div class="col1of3">
+                                <div class="flex flex-center">
+                                    <div class="w50">
+                                        <span class="text-s m-b-s box-i-block">05.09.2023</span>
+                                        <div class="bg-img-cov h20 m-b-s"
+                                            style="background-image:url('./assets/img/card/3.jpg');"></div>
+                                        <a href="#">
+                                            <h3 class="heading-quaternary text-fifth m-b-s">Wksozycja na półkach
+                                                sklepowych
+                                            </h3>
+                                        </a>
+                                        <p class="paragraph-primary m-b-s">
+                                            Lokalne produkty to dla mnie gwarancja świeżości i wspaniałego smaku potraw.
+                                            Wybieram
+                                            właśnie takie – których dostarczenie do sklepu zajęło pół godziny...
+                                        </p>
+                                        <a href="" class="btn btn-primary">czytaj dalej...</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

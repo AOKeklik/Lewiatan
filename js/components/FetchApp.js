@@ -11,22 +11,21 @@ class FetchApp {
 	async controllerLoadResults() {
 		this.executer(renders.renderFilterNames, "filter")
 		this.executer(renders.renderLayoutBtn, "filter")
-		this.executer(renders.renderSpiner, "root")
 
-		await fetchs.loadResults()
+		this.executer(this.renderingData, "root")
+	}
+	async renderingData(parent) {
+		renders.renderSpiner(parent)
+
 		await fetchs.wait(3)
+		await fetchs.loadResults()
 
-		this.executer(state.saveStateObjectByCategory, "root")
+		state.saveStateObjectByCategory(parent)
 
 		sort.sortDataByDate()
 		sort.sortDataByCategory()
 
-		this.executer(
-			renders.renderResults,
-			"root",
-			sort.sortDataByLimit(3)
-		)
-		console.log(state.state)
+		renders.renderResults(parent, sort.sortDataByLimit)
 	}
 	/* configs */
 	events() {

@@ -1,14 +1,15 @@
 import { state } from "./State.js"
 
-export function sortDataByDate(date = state.sortDate) {
+export function sortDataByDate() {
+	const date = state.sortDate
 	let sortedData
 
 	sortedData = state.results.posts
 		.slice()
 		.sort(
 			(a, b) =>
-				new Date(date === 1 ? a.date : b.date) -
-				new Date(date === 1 ? b.date : a.date)
+				new Date(date === 0 ? a.date : b.date) -
+				new Date(date === 0 ? b.date : a.date)
 		)
 
 	state.data = sortedData
@@ -22,7 +23,9 @@ export function sortDataByCategory() {
 			: state.data.slice().filter(el => {
 					return el.categories.some(n => {
 						return (
-							n === state.sortCategories.currentSort
+							n.id ===
+							state.sortCategories.currentCategory
+								.id
 						)
 					})
 			  })
@@ -51,6 +54,7 @@ export function sortDataByPagination(page = state.pagination.page) {
 
 	return newData
 }
-export function sortDataByLimit(limit = -1) {
+export function sortDataByLimit(parent) {
+	const limit = +parent.getAttribute("aria-data-limit") || -1
 	return state.data.slice(0, limit)
 }
