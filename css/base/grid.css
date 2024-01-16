@@ -8,6 +8,10 @@
 	margin: 0 auto;
 	overflow: hidden;
 }
+.gap2 {
+	--gap: 2rem
+	gap: var(var(--gap));
+}
 .row {
 	display: flex;
 	flex-wrap: wrap;
@@ -19,6 +23,9 @@
 }
 .col1of3 {
 	width: calc((100% - (2 * var(--gap))) / 3);
+}
+.col2of3 {
+	width: calc((((100% - (2 * var(--gap))) / 3) * 2) + var(--gap));
 }
 .col1of2 {
 	width: calc((100% - var(--gap)) / 2);
@@ -35,12 +42,15 @@
 	.col1of2 {
 		width: 100%;
 	}
+	.col2of3 {
+		width: calc((100% - var(--gap)) / 2);
+	}
 }
 @media (max-width: 700px) {
-	.row {
-		gap: 5rem;
-	}
 	.col1of3 {
+		width: 100%;
+	}
+	.col2of3 {
 		width: 100%;
 	}
 }

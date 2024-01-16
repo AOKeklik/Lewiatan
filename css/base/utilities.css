@@ -3,6 +3,8 @@
 	margin-right: 2rem;
 	margin-left: 2rem;
 }
+/* prettier-ignore */
+@media (max-width: 1200px) { .m-x-s-l  {margin-left: 2rem; margin-right: 2rem;} }
 .m-y-s {
 	margin-top: 2rem;
 	margin-bottom: 2rem;
@@ -76,12 +78,18 @@
 .h16 {
 	height: 16rem;
 }
-.h20 {
+.h20,
+.h20x30-m {
 	height: 20rem;
 }
 .h24 {
 	height: 24rem;
 }
+.h30 {
+	height: 30rem;
+}
+/* prettier-ignore */
+@media (max-width: 800px) { .h20x30-m {height: 30rem;} }
 /* sizes */
 /* flex */
 .flex,
@@ -112,6 +120,9 @@
 }
 .flex-end {
 	justify-content: end;
+}
+.flex-wrap {
+	flex-wrap: wrap;
 }
 .flex-center-y {
 	align-items: center;
@@ -203,6 +214,9 @@
 }
 .text-center {
 	text-align: center;
+}
+.text-justify {
+	text-align: justify;
 }
 /* prettier-ignore */
 @media (max-width: 700px) { .text-center-m {text-align: center;} }

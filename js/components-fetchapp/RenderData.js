@@ -57,7 +57,9 @@ export function renderSpiner(parent) {
 // 	parentElement.insertAdjacentHTML("afterbegin", renderData)
 // }
 export function renderResults(parentElement, data) {
-	let renderPostsGrid = () => {
+	console.log(state.layout)
+	console.log(data(parentElement))
+	const renderPostsGrid = () => {
 		return data(parentElement)
 			.map(d => {
 				return `<div class="col1of3">
@@ -77,13 +79,58 @@ export function renderResults(parentElement, data) {
 			})
 			.join("")
 	}
-	let renderData = `<div class="container-bigger bg-paper-light">
+	const renderPostsLine = () => {
+		return data(parentElement)
+			.map(d => {
+				return `<div class="container-bigger bg-paper-light m-x-s-l">
+					<div class="container p-y-s">
+						<div class="">
+							<div class="row gap2">
+								<div class="col1of3">
+									<span class="text-s m-b-s box-i-block">${utls.convertedDate(d.date)}</span>
+									<div class="bg-img-cov h20x30-m m-b-s"
+										style="background-image:url('${d.img}');">
+									</div>
+								</div>
+								<div class="col2of3">
+									<a href="${d.link}">
+										<h3 class="heading-quaternary text-fifth m-b-s">${d.title}</h3>
+									</a>
+									<p class="paragraph-primary m-b-s text-justify">${utls.stripHtml(d.content)}</p>
+									<div class="flex flex-wrap flex-between flex-center-y flex-gap2">
+										<span class="">
+										${d.tags
+											.map(
+												el =>
+													`<a href="${el.link}" class="text-s text-secondary">${el.name}</a>`
+											)
+											.join(
+												'<span class="text-s"> | </span>'
+											)}
+										</span>
+										<a href="${d.link}" class="btn btn-primary">czytaj dalej...</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>`
+			})
+			.join("")
+	}
+
+	const renderData =
+		state.layout === 0
+			? `<div class="container-bigger bg-paper-light">
 			<div class="container p-y-s">
-				<div class="row results-top">
+				<div class="row">
 					${renderPostsGrid()}
 				</div>
 			</div>
 		</div>`
+			: `<div class="flex-v flex-gap2"> 
+				${renderPostsLine()}
+			</div>`
 
 	parentElement.innerHTML = ""
 	parentElement.insertAdjacentHTML("afterbegin", renderData)
