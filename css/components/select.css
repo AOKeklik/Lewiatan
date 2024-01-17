@@ -19,6 +19,7 @@
 .select-items {
 	padding: 2rem 0;
 	position: absolute;
+	z-index: 9;
 	top: 3.5rem;
 	display: flex;
 	flex-direction: column;

@@ -35,44 +35,50 @@ class ListBox {
 		})
 	}
 	doBannerList() {
+		const navLinks = document.querySelectorAll(
+			"#menu-header .menu-item a"
+		)
 		const pageLink = window.location.pathname
-		const link = localStorage.getItem("link")
-		if (pageLink !== "/" && !pageLink.startsWith("/tag")) {
-			if (pageLink === "/category/eksperci-w-lokalnosci/") {
-				this.parent.innerHTML = `
-					<span class="text-quaternary">EKSPERCI</span>
-					<span class="text-fifth">W LEWIATANIE</span>
-				`
-				return
-			}
-			if (pageLink === "/category/lokalnosc-w-lewiatanie/") {
-				this.parent.innerHTML = `
+			.split("/")
+			.filter(Boolean)
+			.map(e => e.replace(/\.(php|html)/i, ""))
+		const cat = localStorage.getItem("link")
+
+		console.log(pageLink)
+
+		if (pageLink.length > 0)
+			pageLink.forEach(e => {
+				// console.log(e)
+				console.log(e.includes("lokalnosc-w-lewiatanie"))
+
+				if (
+					e.includes("lokalnosc-w-lewiatanie") ||
+					(cat && cat)
+				) {
+					return (this.parent.innerHTML = `
 					<span class="text-quaternary">LOKALNOŚĆ</span>
 					<span class="text-fifth">W LEWIATANIE</span>
-				`
-				return
-			}
-			if (link && link === "lokalnosc-w-lewiatanie") {
+				`)
+				}
+
+				if (e.includes("eksperci-w-lokalnosci") || (cat && cat))
+					return (this.parent.innerHTML = `
+						<span class="text-quaternary">EKSPERCI</span>
+						<span class="text-fifth">W LEWIATANIE</span>
+				`)
+
 				this.parent.innerHTML = `
-					<span class="text-quaternary">LOKALNOŚĆ</span>
-					<span class="text-fifth">W LEWIATANIE</span>
+					<span class="text-quaternary">NAJLEPSZE PRODUKTY</span>
+					<span class="text-primary">POCHODZĄ</span>
+					<span class="text-secondary">Z NAJBLIŻSZEJ OKOLICY!</span>
 				`
-				return
-			}
-			if (link && link === "eksperci-w-lokalnosci") {
-				this.parent.innerHTML = `
-					<span class="text-quaternary">EKSPERCI</span>
-					<span class="text-fifth">W LEWIATANIE</span>
-				`
-				return
-			}
-		} else {
+			})
+		else
 			this.parent.innerHTML = `
 				<span class="text-quaternary">NAJLEPSZE PRODUKTY</span>
 				<span class="text-primary">POCHODZĄ</span>
 				<span class="text-secondary">Z NAJBLIŻSZEJ OKOLICY!</span>
-			`
-		}
+				`
 	}
 }
 

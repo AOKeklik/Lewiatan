@@ -8,81 +8,36 @@ export function renderSpiner(parent) {
 	parent.innerHTML = ""
 	parent.insertAdjacentHTML("afterbegin", markup)
 }
-// export function renderResults(parentElement, data) {
-// 	if (state.layout === "true") parentElement.classList.remove("bg-paper")
-// 	if (state.layout === "false") parentElement.classList.add("bg-paper")
-// 	const renderData = data
-// 		.map(d => {
-// 			return `<div class="${
-// 				state.layout === "false"
-// 					? "col-1-of-3"
-// 					: "col-1-of-1 bg-paper"
-// 			}">
-// 					<div class="card-header">
-// 						<span class="card-date">${convertedDate(d.date)}</span>
-// 						<div class="card-img" style="background-image:url('${d.img}');"></div>
-// 					</div>
-// 					<div class="card-body">
-// 						<a id="post-link" href="${d.link}" data-cat="${
-// 				d.categories[0]
-// 			}"><h3 class="card-title">${d.title}</h3></a>
-// 						<p class="card-desc">${stripHtml(d.content)}</p>
-// 						<div class="card-btn">
-// 							<p class="card-btn-tags">
-// 								${
-// 									state.layout === "true"
-// 										? d.tags
-// 												.map(
-// 													el =>
-// 														`
-// 												<a href="${el.link}">
-// 													${el.name}
-// 												</a>`
-// 												)
-// 												.join(
-// 													'<span class="card-separator"> | </span>'
-// 												)
-// 										: ""
-// 								}
-// 							</p>
-// 							<a href="${d.link}" class="btn btn-primary">czytaj dalej...</a>
-// 						</div>
-// 					</div>
-// 				</div>
-// 			`
-// 		})
-// 		.join("")
-
-// 	parentElement.innerHTML = ""
-// 	parentElement.insertAdjacentHTML("afterbegin", renderData)
-// }
 export function renderResults(parentElement, data) {
-	console.log(state.layout)
-	console.log(data(parentElement))
 	const renderPostsGrid = () => {
-		return data(parentElement)
-			.map(d => {
-				return `<div class="col1of3">
-					<div class="flex flex-center">
-						<div class="w50">
-							<span class="text-s m-b-s box-i-block">${utls.convertedDate(d.date)}</span>
-							<div class="bg-img-cov h20 m-b-s"
-								style="background-image:url('${d.img}');"></div>
-							<a href="${d.link}">
-								<h3 class="heading-quaternary text-fifth m-b-s">${d.title}</h3>
-							</a>
-							<p class="paragraph-primary m-b-s">${utls.stripHtml(d.content)}</p>
-							<a href="${d.link}" class="btn btn-primary">czytaj dalej...</a>
+		let markup = ``
+		data(parentElement).forEach((d, i) => {
+			if (i % 3 === 0)
+				markup += `<div class="container-bigger bg-paper-light m-b-m"><div class="container p-y-s"><div class="row"> `
+			markup += `<div class="col1of3">
+						<div class="flex flex-center">
+							<div class="w50">
+								<span class="text-s m-b-s box-i-block">${utls.convertedDate(d.date)}</span>
+								<div class="bg-img-cov h20 m-b-s"
+									style="background-image:url('${d.img}');"></div>
+								<a href="${d.link}">
+									<h3 class="heading-quaternary text-fifth m-b-s">${d.title}</h3>
+								</a>
+								<p class="paragraph-primary m-b-s">${utls.stripHtml(d.content)}</p>
+								<a href="${d.link}" class="btn btn-primary">czytaj dalej...</a>
+							</div>
 						</div>
-					</div>
-				</div>`
-			})
-			.join("")
+					</div>`
+			if (i % 3 === 2) markup += `</div></div></div>`
+		})
+
+		return markup
 	}
 	const renderPostsLine = () => {
-		return data(parentElement)
-			.map(d => {
-				return `<div class="container-bigger bg-paper-light m-x-s-l">
+		return `<div class="flex-v flex-gap2"> 		
+			${data(parentElement)
+				.map(d => {
+					return `<div class="container-bigger bg-paper-light m-x-s-l">
 					<div class="container p-y-s">
 						<div class="">
 							<div class="row gap2">
@@ -115,22 +70,13 @@ export function renderResults(parentElement, data) {
 						</div>
 					</div>
 				</div>`
-			})
-			.join("")
+				})
+				.join("")}
+		</div>`
 	}
 
 	const renderData =
-		state.layout === 0
-			? `<div class="container-bigger bg-paper-light">
-			<div class="container p-y-s">
-				<div class="row">
-					${renderPostsGrid()}
-				</div>
-			</div>
-		</div>`
-			: `<div class="flex-v flex-gap2"> 
-				${renderPostsLine()}
-			</div>`
+		state.layout === 0 ? renderPostsGrid() : renderPostsLine()
 
 	parentElement.innerHTML = ""
 	parentElement.insertAdjacentHTML("afterbegin", renderData)

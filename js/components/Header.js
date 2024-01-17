@@ -1,5 +1,6 @@
 class Header {
 	constructor() {
+		/* header */
 		this.navHeader = document.querySelector(".nav")
 		this.navItems = document.querySelectorAll("#menu-header .menu-item")
 		this.navLinks = document.querySelectorAll(
@@ -9,6 +10,12 @@ class Header {
 			".footer-nav .menu-item a"
 		)
 		this.bannerTitle = document.querySelector(".banner-text")
+
+		/* marker */
+		this.nav = document.querySelector("#menu-header")
+		this.marker = document.querySelector(".marker")
+
+		/* events */
 		this.events()
 	}
 	events() {
@@ -20,6 +27,17 @@ class Header {
 			this.addActiveClassOnload.bind(this)()
 			this.addattributeToFooterNavLinks.bind(this)()
 		})
+		/* marker */
+		this.nav.addEventListener(
+			"mouseenter",
+			this.showMarker.bind(this),
+			true
+		)
+		this.nav.addEventListener(
+			"mouseleave",
+			this.showMarker.bind(this),
+			true
+		)
 	}
 	handleEventClickOnNav(e) {
 		this.handleBurgerToggle(e)
@@ -63,29 +81,7 @@ class Header {
 		theNode.classList.toggle("toggle")
 		document.body.classList.toggle("active-nav")
 	}
-}
-new Header()
-
-class Header2 {
-	constructor() {
-		this.nav = document.querySelector("#menu-header")
-		this.marker = document.querySelector(".marker")
-		this.events()
-	}
-
-	events() {
-		this.nav.addEventListener(
-			"mouseenter",
-			this.showMarker.bind(this),
-			true
-		)
-		this.nav.addEventListener(
-			"mouseleave",
-			this.showMarker.bind(this),
-			true
-		)
-	}
-
+	/* marker */
 	showMarker(e) {
 		const theNode = e.target
 
@@ -103,9 +99,9 @@ class Header2 {
 	reLocateMarker(el) {
 		this.marker.style.transformOrigin = "left"
 		this.marker.style.transform = "scaleX(1)"
-		this.marker.style.width = el.offsetWidth + 1 + "px"
+		this.marker.style.width = el.offsetWidth + "px"
 		this.marker.style.height = el.offsetHeight + "px"
-		this.marker.style.left = el.offsetLeft - 1 + "px"
+		this.marker.style.left = el.offsetLeft + "px"
 		this.marker.style.top =
 			el.offsetTop +
 			el.offsetHeight -
@@ -113,5 +109,4 @@ class Header2 {
 			"px"
 	}
 }
-
-new Header2()
+new Header()

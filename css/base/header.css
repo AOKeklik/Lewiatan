@@ -108,10 +108,14 @@
 	backface-visibility: hidden;
 	transition: left 0.3s, transform 0.3s, width 0s;
 	pointer-events: none;
+	box-shadow: 1px 0 0 0 var(--color-secondary),
+		inset 1px 0 0 0 var(--color-secondary);
 }
 /* active */
 .active-item {
 	background-color: var(--color-secondary);
+	box-shadow: 2px 0 0 0 var(--color-secondary),
+		inset 1px 0 0 0 var(--color-secondary);
 }
 /* query */
 @media (max-width: 800px) {
@@ -137,7 +141,7 @@
 		z-index: 999;
 		top: 0;
 		right: -120%;
-		width: 50vh;
+		width: 40vh;
 		height: 100vh;
 
 		display: flex;
@@ -152,7 +156,8 @@
 	.menu-item {
 		width: 100%;
 	}
-	.menu-item a {
+	#menu-header .menu-item a {
+		font-size: x-large;
 		padding-top: 2rem;
 		padding-bottom: 2rem;
 	}
