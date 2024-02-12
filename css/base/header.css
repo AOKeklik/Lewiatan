@@ -95,7 +95,7 @@
 /* marker */
 .menu {
 	position: relative;
-	z-index: 999;
+	z-index: 1;
 }
 .marker {
 	position: absolute;
@@ -108,14 +108,12 @@
 	backface-visibility: hidden;
 	transition: left 0.3s, transform 0.3s, width 0s;
 	pointer-events: none;
-	box-shadow: 1px 0 0 0 var(--color-secondary),
-		inset 1px 0 0 0 var(--color-secondary);
+	box-shadow: 1px 0 0 0 var(--color-secondary), inset 1px 0 0 0 var(--color-secondary);
 }
 /* active */
 .active-item {
 	background-color: var(--color-secondary);
-	box-shadow: 2px 0 0 0 var(--color-secondary),
-		inset 1px 0 0 0 var(--color-secondary);
+	box-shadow: 2px 0 0 0 var(--color-secondary), inset 1px 0 0 0 var(--color-secondary);
 }
 /* query */
 @media (max-width: 800px) {
@@ -133,12 +131,12 @@
 		margin-left: auto;
 		display: block;
 		position: relative;
-		z-index: 9999;
+		z-index: 20;
 	}
 	.nav-menu {
 		display: block;
 		position: absolute;
-		z-index: 999;
+		z-index: 10;
 		top: 0;
 		right: -120%;
 		width: 40vh;

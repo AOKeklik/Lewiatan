@@ -44,13 +44,8 @@ class ListBox {
 			.map(e => e.replace(/\.(php|html)/i, ""))
 		const cat = localStorage.getItem("link")
 
-		console.log(pageLink)
-
 		if (pageLink.length > 0)
 			pageLink.forEach(e => {
-				// console.log(e)
-				console.log(e.includes("lokalnosc-w-lewiatanie"))
-
 				if (
 					e.includes("lokalnosc-w-lewiatanie") ||
 					(cat && cat)

@@ -66,6 +66,7 @@ class SelectOption {
 		theSelectItem.setAttribute("aria-selected", "true")
 	}
 }
+
 const parents = document.querySelectorAll("[role=selectoption]")
 if (parents.length > 0) {
 	parents.forEach(e => new SelectOption(e))

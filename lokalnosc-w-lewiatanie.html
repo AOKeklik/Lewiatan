@@ -71,11 +71,11 @@
         <!-- section sort -->
         <section class="m-b-s">
             <div class="container">
-                <div class="filter" role="filter" aria-filter-date="true" aria-filter-category="false">
+                <div class="filter" role="filter" aria-filter-date="true" aria-filter-category="true">
                     <div role="selectoption" aria-select-type="date">
                         <select aria-select-type="date">
-                            <option value="oldest" selected="selected">Najstarszy</option>
-                            <option value="newest">Najnowsze</option>
+                            <option value="0" selected="selected">Najstarszy</option>
+                            <option value="1">Najnowsze</option>
                         </select>
                         <svg xmlns="http://www.w3.org/2000/svg" class="filter-arrow" viewBox="3 3 17 17">
                             <path d="M18 6.41L16.59 5L12 9.58L7.41 5L6 6.41l6 6z" />
@@ -83,10 +83,11 @@
                         </svg>
                     </div>
 
-                    <div role="selectoption" aria-select-type="date">
-                        <select aria-select-type="date">
-                            <option value="oldest" selected="selected">Najstarszy</option>
-                            <option value="newest">Najnowsze</option>
+                    <div role="selectoption" aria-select-type="category">
+                        <select aria-select-type="category">
+                            <option value="-1" selected="selected">Wszystkie Kategorie</option>
+                            <option value="4">Eksperci w lokalności</option>
+                            <option value="1">Lokalność w Lewiatanie</option>
                         </select>
                         <svg xmlns="http://www.w3.org/2000/svg" class="filter-arrow" viewBox="3 3 17 17">
                             <path d="M18 6.41L16.59 5L12 9.58L7.41 5L6 6.41l6 6z" />
@@ -95,12 +96,12 @@
                     </div>
 
                     <div role="selectlayout" class="flex flex-gap1">
-                        <div aria-controls="line" aria-current="false" class="filter-horizontal">
+                        <div aria-select-type="line" aria-select-id="0" aria-current="false" class="filter-horizontal">
                             <span class="filter-h-line"></span>
                             <span class="filter-h-line"></span>
                             <span class="filter-h-line"></span>
                         </div>
-                        <div aria-controls="grid" aria-current="true" class="filter-grid">
+                        <div aria-select-type="grid" aria-select-id="1" aria-current="true" class="filter-grid">
                             <span class="filter-g-line"></span>
                             <span class="filter-g-line"></span>
                             <span class="filter-g-line"></span>
@@ -117,7 +118,7 @@
         </section>
         <!-- section products -->
         <section class="m-b-s">
-            <div role="root" data-category-id="0" aria-data-limit="10">
+            <div role="root" aria-data-limit="10" class="m-b-m">
                 <div class="container-bigger bg-paper-light">
                     <div class="container p-y-s">
                         <div class="row reveal-fadeup-50 results-top">
@@ -186,69 +187,8 @@
                     </div>
                 </div>
             </div>
-            <!-- <div role="root" data-category-id="1" aria-data-limit="3">
-                <div class="flex-v flex-gap2">
-                    <div class="container-bigger bg-paper-light m-x-s-l">
-                        <div class="container p-y-s">
-                            <div class="reveal-fadeup-50">
-                                <div class="row gap2">
-                                    <div class="col1of3">
-                                        <span class="text-s m-b-s box-i-block">3 dni temu</span>
-                                        <div class="bg-img-cov h20x30-m m-b-s"
-                                            style="background-image:url('./assets/img/card/1.jpg');">
-                                        </div>
-                                    </div>
-                                    <div class="col2of3">
-                                        <a href="#">
-                                            <h3 class="heading-quaternary text-fifth m-b-s">Festiwal produktów
-                                                lokalnych
-                                            </h3>
-                                        </a>
-                                        <p class="paragraph-primary m-b-s text-justify">
-                                            Lokalne produkty to dla mnie gwarancja świeżości i wspaniałego smaku
-                                            potraw.
-                                            Wybieram
-                                            właśnie takie – których dostarczenie do sklepu zajęło pół godziny...
-                                        </p>
-                                        <div class="flex flex-wrap flex-between flex-center-y flex-gap2">
-                                            <span class="text-s text-secondary">owoce i warzywa</span>
-                                            <a href="" class="btn btn-primary">czytaj dalej...</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container-bigger bg-paper-light m-x-s-l">
-                        <div class="container p-y-s">
-                            <div class="reveal-fadeup-50">
-                                <div class="row gap2">
-                                    <div class="col1of3">
-                                        <span class="text-s m-b-s box-i-block">3 dni temu</span>
-                                        <div class="bg-img-cov h20x30-m m-b-s"
-                                            style="background-image:url('./assets/img/card/1.jpg');">
-                                        </div>
-                                    </div>
-                                    <div class="col2of3">
-                                        <a href="#">
-                                            <h3 class="heading-quaternary text-fifth m-b-s">Festiwal produktów
-                                                lokalnych
-                                            </h3>
-                                        </a>
-                                        <p class="paragraph-primary m-b-s text-justify">
-                                            Lokalne produkty to dla mnie gwarancja świeżości i wspaniałego smaku
-                                            potraw.
-                                            Wybieram
-                                            właśnie takie – których dostarczenie do sklepu zajęło pół godziny...
-                                        </p>
-                                        <a href="" class="btn btn-primary">czytaj dalej...</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
+            <div id="pagination" role="pagination" class="pagination">
+            </div>
         </section>
     </main>
     <!-- footer -->

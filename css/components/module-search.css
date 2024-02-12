@@ -1,0 +1,71 @@
+.section-search {
+}
+.module-search--overlay {
+	position: fixed;
+	z-index: 999;
+	inset: 0;
+	background-color: rgba(255, 255, 255, 0.8);
+
+	display: grid;
+	place-items: center;
+
+	visibility: hidden;
+	opacity: 0;
+	transition: 0.3s;
+}
+.module-search--icon {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+}
+.module-search--icon > svg {
+	width: 3em;
+	height: 3rem;
+	fill: var(--color-secondary);
+	cursor: pointer;
+}
+.module-search--control {
+	position: absolute;
+	top: 1rem;
+	left: 50%;
+	transform: translate(-50%);
+	width: 50%;
+}
+.module-search--control input {
+	width: 100%;
+	border: none;
+	padding: 0.6rem;
+	font-size: 1.5rem;
+	color: #777;
+	font-weight: bold;
+	letter-spacing: 0.1rem;
+	z-index: 999;
+}
+
+.module-search--content {
+	overflow-y: auto;
+	position: absolute;
+	top: 4rem;
+	left: 50%;
+	transform: translate(-50%, 0);
+	width: 95%;
+	height: 100vh;
+}
+#module-search--root {
+	width: 100%;
+	max-width: 130rem;
+	margin: 0 auto;
+	margin-top: 4rem;
+	padding-right: 2rem;
+}
+#module-search--pagination {
+	width: 90%;
+	margin: 2rem auto;
+	text-align: center;
+	margin-bottom: 10rem;
+}
+/* js */
+.module-search--overlay.module-search--open {
+	opacity: 1;
+	visibility: visible;
+}

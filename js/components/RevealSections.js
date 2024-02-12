@@ -1,15 +1,3 @@
-// class  {
-// 	constructor () {
-// 		this.events()
-// 	}
-// 	events () {}
-// 	dispatcher () {}
-// }
-// const parents = document.querySelectorAll("[=]")
-// if (parent.length > 0) {
-// 	parents.forEach(e => new ())
-// }
-
 window.onload = function () {
 	const sections = document.querySelectorAll(
 		".reveal-fadeup-50, .reveal-fadeup-10, .reveal-fadeRight-30, .reveal-fadeLeft-30"

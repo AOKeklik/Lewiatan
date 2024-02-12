@@ -1,27 +1,22 @@
 import { POSTS_PER_PAGE } from "./config.js"
 
 /* oldest 0 - newest - 1 */
-/* grid 0 - line - 1 */
+/* line 0 - grid 1 */
 export const state = {
 	data: [],
 	layout: +localStorage.getItem("layout") ?? 0,
 	sortDate: +localStorage.getItem("sortDate") ?? 0,
 	sortCategories: {
 		categories: [],
-		sort: [],
 		currentCategory:
-			JSON.parse(localStorage.getItem("categories")) &&
-			JSON.parse(localStorage.getItem("categories")).currentSort,
-		categoryLength: 0,
-		counter: null,
+			localStorage.getItem("category") === null || localStorage.getItem("category") === "undefined"
+				? { id: -1, name: "Wszystkie Kategorie" }
+				: JSON.parse(localStorage.getItem("category")),
 	},
 	sortTags: {
-		sort: [],
+		tags: [],
 		currentTag:
-			JSON.parse(localStorage.getItem("tags")) &&
-			JSON.parse(localStorage.getItem("tags")).currentSort,
-		tagLength: 0,
-		counter: null,
+			JSON.parse(localStorage.getItem("tags")) && JSON.parse(localStorage.getItem("tags")).currentSort,
 	},
 	pagination: {
 		page: 1,
@@ -40,15 +35,11 @@ export function createStateObject(posts, categories, tags) {
 			link: el.link,
 			date: el.date,
 			categories: el.categories.map(n => {
-				const { id, name, slug, link } = categories.filter(
-					nn => nn.id === n
-				)[0]
+				const { id, name, slug, link } = categories.filter(nn => nn.id === n)[0]
 				return { id, name, slug, link }
 			}),
 			tags: el.tags.map(n => {
-				const { id, name, slug, link } = tags.filter(
-					nn => nn.id === n
-				)[0]
+				const { id, name, slug, link } = tags.filter(nn => nn.id === n)[0]
 				return { id, name, slug, link }
 			}),
 			title: el.title.rendered,
@@ -67,14 +58,11 @@ export function createCategoriesObject(categories) {
 		slug: e.slug,
 		link: e.link,
 	}))
-	newData.categories.push({
-		id: 0,
-		name: "Wszystko",
-	})
+	newData.categories.unshift({ id: -1, name: "Wszystkie Kategorie" })
 	newData.currentCategory =
-		JSON.parse(localStorage.getItem("categories")) &&
-		JSON.parse(localStorage.getItem("categories")).currentCategory
-	newData.categoryLength = categories.length
+		localStorage.getItem("category") === null || localStorage.getItem("category") === "undefined"
+			? { id: -1, name: "Wszystkie Kategorie" }
+			: JSON.parse(localStorage.getItem("category"))
 
 	return newData
 }
@@ -91,8 +79,7 @@ export function createTagsObject(tags) {
 		name: "Wszystko",
 	})
 	newData.currentTag =
-		JSON.parse(localStorage.getItem("tags")) &&
-		JSON.parse(localStorage.getItem("tags")).currentTag
+		JSON.parse(localStorage.getItem("tags")) && JSON.parse(localStorage.getItem("tags")).currentTag
 	newData.tagLength = tags.length
 
 	return newData
@@ -103,18 +90,12 @@ export function saveStateObjectByDate(newDate) {
 	state.sortDate = newDate
 	localStorage.setItem("sortDate", state.sortDate)
 }
-export function saveStateObjectByCategory(parent) {
-	const categoryId = +parent.getAttribute("data-category-id")
-
-	state.sortCategories.currentCategory =
-		state.sortCategories.categories.find(e => {
-			return e.id === categoryId
-		})
-
-	localStorage.setItem(
-		"categories",
-		JSON.stringify(state.sortCategories.currentCategory)
-	)
+export function saveStateObjectByCategory(catID = null) {
+	const theID = catID === null ? -1 : catID
+	state.sortCategories.currentCategory = state.sortCategories.categories.find(e => {
+		return e.id === theID
+	})
+	localStorage.setItem("category", JSON.stringify(state.sortCategories.currentCategory))
 }
 export function saveStateObjectByTag(resetTag = false) {
 	state.sortTags.counter =

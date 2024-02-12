@@ -1,60 +1,54 @@
-import { state } from "./State.js"
+import * as states from "../components-fetchapp/State.js"
+import { HOMEPAGE_LIMIT } from "./config.js"
 
 export function sortDataByDate() {
-	const date = state.sortDate
+	const date = states.state.sortDate
 	let sortedData
 
-	sortedData = state.results.posts
+	sortedData = states.state.results.posts
 		.slice()
-		.sort(
-			(a, b) =>
-				new Date(date === 0 ? a.date : b.date) -
-				new Date(date === 0 ? b.date : a.date)
-		)
+		.sort((a, b) => new Date(date === 0 ? a.date : b.date) - new Date(date === 0 ? b.date : a.date))
 
-	state.data = sortedData
+	states.state.data = sortedData
 }
-export function sortDataByCategory() {
-	let sortedData
+export function sortDataByCategory(catID = null) {
+	const theId = catID ? catID : states.state.sortCategories.currentCategory.id
 
+	let sortedData
 	sortedData =
-		state.sortCategories.currentCategory.id === 0
-			? state.data.slice()
-			: state.data.slice().filter(el => {
+		theId === -1
+			? states.state.data.slice()
+			: states.state.data.slice().filter(el => {
 					return el.categories.some(n => {
-						return (
-							n.id ===
-							state.sortCategories.currentCategory
-								.id
-						)
+						return n.id === theId
 					})
 			  })
 
-	state.data = sortedData
+	states.state.data = sortedData
 }
 export function sortDataByTag() {
 	let sortedData
 
-	sortedData = !state.sortTags.currentSort
-		? state.data.slice()
-		: state.data.slice().filter(el => {
+	sortedData = !states.state.sortTags.currentSort
+		? states.state.data.slice()
+		: states.state.data.slice().filter(el => {
 				return el.tags.some(n => {
-					return n.name === state.sortTags.currentSort
+					return n.name === states.state.sortTags.currentSort
 				})
 		  })
 
-	state.data = sortedData
+	states.state.data = sortedData
 }
-export function sortDataByPagination(page = state.pagination.page) {
-	state.pagination.page = page
+export function sortDataByPagination(page = states.state.pagination.page) {
+	states.state.pagination.page = page
 
-	const end = page * state.pagination.resultsPerPage
-	const start = (page - 1) * state.pagination.resultsPerPage
-	const newData = state.data.slice(start, end)
+	const end = page * states.state.pagination.resultsPerPage
+	const start = (page - 1) * states.state.pagination.resultsPerPage
+	const newData = states.state.data.slice(start, end)
 
 	return newData
 }
-export function sortDataByLimit(parent) {
-	const limit = +parent.getAttribute("aria-data-limit") || -1
-	return state.data.slice(0, limit)
+export function sortDataByLimit() {
+	const limit = HOMEPAGE_LIMIT || -1
+	return states.state.data.slice(0, limit)
 }
