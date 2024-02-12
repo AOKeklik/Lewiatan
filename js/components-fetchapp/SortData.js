@@ -39,13 +39,14 @@ export function sortDataByTag() {
 
 	states.state.data = sortedData
 }
-export function sortDataByPagination(page = states.state.pagination.page) {
+export function sortDataByPagination(page = states.state.pagination.page, dataOnly = null) {
 	states.state.pagination.page = page
 
 	const end = page * states.state.pagination.resultsPerPage
 	const start = (page - 1) * states.state.pagination.resultsPerPage
 	const newData = states.state.data.slice(start, end)
 
+	if (dataOnly !== null) return states.state.data
 	return newData
 }
 export function sortDataByLimit() {

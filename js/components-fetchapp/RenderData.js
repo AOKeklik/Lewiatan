@@ -113,7 +113,7 @@ export function renderPagination(parentElement) {
 	const pagePrev = pageCurrent - 1
 	const pageNext = pageCurrent + 1
 
-	let markup
+	let markup = ""
 
 	if (pageCurrent === 1 && pageLength > 1)
 		markup = `

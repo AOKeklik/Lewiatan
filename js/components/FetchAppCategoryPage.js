@@ -6,11 +6,7 @@ import {
 	renderResults,
 	renderSpiner,
 } from "../components-fetchapp/RenderData.js"
-import {
-	sortDataByCategory,
-	sortDataByDate,
-	sortDataByPagination,
-} from "../components-fetchapp/SortData.js"
+import { sortDataByCategory, sortDataByDate, sortDataByPagination } from "../components-fetchapp/SortData.js"
 import {
 	saveStateObjectByCategory,
 	saveStateObjectByDate,
@@ -122,10 +118,7 @@ function executeClickEvents(e) {
 	if (theNode.closest(".filter-date")) controllerLoadResultsByDate()
 	if (theNode.closest(".filter-cat")) controllerLoadResultsByCategory()
 
-	if (
-		theNode.closest(".filter-grid") ||
-		theNode.closest(".filter-horizontal")
-	) {
+	if (theNode.closest(".filter-grid") || theNode.closest(".filter-horizontal")) {
 		controllerLayout()
 	}
 }
