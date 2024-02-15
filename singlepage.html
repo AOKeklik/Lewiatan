@@ -9,14 +9,15 @@
 </head>
 
 <body>
+    <!-- header -->
     <header class="header">
         <nav class="nav">
             <div class="nav-menu">
                 <ul id="menu-header" class="menu">
                     <span class="marker"></span>
-                    <li class="menu-item"><a href="">Blog</a></li>
-                    <li class="menu-item active-item"><a href="">Lokalność w Lewiatanie</a></li>
-                    <li class="menu-item"><a href="">Eksperci w lokalności</a></li>
+                    <li class="menu-item active-item"><a href="/">Blog</a></li>
+                    <li class="menu-item"><a href="lokalnosc-w-lewiatanie.html">Lokalność w Lewiatanie</a></li>
+                    <li class="menu-item"><a href="eksperci-w-lokalnosci.html">Eksperci w lokalności</a></li>
                 </ul>
             </div>
             <form class="nav-search">
@@ -24,28 +25,18 @@
                 <input type="text" class="nav-search--input">
             </form>
             <div class="nav-social">
-                <a href="https://www.facebook.com" target="_blank">
-                    <svg class="nav-social--icon nav-social--icon-f" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path
-                            d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5Z" />
-                    </svg>
-                </a>
-                <a href="https://www.linkedin.com" target="_blank">
-                    <svg class="nav-social--icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path
-                            d="M6.94 5a2 2 0 1 1-4-.002a2 2 0 0 1 4 .002ZM7 8.48H3V21h4V8.48Zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68Z" />
-                    </svg>
-                </a>
-                <a href="https://www.youtube.com/c/GotujeZLewiatanem" target="_blank" class="nav-social--icon-y">
-                    <svg class="nav-social--icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M12.244 4c.534.003 1.87.016 3.29.073l.504.022c1.429.067 2.857.183 3.566.38c.945.266 1.687 1.04 1.938 2.022c.4 1.56.45 4.602.456 5.339l.001.152v.174c-.007.737-.057 3.78-.457 5.339c-.254.985-.997 1.76-1.938 2.022c-.709.197-2.137.313-3.566.38l-.504.023c-1.42.056-2.756.07-3.29.072l-.235.001h-.255c-1.13-.007-5.856-.058-7.36-.476c-.944-.266-1.687-1.04-1.938-2.022c-.4-1.56-.45-4.602-.456-5.339v-.326c.006-.737.056-3.78.456-5.339c.254-.985.997-1.76 1.939-2.021c1.503-.419 6.23-.47 7.36-.476h.489ZM9.999 8.5v7l6-3.5l-6-3.5Z"/>
-                    </svg>
-                </a>
-                <a href=" https://www.instagram.com/gotuje_z_lewiatanem" target="_blank" class="nav-social--icon-i">
-                    <svg class="nav-social--icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15">
-                        <path d="M7.5 5a2.5 2.5 0 1 0 0 5a2.5 2.5 0 0 0 0-5Z"/><path d="M4.5 0A4.5 4.5 0 0 0 0 4.5v6A4.5 4.5 0 0 0 4.5 15h6a4.5 4.5 0 0 0 4.5-4.5v-6A4.5 4.5 0 0 0 10.5 0h-6ZM4 7.5a3.5 3.5 0 1 1 7 0a3.5 3.5 0 0 1-7 0ZM11 4h1V3h-1v1Z" clip-rule="evenodd"/>
-                    </svg>
-                </a>
+                <svg class="icon-m icon-white">
+                    <use href="./assets/icons.svg#icon-facebook" />
+                </svg>
+                <svg class="icon-m icon-white">
+                    <use href="./assets/icons.svg#icon-linkedin" />
+                </svg>
+                <svg class="icon-m icon-white">
+                    <use href="./assets/icons.svg#icon-youtube" />
+                </svg>
+                <svg class="icon-m icon-white">
+                    <use href="./assets/icons.svg#icon-instagram" />
+                </svg>
             </div>
             <div class="nav-burger">
                 <span class="nav-line1"></span>
@@ -54,132 +45,159 @@
             </div>
         </nav>
     </header>
-    <div class="section-hero">
+    <!-- hero section -->
+    <section class="section-hero">
         <ul class="slider">
-            <li style="background-image: url('./img/slider/1.jpg');"></li>
-            <li style="background-image: url('./img/slider/2.jpg');"></li>
-            <li style="background-image: url('./img/slider/3.jpg');"></li>
-            <li style="background-image: url('./img/slider/4.jpg');"></li>
+            <li style="background-image: url('./assets/img/slider/1.jpg');"></li>
+            <li style="background-image: url('./assets/img/slider/2.jpg');"></li>
+            <li style="background-image: url('./assets/img/slider/3.jpg');"></li>
+            <li style="background-image: url('./assets/img/slider/4.jpg');"></li>
         </ul>
-    </div>
-    <div class="section-banner">
+    </section>
+    <!-- banner section -->
+    <section class="bg-paper-light p-y-s">
         <div class="container">
             <div class="banner">
                 <figure class="banner-image reveal-fadeRight-30">
-                    <img src="./img/banner/banner-image.jpg" alt="">
+                    <img src="./assets/img/banner/banner-image.jpg" alt="">
                 </figure>
-                <h1 class="banner-text heading-primary text-bigger reveal-fadeLeft-30">
-                    <span class="color-quaternary">LOKALNOŚĆ</span>
-                    <span class="color-fifth">W LEWIATANIE</span>
-                </h1>
-            </div>
-        </div>
-    </div>
-    <main class="main">
-        <section class="section-product-lists">
-            <div class="container text-right p-b-s p-x-s">
-                <a href="#" class="btn btn-arrow">
-                    Powrót do listy artykułów
-                    <svg xmlns="http://www.w3.org/2000/svg" class="btn-arrow-icon-right" viewBox="3 3 17 17">
-                        <path d="M17.59 18L19 16.59L14.42 12L19 7.41L17.59 6l-6 6z" />
-                        <path d="m11 18l1.41-1.41L7.83 12l4.58-4.59L11 6l-6 6z" />
-                    </svg>
-                </a>
-            </div>
-            <div class="grid m-b-s">
-                <div class="row">
-                    <div class="col-1-of-1 bg-paper reveal-fadeup-10">
-                        <div class="singlepage">
-                            <h1 class="heading-primary-bigger color-fifth m-b-m">Ekspozycja na stoisku warzywa i owoce
-                            </h1>
-                            <div class="singlepage-column m-b-s">
-                                <p class="singlepage-text">
-                                    Lokalne produkty to dla mnie gwarancja świeżości i wspaniałego smaku potraw.
-                                    Wybieram właśnie takie – których dostarczenie do sklepu zajęło pół godziny. Po co
-                                    mam kupować produkty transportowane tysiące kilometrów, skoro w Lewiatanie znajduję
-                                    lokalne perełki?Bus deriaep ratur? Aperum et latinul labore, ium rest, quias
-                                    disincture, aliquibusdae dolorec escipici odi odigniat mos eos aditi nimusa.
-                                    Vestibulum vel urna eu enim rhoncus pretium eu lobortis sem. Pellentesque eu est
-                                    mauris. Praesent nibh urna, feugiat et ultricies quis, tincidunt eu tellus. Donec
-                                    cursus, enim pharetra varius efficitur, ante ex feugiat sapien, in vestibulum arcu
-                                    odio nec augue. Nunc volutpat eu mi euismod vestibulum.
-                                </p>
-                                <div class="singlepage-img">
-                                    <img src="./img/card/1.jpg" alt="">
-                                </div>
-                            </div>
-                            <p class="singlepage-text m-b-m">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit urna elit, at
-                                facilisis ligula ornare in. Sed tincidunt elementum sapien, sit amet ornare lectus
-                                iaculis sit amet. Cras tincidunt leo non purus congue congue ut it amet odio. Maecenas
-                                ultrices nunc id felis mattis tincidunt. Nam in felis ut justo feugiat semper. Duis a
-                                ultrices est. Nunc condimentum dolor in magna vestibulum eleifend. Etiam et metus et
-                                lacus aliquam fermentum at quis dolor.Nullam volutpat felis lacus, sagittis posuere urna
-                                finibus et.
-                            </p>
-                            <h1 class="heading-primary-bigger color-fifth m-b-m">Co jest najważniejsze!</h1>
-                            <p class="singlepage-text m-b-m">
-                                Quisque mauris massa, fringilla iaculis scelerisque at, sagittis luctus lacus. Nam
-                                viverra, dui nec molestie ultricies, felis erat fringilla lorem, eu porttitor massa
-                                lorem aliquam turpis. Vestibulum vel urna eu enim rhoncus retium eu lobortis sem.
-                                Pellentesque eu est mauris. Praesent nibh urna, feugiat et ultricies quis, tincidunt eu
-                                tellus. Donec cursus, enim pharetra varius efficitur, ante ex feugiat sapien, in
-                                vestibulum arcu odio nec augue. Nunc volutpat eu mi euismod vestibulum.
-                            </p>
-                            <p class="singlepage-text m-b-m">
-                                Vivamus auctor nunc vitae massa sodales ultrices. Mauris euismod sapien sit amet porta
-                                cursus. Sed blandit enim suscipit massa gravida, a porta dolor faucibus. Suspendisse
-                                velit libero, faucibus sit amet justo id, tristique feugiat magna. Aenean cursus diam
-                                ligula, et dapibus ligula ultrices quis. Aliquam tempor sit amet tellus sed tincidunt.
-                                Nulla egestas nulla nec purus sodales, quis elementum quam cursus. Etiam commodo augue
-                                sit amet malesuada dictum. Maecenas commodo, tellus ut posuere vehicula, nulla enim
-                                aliquet nisl, ac placerat ex mauris in nibh. Quisque eu felis sed tempor consequat.
-                                Fusce porttitor at velit fringilla cursus. In vel lacinia sapien.
-                            </p>
-                            <div class="singlepage-column m-b-s">
-                                <div class="singlepage-img">
-                                    <img src="./img/card/1.jpg" alt="">
-                                </div>
-                                <p class="singlepage-text">
-                                    Lokalne produkty to dla mnie gwarancja świeżości i wspaniałego smaku potraw.
-                                    Wybieram właśnie takie – których dostarczenie do sklepu zajęło pół godziny. Po co
-                                    mam kupować produkty transportowane tysiące kilometrów, skoro w Lewiatanie znajduję
-                                    lokalne perełki?Bus deriaep ratur? Aperum et latinul labore, ium rest, quias
-                                    disincture, aliquibusdae dolorec escipici odi odigniat mos eos aditi nimusa.
-                                    Vestibulum vel urna eu enim rhoncus pretium eu lobortis sem. Pellentesque eu est
-                                    mauris. Praesent nibh urna, feugiat et ultricies quis, tincidunt eu tellus. Donec
-                                    cursus, enim pharetra varius efficitur, ante ex feugiat sapien, in vestibulum arcu
-                                    odio nec augue. Nunc volutpat eu mi euismod vestibulum.
-                                </p>
-                            </div>
-                            <p class="singlepage-text">
-                                Lokalne produkty to dla mnie gwarancja świeżości i wspaniałego smaku potraw. Wybieram
-                                właśnie takie – których dostarczenie do sklepu zajęło pół godziny. Po co mam kupować
-                                produkty transportowane tysiące kilometrów, skoro w Lewiatanie znajduję lokalne
-                                perełki?Bus deriaep ratur? Aperum et latinul labore, ium rest, quias disincture,
-                                aliquibusdae dolorec escipici odi odigniat mos eos aditi nimusa. Vestibulum vel urna eu
-                                enim rhoncus pretium eu lobortis sem. Pellentesque eu est mauris. Praesent nibh urna,
-                                feugiat et ultricies quis, tincidunt eu tellus. Donec cursus, enim pharetra varius
-                                efficitur, ante ex feugiat sapien, in vestibulum arcu odio nec augue. Nunc volutpat eu
-                                mi euismod vestibulum.
-                            </p>
-                        </div>
-                    </div>
+                <div role="banner-text" aria-type="single-page" class="flex-v flex-end-v reveal-fadeLeft-30">
                 </div>
             </div>
-            <div class="container text-right p-b-s p-x-s">
-                <p class="heading-primary text-float color-primary">Powiązane artykuły</p>
-                <a href="#" class="btn btn-arrow">
+        </div>
+    </section>
+    <!-- main -->
+    <main class="bg-paper p-b-l">
+        <!-- go back section -->
+        <section class="m-b-s">
+            <div class="container text-right">
+                <a href="#" class="btn btn-arrow-reverse">
                     Powrót do listy artykułów
-                    <svg xmlns="http://www.w3.org/2000/svg" class="btn-arrow-icon-right" viewBox="3 3 17 17">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 17 17">
                         <path d="M17.59 18L19 16.59L14.42 12L19 7.41L17.59 6l-6 6z" />
                         <path d="m11 18l1.41-1.41L7.83 12l4.58-4.59L11 6l-6 6z" />
                     </svg>
                 </a>
             </div>
-            <div class="grid m-b-l">
+        </section>
+        <!-- post -->
+        <section class="p-b-m">
+            <div class="container-bigger bg-paper-light">
+                <div class="container p-y-s">
+                    <h1 class="heading-primary-bigger text-fifth m-b-m reveal-fadeup-100">
+                        Ekspozycja na stoisku warzywa i owoce
+                    </h1>
+                    <div class="row gap4 m-b-s">
+                        <p class="col1of2 paragraph-primary reveal-fadeRight-30">
+                            Lokalne produkty to dla mnie gwarancja świeżości i wspaniałego smaku potraw.
+                            Wybieram właśnie takie – których dostarczenie do sklepu zajęło pół godziny. Po
+                            co
+                            mam kupować produkty transportowane tysiące kilometrów, skoro w Lewiatanie
+                            znajduję
+                            lokalne perełki?Bus deriaep ratur? Aperum et latinul labore, ium rest, quias
+                            disincture, aliquibusdae dolorec escipici odi odigniat mos eos aditi nimusa.
+                            Vestibulum vel urna eu enim rhoncus pretium eu lobortis sem. Pellentesque eu est
+                            mauris. Praesent nibh urna, feugiat et ultricies quis, tincidunt eu tellus.
+                            Donec
+                            cursus, enim pharetra varius efficitur, ante ex feugiat sapien, in vestibulum
+                            arcu
+                            odio nec augue. Nunc volutpat eu mi euismod vestibulum.
+                        </p>
+                        <div class="col1of2 reveal-fadeLeft-30">
+                            <img src="./assets/img/card/1.jpg" alt="" class="img">
+                        </div>
+                    </div>
+                    <p class="paragraph-primary m-b-m">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit urna elit,
+                        at
+                        facilisis ligula ornare in. Sed tincidunt elementum sapien, sit amet ornare lectus
+                        iaculis sit amet. Cras tincidunt leo non purus congue congue ut it amet odio.
+                        Maecenas
+                        ultrices nunc id felis mattis tincidunt. Nam in felis ut justo feugiat semper. Duis
+                        a
+                        ultrices est. Nunc condimentum dolor in magna vestibulum eleifend. Etiam et metus et
+                        lacus aliquam fermentum at quis dolor.Nullam volutpat felis lacus, sagittis posuere
+                        urna
+                        finibus et.
+                    </p>
+                    <h1 class="heading-primary-bigger text-fifth m-b-m">Co jest najważniejsze!</h1>
+                    <p class="paragraph-primary m-b-m">
+                        Quisque mauris massa, fringilla iaculis scelerisque at, sagittis luctus lacus. Nam
+                        viverra, dui nec molestie ultricies, felis erat fringilla lorem, eu porttitor massa
+                        lorem aliquam turpis. Vestibulum vel urna eu enim rhoncus retium eu lobortis sem.
+                        Pellentesque eu est mauris. Praesent nibh urna, feugiat et ultricies quis, tincidunt
+                        eu
+                        tellus. Donec cursus, enim pharetra varius efficitur, ante ex feugiat sapien, in
+                        vestibulum arcu odio nec augue. Nunc volutpat eu mi euismod vestibulum.
+                    </p>
+                    <p class="paragraph-primary m-b-m">
+                        Vivamus auctor nunc vitae massa sodales ultrices. Mauris euismod sapien sit amet
+                        porta
+                        cursus. Sed blandit enim suscipit massa gravida, a porta dolor faucibus. Suspendisse
+                        velit libero, faucibus sit amet justo id, tristique feugiat magna. Aenean cursus
+                        diam
+                        ligula, et dapibus ligula ultrices quis. Aliquam tempor sit amet tellus sed
+                        tincidunt.
+                        Nulla egestas nulla nec purus sodales, quis elementum quam cursus. Etiam commodo
+                        augue
+                        sit amet malesuada dictum. Maecenas commodo, tellus ut posuere vehicula, nulla enim
+                        aliquet nisl, ac placerat ex mauris in nibh. Quisque eu felis sed tempor consequat.
+                        Fusce porttitor at velit fringilla cursus. In vel lacinia sapien.
+                    </p>
+                    <div class="row gap4 m-b-s">
+                        <div class="col1of2">
+                            <img src="./assets/img/card/2.jpg" alt="" class="img">
+                        </div>
+                        <p class="col1of2 paragraph-primary">
+                            Lokalne produkty to dla mnie gwarancja świeżości i wspaniałego smaku potraw.
+                            Wybieram właśnie takie – których dostarczenie do sklepu zajęło pół godziny. Po
+                            co
+                            mam kupować produkty transportowane tysiące kilometrów, skoro w Lewiatanie
+                            znajduję
+                            lokalne perełki?Bus deriaep ratur? Aperum et latinul labore, ium rest, quias
+                            disincture, aliquibusdae dolorec escipici odi odigniat mos eos aditi nimusa.
+                            Vestibulum vel urna eu enim rhoncus pretium eu lobortis sem. Pellentesque eu est
+                            mauris. Praesent nibh urna, feugiat et ultricies quis, tincidunt eu tellus.
+                            Donec
+                            cursus, enim pharetra varius efficitur, ante ex feugiat sapien, in vestibulum
+                            arcu
+                            odio nec augue. Nunc volutpat eu mi euismod vestibulum.
+                        </p>
+                    </div>
+                    <p class="singlepage-text">
+                        Lokalne produkty to dla mnie gwarancja świeżości i wspaniałego smaku potraw.
+                        Wybieram
+                        właśnie takie – których dostarczenie do sklepu zajęło pół godziny. Po co mam kupować
+                        produkty transportowane tysiące kilometrów, skoro w Lewiatanie znajduję lokalne
+                        perełki?Bus deriaep ratur? Aperum et latinul labore, ium rest, quias disincture,
+                        aliquibusdae dolorec escipici odi odigniat mos eos aditi nimusa. Vestibulum vel urna
+                        eu
+                        enim rhoncus pretium eu lobortis sem. Pellentesque eu est mauris. Praesent nibh
+                        urna,
+                        feugiat et ultricies quis, tincidunt eu tellus. Donec cursus, enim pharetra varius
+                        efficitur, ante ex feugiat sapien, in vestibulum arcu odio nec augue. Nunc volutpat
+                        eu
+                        mi euismod vestibulum.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container text-right p-b-s p-x-s">
+                <p class="heading-primary text-float text-primary">Powiązane artykuły</p>
+                <a href="#" class="btn btn-arrow-reverse">
+                    Powrót do listy artykułów
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 17 17">
+                        <path d="M17.59 18L19 16.59L14.42 12L19 7.41L17.59 6l-6 6z" />
+                        <path d="m11 18l1.41-1.41L7.83 12l4.58-4.59L11 6l-6 6z" />
+                    </svg>
+                </a>
+            </div>
+        </section>
+        <section>
+            <div class="container-bigger bg-paper-light">
                 <div class="row">
-                    <div class="col-1-of-1 bg-paper reveal-fadeup-50">
+                    <div class="col1of2 bg-paper reveal-fadeup-50">
                         <div class="card-header">
                             <span class="card-date">3 dni temu</span>
                             <div class="card-img" style="background-image:url('./img/card/1.jpg');"></div>
@@ -205,35 +223,34 @@
             </div>
         </section>
     </main>
-    <footer class="footer">
-        <div class="container footer-wrap m-b-m">
-            <div class="footer-text reveal-fadeRight-30">
-                <h3 class="heading-tertiary m-b-s">Lewiatan Holding S.A.</h3>
-                <p class="footer-adress">
-                    Lewiatan Holding S.A.
-                    <br />
-                    ul. Kilińskiego 10
-                    <br />
-                    87-800 Włocławek
-                </p>
-                <p class="footer-adress">
-                    telefon: +48 54 412 78 21
-                    <br />
-                    e-mail: sekretariat@lewiatan.pl
-                </p>
-                <p class="footer-adress">
-                    Kontakt dla mediów:
-                    <br />
-                    Adam Imielski: adam.imielski@lewiatan.pl
-                </p>
-            </div>
-            <div class="footer-logo reveal-fadeLeft-30">
-                <div class="footer-img bg-image" style="background-image: url('./img/footer/footer-logo.png');"></div>
+    <!-- footer -->
+    <footer class="bg-paper-blue p-t-m">
+        <div class="container m-b-m">
+            <div class="row">
+                <div class="col1of2 flex flex-center-m flex-1-m reveal-fadeRight-30">
+                    <div>
+                        <h3 class="heading-tertiary m-b-s">Lewiatan Holding S.A.</h3>
+                        <p role="listbox" data-item="span" class="flex-v flex-gap1 text-xs text-white m-b-s">
+                            Lewiatan Holding S.A., ul. Kilińskiego 10, 87-800 Włocławek
+                        </p>
+                        <p role="listbox" data-item="span" class="flex-v flex-gap1 text-xs text-white m-b-s">
+                            telefon: +48 54 412 78 21, e-mail: sekretariat@lewiatan.pl
+                        </p>
+                        <p role="listbox" data-item="span" class="flex-v flex-gap1 text-xs text-white">
+                            Kontakt dla mediów:, Adam Imielski: adam.imielski@lewiatan.pl
+                        </p>
+                    </div>
+                </div>
+                <div class="col1of2 flex flex-end flex-center-m flex-center-y flex-0-m reveal-fadeLeft-30">
+                    <div class="bg-img-con h15 w30"
+                        style="background-image: url('./assets/img/footer/footer-logo.png');">
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="footer-nav bg-primary">
-            <div class="container">
-                <ul class="menu">
+        <div class="bg-primary">
+            <div class="container p-y-s ">
+                <ul id="menu-footer" class="menu flex-center-x">
                     <li class="menu-item"><a href="">www.lewiatan.pl</a></li>
                     <li class="menu-item"><a href="">www.gotujezlewiatanem.pl</a></li>
                     <li class="menu-item"><a href="">www.mojlewiatan.pl</a></li>

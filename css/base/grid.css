@@ -9,8 +9,12 @@
 	overflow: hidden;
 }
 .gap2 {
-	--gap: 2rem
-	gap: var(var(--gap));
+	--gap: 2rem;
+	gap: var(--gap);
+}
+.gap4 {
+	--gap: 4rem;
+	gap: var(--gap);
 }
 .row {
 	display: flex;

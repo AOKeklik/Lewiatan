@@ -7,8 +7,8 @@
 @import "./components/select.css";
 @import "./components/banner.css";
 @import "./components/slider.css";
+@import "./components/btn.css";
 /* base */
-@import "./base/btn.css";
 @import "./base/grid.css";
 @import "./base/veriables.css";
 @import "./base/base.css";

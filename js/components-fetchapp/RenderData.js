@@ -1,6 +1,5 @@
 import { state } from "./State.js"
 import * as utls from "./Utilities.js"
-import * as fetchs from "../components-fetchapp/FetchData.js"
 
 export function renderSpiner(parent) {
 	const markup = `<div class="p-y-l flex flex-center">
@@ -21,11 +20,11 @@ export function renderResults(parentElement, data) {
 								<span class="text-s m-b-s box-i-block">${utls.convertedDate(d.date)}</span>
 								<div class="bg-img-cov h20 m-b-s"
 									style="background-image:url('${d.img}');"></div>
-								<a href="${d.link}">
+								<a href="${d.link}?id=${d.id}">
 									<h3 class="heading-quaternary text-fifth m-b-s">${d.title}</h3>
 								</a>
 								<p class="paragraph-primary m-b-s">${utls.stripHtml(d.content)}</p>
-								<a href="${d.link}" class="btn btn-primary">czytaj dalej...</a>
+								<a href="${d.link}?id=${d.id}" class="btn btn-primary">czytaj dalej...</a>
 							</div>
 						</div>
 					</div>`
@@ -49,7 +48,7 @@ export function renderResults(parentElement, data) {
 									</div>
 								</div>
 								<div class="col2of3">
-									<a href="${d.link}">
+									<a href="${d.link}?id=${d.id}">
 										<h3 class="heading-quaternary text-fifth m-b-s">${d.title}</h3>
 									</a>
 									<p class="paragraph-primary m-b-s text-justify">${utls.stripHtml(d.content)}</p>
@@ -62,7 +61,7 @@ export function renderResults(parentElement, data) {
 											)
 											.join('<span class="text-s"> | </span>')}
 										</span>
-										<a href="${d.link}" class="btn btn-primary">czytaj dalej...</a>
+										<a href="${d.link}?id=${d.id}" class="btn btn-primary">czytaj dalej...</a>
 									</div>
 								</div>
 							</div>
@@ -93,7 +92,7 @@ export function renderSearchResults(parentElement, data) {
 							</div>
 							<div class="col2of3">
 								<span class="text-s m-b-s box-i-block">${utls.convertedDate(d.date)}</span>
-								<a href="${d.link}">
+								<a href="${d.link}?id=${d.id}">
 									<h3 class="heading-tertiary text-fifth m-b-s text-s">${d.title}</h3>
 									<p class="paragraph-primary m-b-s">${utls.stripHtml(d.content, 60)}</p>
 								</a>

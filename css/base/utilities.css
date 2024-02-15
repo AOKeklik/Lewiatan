@@ -121,6 +121,9 @@
 .flex-end {
 	justify-content: end;
 }
+.flex-end-v {
+	align-items: end;
+}
 .flex-wrap {
 	flex-wrap: wrap;
 }
@@ -143,6 +146,12 @@
 }
 /* box */
 /* icon */
+.img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
 .icon-s,
 .icon-m,
 .icon-l {

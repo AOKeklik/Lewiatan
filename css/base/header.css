@@ -162,6 +162,12 @@
 	.active-nav .nav-menu {
 		right: 0%;
 	}
+	#menu-footer.menu {
+		gap: 1rem;
+	}
+	#menu-footer .menu-item a {
+		font-size: large;
+	}
 	body.active-nav {
 		overflow-y: hidden;
 	}

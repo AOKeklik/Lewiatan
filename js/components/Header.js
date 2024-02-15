@@ -3,12 +3,8 @@ class Header {
 		/* header */
 		this.navHeader = document.querySelector(".nav")
 		this.navItems = document.querySelectorAll("#menu-header .menu-item")
-		this.navLinks = document.querySelectorAll(
-			"#menu-header .menu-item a"
-		)
-		this.footerNav = document.querySelectorAll(
-			".footer-nav .menu-item a"
-		)
+		this.navLinks = document.querySelectorAll("#menu-header .menu-item a")
+		this.footerNav = document.querySelectorAll("#menu-footer .menu-item a")
 		this.bannerTitle = document.querySelector(".banner-text")
 
 		/* marker */
@@ -19,25 +15,14 @@ class Header {
 		this.events()
 	}
 	events() {
-		this.navHeader.addEventListener(
-			"click",
-			this.handleEventClickOnNav.bind(this)
-		)
-		window.addEventListener("load", () => {
+		this.navHeader.addEventListener("click", this.handleEventClickOnNav.bind(this))
+		window.addEventListener("DOMContentLoaded", () => {
 			this.addActiveClassOnload.bind(this)()
 			this.addattributeToFooterNavLinks.bind(this)()
 		})
 		/* marker */
-		this.nav.addEventListener(
-			"mouseenter",
-			this.showMarker.bind(this),
-			true
-		)
-		this.nav.addEventListener(
-			"mouseleave",
-			this.showMarker.bind(this),
-			true
-		)
+		this.nav.addEventListener("mouseenter", this.showMarker.bind(this), true)
+		this.nav.addEventListener("mouseleave", this.showMarker.bind(this), true)
 	}
 	handleEventClickOnNav(e) {
 		this.handleBurgerToggle(e)
@@ -53,20 +38,15 @@ class Header {
 		theNode.classList.add("active-item")
 	}
 	addActiveClassOnload() {
-		let currentPath = window.location.pathname
-			.split("/")
-			.filter(Boolean)
+		let currentPath = window.location.pathname.split("/").filter(Boolean)
 		currentPath = currentPath.map(e => e.replace(/\.(html|php)/, ""))
 
 		this.navItems.forEach((el, _, arr) => {
 			el.classList.remove("active-item")
 			const link = el.querySelector("a")
 
-			if (currentPath.length === 0)
-				return arr[0].classList.add("active-item")
-
-			if (link.href.includes(currentPath[0]))
-				el.classList.add("active-item")
+			if (currentPath.length === 0) return arr[0].classList.add("active-item")
+			if (link.href.includes(currentPath.slice(-1))) el.classList.add("active-item")
 		})
 	}
 	addattributeToFooterNavLinks() {
@@ -102,11 +82,7 @@ class Header {
 		this.marker.style.width = el.offsetWidth + "px"
 		this.marker.style.height = el.offsetHeight + "px"
 		this.marker.style.left = el.offsetLeft + "px"
-		this.marker.style.top =
-			el.offsetTop +
-			el.offsetHeight -
-			this.marker.offsetHeight +
-			"px"
+		this.marker.style.top = el.offsetTop + el.offsetHeight - this.marker.offsetHeight + "px"
 	}
 }
 new Header()

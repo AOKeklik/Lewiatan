@@ -1,3 +1,4 @@
+import "./components/BannerText.js"
 import "./components/ModalSearch.js"
 import "./components/Header.js"
 import "./components/ListBox.js"
@@ -7,11 +8,3 @@ import "./components/RevealSections.js"
 
 import "./pages/HomePage.js"
 import "./pages/CategoryPage.js"
-
-// import "./components/FetchAppByFilter.js"
-// import "./components/FetchApp.js"
-
-// import "./components/FetchAppHomePage.js"
-// import "./components/FetchAppSearch.js"
-// import "./components/FetchAppCategoryPage.js"
-// import "./components/FetchAppTagPage.js"

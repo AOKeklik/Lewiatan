@@ -1,7 +1,5 @@
 window.onload = function () {
-	const sections = document.querySelectorAll(
-		".reveal-fadeup-50, .reveal-fadeup-10, .reveal-fadeRight-30, .reveal-fadeLeft-30"
-	)
+	const sections = document.querySelectorAll("[class*=reveal-]")
 
 	function updateActiveSection() {
 		sections.forEach(el => {
