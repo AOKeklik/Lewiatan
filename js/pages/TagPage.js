@@ -14,7 +14,6 @@ async function controllerLoadResults() {
         await fetchs.wait(3)
         await fetchs.loadResults()
 
-        // states.saveStateObjectByTag()
         states.saveStateObjectByPage(1)
         renders.renderFilterNames()
 
