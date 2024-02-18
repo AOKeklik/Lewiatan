@@ -6,7 +6,7 @@ import * as states from "../components-fetchapp/State.js"
 const parentResults = document.querySelector("[role=root]")
 const parentPagination = document.getElementById("pagination")
 
-async function controllerLoadResults(catID) {
+async function controllerLoadResults() {
     try {
         renders.renderLayoutBtn()
         renders.renderSpiner(parentResults)
@@ -14,15 +14,17 @@ async function controllerLoadResults(catID) {
         await fetchs.wait(3)
         await fetchs.loadResults()
 
-        states.saveStateObjectByCategory(catID)
+        // states.saveStateObjectByTag()
         states.saveStateObjectByPage(1)
         renders.renderFilterNames()
 
         sorts.sortDataByDate()
-        sorts.sortDataByCategory(catID)
+        sorts.sortDataByTag()
 
         renders.renderResults(parentResults, sorts.sortDataByPagination)
         renders.renderPagination(parentPagination)
+
+        console.log(states.state)
     } catch (err) {
         console.log(err)
     }
@@ -42,32 +44,7 @@ async function controllerLoadResultsByDate() {
         states.saveStateObjectByDate(currentDate)
 
         sorts.sortDataByDate()
-        sorts.sortDataByCategory()
-
-        renders.renderResults(parentResults, sorts.sortDataByPagination)
-        renders.renderPagination(parentPagination)
-        renders.renderFilterNames()
-    } catch (err) {
-        console.log(err)
-    }
-}
-async function constrollerLoadResultsByCategory() {
-    try {
-        const parentPagination = document.querySelector(".pagination")
-        const theDteSelect = document.querySelector(
-            `select[aria-select-type=category]`
-        )
-        const currentCategory = +theDteSelect.value
-
-        renders.renderSpiner(parentResults)
-
-        await fetchs.wait(5)
-
-        states.saveStateObjectByCategory(currentCategory)
-        states.saveStateObjectByPage(1)
-
-        sorts.sortDataByDate()
-        sorts.sortDataByCategory()
+        sorts.sortDataByTag()
 
         renders.renderResults(parentResults, sorts.sortDataByPagination)
         renders.renderPagination(parentPagination)
@@ -116,16 +93,9 @@ function dispatcher(e) {
     if (selectCategory) constrollerLoadResultsByCategory()
     if (selectLayout) controllerLoadResultsByLayout(selectLayout)
 }
-if (window.location.pathname === "/lokalnosc-w-lewiatanie.html") {
+if (window.location.pathname.startsWith("/tag")) {
     document.addEventListener("DOMContentLoaded", () =>
         controllerLoadResults(1)
-    )
-    controllerPagination()
-    document.querySelector(".filter").addEventListener("click", dispatcher)
-}
-if (window.location.pathname === "/eksperci-w-lokalnosci.html") {
-    document.addEventListener("DOMContentLoaded", () =>
-        controllerLoadResults(4)
     )
     controllerPagination()
     document.querySelector(".filter").addEventListener("click", dispatcher)

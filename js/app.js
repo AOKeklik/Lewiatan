@@ -8,3 +8,4 @@ import "./components/RevealSections.js"
 
 import "./pages/HomePage.js"
 import "./pages/CategoryPage.js"
+import "./pages/TagPage.js"
